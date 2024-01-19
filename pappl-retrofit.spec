@@ -1,5 +1,7 @@
 # the original SPEC file was created by Brandon Nielsen in his COPR repo and this comment
 # is to honor his great contribution - thank you for all you work, Brandon!
+#
+# Brandon changes are present in Changelog as well to let people know he worked on this SPEC file.
 
 %if 0%{?fedora}
 %bcond_without mdns
@@ -7,14 +9,14 @@
 %bcond_with mdns
 %endif
 
-Name: libpappl-retrofit
+Name: pappl-retrofit
 Version: 1.0b2
-Release: 1%{?dist}
+Release: 2%{?dist}
 # the CUPS exception text is the same as LLVM exception, so using that name with
 # agreement from legal team
 # https://lists.fedoraproject.org/archives/list/legal@lists.fedoraproject.org/message/A7GFSD6M3GYGSI32L2FC5KB22DUAEQI3/
 License: Apache-2.0 WITH LLVM-exception
-Summary: Library for common functions used in retrofitting printer applications by OpenPrinting
+Summary: Library for common functions used in retrofitting printer applications
 URL: https://github.com/OpenPrinting/pappl-retrofit/
 Source: %{URL}/releases/download/%{version}/pappl-retrofit-%{version}.tar.gz
 
@@ -25,22 +27,39 @@ Patch001: 0001-pappl-retrofit-private.h-Add-include-cups-sidechanne.patch
 # add man page
 # https://github.com/OpenPrinting/pappl-retrofit/commit/33be36f28
 Patch002: 0001-Added-man-page-for-the-Legacy-Printer-Application.patch
+# fix use after free
+# part of https://github.com/OpenPrinting/pappl-retrofit/commit/eebb36724a62
+Patch003: pappl-retrofit-use-after-free.patch
 
 
+# for autogen.sh - generating configure scripts
 BuildRequires: autoconf
+# for autogen.sh - generating Makefiles
 BuildRequires: automake
+# for autopoint
 BuildRequires: gettext-devel
+# compiled by gcc
 BuildRequires: gcc
+# for autosetup
 BuildRequires: git-core
+# uses make
 BuildRequires: make
+# uses libtool during build
 BuildRequires: libtool
+# supports PAM authentication
 BuildRequires: pam-devel
 # for pkg-config in configure and in SPEC file
 BuildRequires: pkgconf-pkg-config
+# CUPS API for arrays, IPP etc.
 BuildRequires: pkgconfig(cups) >= 2.2.0
+# API for filter functions
 BuildRequires: pkgconfig(libcupsfilters) >= 2.0b2
+# API for loading PPDs and its conversion to IPP
 BuildRequires: pkgconfig(libppd) >= 2.0b2
+# printer application library for common objects
 BuildRequires: pkgconfig(pappl) >= 1.1b2
+# used to fix unused shlib dependency error from rpmlint
+BuildRequires: sed
 
 
 %description
@@ -75,10 +94,10 @@ Requires(preun): systemd
 Requires(postun): systemd
 
 %description -n legacy-printer-app
-Legacy printer application provides support for classic printer drivers which are
-not part of official Linux repositories - it enables possibility to set your printer
-with proprietary printer drivers from manufacturers, so such printer will be seen
-by CUPS.
+Legacy printer application provides support for classic printer drivers
+which are not part of official Linux repositories - it enables possibility
+to set your printer with proprietary printer drivers from manufacturers,
+so such printer will be seen by CUPS.
 
 
 %prep
@@ -91,6 +110,8 @@ by CUPS.
   --disable-static\
   --disable-silent-rules
 
+sed -i -e 's! -shared ! -Wl,--as-needed\0!g' libtool
+
 %make_build
 
 
@@ -100,22 +121,32 @@ by CUPS.
 # Remove absolute symlink
 rm -f %{buildroot}/%{_libdir}/legacy-printer-app
 
-%post
+# Remove license files from doc
+rm -f %{buildroot}/%{_docdir}/%{name}/{LICENSE,NOTICE,COPYING}
+
+
+%check
+make check
+
+
+%post -n legacy-printer-app
 %systemd_post legacy-printer-app.service
 
-%preun
+%preun -n legacy-printer-app
 %systemd_preun legacy-printer-app.service
 
-%postun
+%postun -n legacy-printer-app
 %systemd_postun_with_restart legacy-printer-app.service
 
 %files
-%license LICENSE NOTICE
+%license LICENSE NOTICE COPYING
+%doc AUTHORS README.md
 %{_libdir}/libpappl-retrofit.so.1
 %{_libdir}/libpappl-retrofit.so.1.0.0
 
 %files devel
-%doc %{_docdir}/pappl-retrofit
+%{_docdir}/%{name}/CONTRIBUTING.md
+%{_docdir}/%{name}/DEVELOPING.md
 %{_includedir}/pappl-retrofit.h
 %{_libdir}/libpappl-retrofit.so
 %{_libdir}/pkgconfig/libpappl-retrofit.pc
@@ -126,6 +157,7 @@ rm -f %{buildroot}/%{_libdir}/legacy-printer-app
 %dir %{_datadir}/legacy-printer-app
 %{_datadir}/legacy-printer-app/testpage.ps
 %{_datadir}/legacy-printer-app/testpage.pdf
+%{_mandir}/man1/legacy-printer-app.1.gz
 
 %changelog
 * Thu Jan 18 2024 Zdenek Dohnal <zdohnal@redhat.com> 1.0b2-2
