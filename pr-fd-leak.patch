@@ -1,0 +1,55 @@
+diff --git a/pappl-retrofit/pappl-retrofit.c b/pappl-retrofit/pappl-retrofit.c
+index dfbf570..909e4a2 100644
+--- a/pappl-retrofit/pappl-retrofit.c
++++ b/pappl-retrofit/pappl-retrofit.c
+@@ -1128,6 +1128,7 @@ _prDriverSetup(
+                search_ppd_path;
+   ppd_file_t   *ppd = NULL;		   // PPD file loaded from collection
+   ppd_cache_t  *pc;
++  cups_file_t  *fp;
+   cups_file_t  *tempfp;
+   int          tempfd,
+                bytes;
+@@ -1171,6 +1172,8 @@ _prDriverSetup(
+   int          default_choice,
+                first_choice;
+   char         *ptr = NULL;
++  ppd_status_t err;		// Last error in file
++  int          line;		// Line number in file
+   const char * const pappl_handled_options[] =
+   {
+    "PageSize",
+@@ -1285,13 +1288,19 @@ _prDriverSetup(
+       }
+     }
+ 
+-    if ((ppd = ppdOpen2(ppdCollectionGetPPD(ppd_path->ppd_path, NULL,
+-					    (cf_logfunc_t)papplLog,
+-					    system))) == NULL)
++    if ((fp = ppdCollectionGetPPD(ppd_path->ppd_path, NULL, (cf_logfunc_t)papplLog,
++	 system)) == NULL)
+     {
+-      ppd_status_t	err;		// Last error in file
+-      int		line;		// Line number in file
++      err = ppdLastError(&line);
++      papplLog(system, PAPPL_LOGLEVEL_ERROR,
++	       "PPD %s: %s on line %d", ppd_path->ppd_path,
++	       ppdErrorString(err), line);
++      return (false);
++    }
+ 
++    if ((ppd = ppdOpen2(fp)) == NULL)
++    {
++      cupsFileClose(fp);
+       err = ppdLastError(&line);
+       papplLog(system, PAPPL_LOGLEVEL_ERROR,
+ 	       "PPD %s: %s on line %d", ppd_path->ppd_path,
+@@ -1299,6 +1308,8 @@ _prDriverSetup(
+       return (false);
+     }
+ 
++    cupsFileClose(fp);
++
+     papplLog(system, PAPPL_LOGLEVEL_DEBUG,
+ 	     "Using PPD %s: %s", ppd_path->ppd_path, ppd->nickname);
+ 

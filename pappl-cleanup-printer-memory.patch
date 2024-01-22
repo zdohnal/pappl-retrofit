@@ -1,0 +1,13 @@
+diff --git a/pappl/system.c b/pappl/system.c
+index 575f070..ef5213f 100644
+--- a/pappl/system.c
++++ b/pappl/system.c
+@@ -774,6 +774,8 @@ papplSystemRun(pappl_system_t *system)	// I - System
+     // Remove advertising via DNS-SD as needed...
+     if (printer->dns_sd_name)
+       _papplPrinterUnregisterDNSSDNoLock(printer);
++
++    _papplPrinterDelete(printer);
+   }
+ 
+   system->is_running = false;

@@ -1,0 +1,23 @@
+diff --git a/pappl-retrofit/pappl-retrofit.c b/pappl-retrofit/pappl-retrofit.c
+index dfbf570..edc58d5 100644
+--- a/pappl-retrofit/pappl-retrofit.c
++++ b/pappl-retrofit/pappl-retrofit.c
+@@ -3931,6 +3931,7 @@ _prSetupDriverList(pr_printer_app_global_data_t *global_data)
+ 		    REG_ICASE | REG_EXTENDED))
+ 	{
+ 	  regfree(driver_re);
++          free(driver_re);
+ 	  driver_re = NULL;
+ 	  papplLog(system, PAPPL_LOGLEVEL_ERROR,
+ 		   "Invalid regular expression: %s",
+@@ -4232,7 +4233,10 @@ _prSetupDriverList(pr_printer_app_global_data_t *global_data)
+ 
+     // Free the compiled regular expression
+     if (driver_re)
++    {
+       regfree(driver_re);
++      free(driver_re);
++    }
+ 
+     cupsArrayDelete(ppds);
+ 

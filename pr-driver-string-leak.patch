@@ -1,0 +1,69 @@
+diff --git a/pappl-retrofit/pappl-retrofit.c b/pappl-retrofit/pappl-retrofit.c
+index dfbf570..50f785b 100644
+--- a/pappl-retrofit/pappl-retrofit.c
++++ b/pappl-retrofit/pappl-retrofit.c
+@@ -73,6 +73,22 @@ prRetroFitPrinterApp(pr_printer_app_config_t *printer_app_config,
+   cupsArrayDelete(global_data.config->stream_formats);
+   if (global_data.config->driver_selection_regex_list)
+     cupsArrayDelete(global_data.config->driver_selection_regex_list);
++
++  if (global_data->drivers)
++  {
++    for (int i = 0; i < global_data->num_drivers; i++)
++    {
++      free(drivers[i].device_id);
++      free(drivers[i].name);
++      free(drivers[i].description);
++      free(drivers[i].extension);
++    }
++
++    free(global_data->drivers);
++  }
++
++  if (global_data->ppd_paths)
++    cupsArrayDelete(global_data->ppd_paths);
+   
+   return (ret);
+ }
+diff --git a/pr-driver-string-leak.patch b/pr-driver-string-leak.patch
+index 830b644..e69de29 100644
+--- a/pr-driver-string-leak.patch
++++ b/pr-driver-string-leak.patch
+@@ -1,37 +0,0 @@
+-diff --git a/pappl-retrofit/pappl-retrofit.c b/pappl-retrofit/pappl-retrofit.c
+-index dfbf570..a4c60a5 100644
+---- a/pappl-retrofit/pappl-retrofit.c
+-+++ b/pappl-retrofit/pappl-retrofit.c
+-@@ -73,6 +73,32 @@ prRetroFitPrinterApp(pr_printer_app_config_t *printer_app_config,
+-   cupsArrayDelete(global_data.config->stream_formats);
+-   if (global_data.config->driver_selection_regex_list)
+-     cupsArrayDelete(global_data.config->driver_selection_regex_list);
+-+
+-+  if (global_data->drivers)
+-+  {
+-+    for (int i = 0; i < global_data->num_drivers; i++)
+-+    {
+-+      free(drivers[i].device_id);
+-+      free(drivers[i].name);
+-+      free(drivers[i].description);
+-+      free(drivers[i].extension);
+-+    }
+-+
+-+    free(global_data->drivers);
+-+  }
+-+
+-+  if (global_data->ppd_paths)
+-+  {
+-+    for (pr_ppd_path_t *p = cupsArrayFirst(global_data->ppd_paths); p;
+-+	 p = cupsArrayNext(global_data->ppd_paths))
+-+    {
+-+      free(p->driver_name);
+-+      free(p->ppd_path);
+-+      cupsArrayRemove(p);
+-+    }
+-+
+-+    cupsArrayDelete(global_data->ppd_paths);
+-+  }
+-   
+-   return (ret);
+- }

@@ -1,0 +1,13 @@
+diff --git a/pappl/system.c b/pappl/system.c
+index 575f070..a618b5b 100644
+--- a/pappl/system.c
++++ b/pappl/system.c
+@@ -302,6 +302,8 @@ papplSystemDelete(
+   free(system->auth_service);
+   free(system->admin_group);
+   free(system->default_print_group);
++  if (system->footer_html)
++    free(system->footer_html);
+ 
+   if (system->logfd >= 0 && system->logfd != 2)
+     close(system->logfd);

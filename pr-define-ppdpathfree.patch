@@ -1,0 +1,49 @@
+diff --git a/pappl-retrofit/pappl-retrofit-private.h b/pappl-retrofit/pappl-retrofit-private.h
+index d293bfb..eec39a5 100644
+--- a/pappl-retrofit/pappl-retrofit-private.h
++++ b/pappl-retrofit/pappl-retrofit-private.h
+@@ -196,6 +196,7 @@ extern bool   _prUpdateStatus(pappl_printer_t *printer,
+ 			      pappl_device_t *device);
+ extern pappl_system_t *_prSystemCB(int num_options, cups_option_t *options,
+ 				   void *data);
++extern void   _prFreePPDPaths(pr_ppd_path_t *path);
+ 
+ 
+ //
+diff --git a/pappl-retrofit/pappl-retrofit.c b/pappl-retrofit/pappl-retrofit.c
+index dfbf570..ddf4d82 100644
+--- a/pappl-retrofit/pappl-retrofit.c
++++ b/pappl-retrofit/pappl-retrofit.c
+@@ -3908,7 +3908,7 @@ _prSetupDriverList(pr_printer_app_global_data_t *global_data)
+     // Create list of PPD file paths
+     if (ppd_paths)
+       cupsArrayDelete(ppd_paths);
+-    ppd_paths = cupsArrayNew(_prComparePPDPaths, NULL, NULL, 0, NULL, NULL);
++    ppd_paths = cupsArrayNew(_prComparePPDPaths, NULL, NULL, 0, NULL, (cups_afree_cb_t)_prPPDPathsFree);
+     if (generic_ppd)
+     {
+       drivers[i].name = strdup("generic");
+@@ -4281,7 +4281,7 @@ _prSetup(pr_printer_app_global_data_t *global_data)  // I - Global data
+ 
+   global_data->num_drivers = 0;
+   global_data->drivers = NULL;
+-  global_data->ppd_paths = cupsArrayNew(_prComparePPDPaths, NULL, NULL, 0, NULL, NULL);
++  global_data->ppd_paths = cupsArrayNew(_prComparePPDPaths, NULL, NULL, 0, NULL, (cups_afree_cb_t)_prFreePPDPaths);
+   global_data->ppd_collections = cupsArrayNew(NULL, NULL, NULL, 0, NULL, NULL);
+ 
+   //
+@@ -4766,3 +4766,14 @@ _prSystemCB(int            num_options,	// I - Number of options
+ 
+   return (system);
+ }
++
++
++//
++// '_pr_ppd_paths_free()' - free memory allocated by ppd_paths
++//
++
++void _prFreePPDPaths(pr_ppd_path_t *path)
++{
++  free(path->driver_name);
++  free(path->ppd_name);
++}

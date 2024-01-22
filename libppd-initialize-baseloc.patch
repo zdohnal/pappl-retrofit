@@ -1,0 +1,12 @@
+diff --git a/ppd/ppdc-catalog.cxx b/ppd/ppdc-catalog.cxx
+index 71cd733..53edf60 100644
+--- a/ppd/ppdc-catalog.cxx
++++ b/ppd/ppdc-catalog.cxx
+@@ -69,6 +69,7 @@ ppdcCatalog::ppdcCatalog(const char *l,	// I - Locale
+       // Try the base locale...
+       char	baseloc[3];		// Base locale...
+ 
++      memset(baseloc, 0, sizeof(baseloc));
+       strncpy(baseloc, l, sizeof(baseloc) - 1);
+       snprintf(pofile, sizeof(pofile), "%s/locale/%s/cups_%s.po", c,
+                baseloc, baseloc);

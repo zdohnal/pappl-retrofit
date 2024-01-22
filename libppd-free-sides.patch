@@ -1,0 +1,19 @@
+diff --git a/ppd/ppd-cache.c b/ppd/ppd-cache.c
+index 5aa617c..8f6811d 100644
+--- a/ppd/ppd-cache.c
++++ b/ppd/ppd-cache.c
+@@ -3376,6 +3376,14 @@ ppdCacheDestroy(ppd_cache_t *pc)	// I - PPD cache and mapping data
+ 
+   free(pc->charge_info_uri);
+   free(pc->password);
++  if (pc->sides_1sided)
++    free(pc->sides_1sided);
++  if (pc->sides_2sided_long)
++    free(pc->sides_2sided_long);
++  if (pc->sides_2sided_short)
++    free(pc->sides_2sided_short);
++  if (pc->sides_option)
++    free(pc->sides_option);
+ 
+   cupsArrayDelete(pc->mandatory);
+ 
