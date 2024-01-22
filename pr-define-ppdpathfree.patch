@@ -1,5 +1,5 @@
 diff --git a/pappl-retrofit/pappl-retrofit-private.h b/pappl-retrofit/pappl-retrofit-private.h
-index d293bfb..eec39a5 100644
+index efa8311..464c2ea 100644
 --- a/pappl-retrofit/pappl-retrofit-private.h
 +++ b/pappl-retrofit/pappl-retrofit-private.h
 @@ -196,6 +196,7 @@ extern bool   _prUpdateStatus(pappl_printer_t *printer,
@@ -11,28 +11,28 @@ index d293bfb..eec39a5 100644
  
  //
 diff --git a/pappl-retrofit/pappl-retrofit.c b/pappl-retrofit/pappl-retrofit.c
-index dfbf570..ddf4d82 100644
+index d7d8efd..e6f49a8 100644
 --- a/pappl-retrofit/pappl-retrofit.c
 +++ b/pappl-retrofit/pappl-retrofit.c
-@@ -3908,7 +3908,7 @@ _prSetupDriverList(pr_printer_app_global_data_t *global_data)
+@@ -3918,7 +3918,7 @@ _prSetupDriverList(pr_printer_app_global_data_t *global_data)
      // Create list of PPD file paths
      if (ppd_paths)
        cupsArrayDelete(ppd_paths);
--    ppd_paths = cupsArrayNew(_prComparePPDPaths, NULL, NULL, 0, NULL, NULL);
-+    ppd_paths = cupsArrayNew(_prComparePPDPaths, NULL, NULL, 0, NULL, (cups_afree_cb_t)_prPPDPathsFree);
+-    ppd_paths = cupsArrayNew(_prComparePPDPaths, NULL);
++    ppd_paths = cupsArrayNew3(_prComparePPDPaths, NULL, NULL, 0, NULL, (cups_afree_func_t)_prFreePPDPaths);
      if (generic_ppd)
      {
        drivers[i].name = strdup("generic");
-@@ -4281,7 +4281,7 @@ _prSetup(pr_printer_app_global_data_t *global_data)  // I - Global data
+@@ -4295,7 +4295,7 @@ _prSetup(pr_printer_app_global_data_t *global_data)  // I - Global data
  
    global_data->num_drivers = 0;
    global_data->drivers = NULL;
--  global_data->ppd_paths = cupsArrayNew(_prComparePPDPaths, NULL, NULL, 0, NULL, NULL);
-+  global_data->ppd_paths = cupsArrayNew(_prComparePPDPaths, NULL, NULL, 0, NULL, (cups_afree_cb_t)_prFreePPDPaths);
-   global_data->ppd_collections = cupsArrayNew(NULL, NULL, NULL, 0, NULL, NULL);
+-  global_data->ppd_paths = cupsArrayNew(_prComparePPDPaths, NULL);
++  global_data->ppd_paths = cupsArrayNew3(_prComparePPDPaths, NULL, NULL, 0, NULL, (cups_afree_func_t)_prFreePPDPaths);
+   global_data->ppd_collections = cupsArrayNew(NULL, NULL);
  
    //
-@@ -4766,3 +4766,14 @@ _prSystemCB(int            num_options,	// I - Number of options
+@@ -4780,3 +4780,14 @@ _prSystemCB(int            num_options,	// I - Number of options
  
    return (system);
  }
@@ -44,6 +44,6 @@ index dfbf570..ddf4d82 100644
 +
 +void _prFreePPDPaths(pr_ppd_path_t *path)
 +{
-+  free(path->driver_name);
-+  free(path->ppd_name);
++  free((char*)path->driver_name);
++  free((char*)path->ppd_path);
 +}

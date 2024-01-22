@@ -30,6 +30,10 @@ Patch002: 0001-Added-man-page-for-the-Legacy-Printer-Application.patch
 # fix use after free
 # part of https://github.com/OpenPrinting/pappl-retrofit/commit/eebb36724a62
 Patch003: pappl-retrofit-use-after-free.patch
+Patch004: pr-fd-leak.patch
+Patch005: pr-regexp-leak.patch
+Patch006: pr-define-ppdpathfree.patch
+Patch007: pr-driver-string-leak.patch
 
 
 # for autogen.sh - generating configure scripts
