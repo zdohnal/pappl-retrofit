@@ -1,0 +1,15 @@
+diff --git a/pappl-retrofit/pappl-retrofit.c b/pappl-retrofit/pappl-retrofit.c
+index b085e66..9a90ddd 100644
+--- a/pappl-retrofit/pappl-retrofit.c
++++ b/pappl-retrofit/pappl-retrofit.c
+@@ -632,7 +632,10 @@ prIdentify(
+     // Start backend if not yet done so (first access is not by PAPPL device
+     // API function)
+     if (!device_data->backend_pid && !_prCUPSDevLaunchBackend(device))
++    {
++      papplPrinterCloseDevice(printer);
+       return;
++    }
+ 
+     // Standard FD for the side channel is 4, the CUPS library
+     // functions use always FD 4. Therefore we redirect our side

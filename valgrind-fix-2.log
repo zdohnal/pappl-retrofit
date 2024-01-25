@@ -1,0 +1,180 @@
+==2094== Thread 5:
+==2094== Mismatched new/delete size value: 24
+==2094==    at 0x484687E: operator delete(void*, unsigned long) (vg_replace_malloc.c:1101)
+==2094==    by 0x4945400: UnknownInlinedFun (unique_ptr.h:99)
+==2094==    by 0x4945400: UnknownInlinedFun (unique_ptr.h:93)
+==2094==    by 0x4945400: UnknownInlinedFun (unique_ptr.h:404)
+==2094==    by 0x4945400: UnknownInlinedFun (Buffer.hh:28)
+==2094==    by 0x4945400: std::_Sp_counted_ptr<Buffer*, (__gnu_cxx::_Lock_policy)2>::_M_dispose() (shared_ptr_base.h:428)
+==2094==    by 0x516D009: UnknownInlinedFun (shared_ptr_base.h:346)
+==2094==    by 0x516D009: std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release() (shared_ptr_base.h:317)
+==2094==    by 0x525DB6C: UnknownInlinedFun (shared_ptr_base.h:1071)
+==2094==    by 0x525DB6C: UnknownInlinedFun (shared_ptr_base.h:1524)
+==2094==    by 0x525DB6C: UnknownInlinedFun (shared_ptr.h:175)
+==2094==    by 0x525DB6C: UnknownInlinedFun (QPDF_Stream.hh:19)
+==2094==    by 0x525DB6C: QPDF_Stream::~QPDF_Stream() (QPDF_Stream.hh:19)
+==2094==    by 0x516CF45: UnknownInlinedFun (shared_ptr_base.h:175)
+==2094==    by 0x516CF45: std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release_last_use_cold() (shared_ptr_base.h:199)
+==2094==    by 0x5188D09: UnknownInlinedFun (shared_ptr_base.h:1071)
+==2094==    by 0x5188D09: UnknownInlinedFun (shared_ptr_base.h:1524)
+==2094==    by 0x5188D09: UnknownInlinedFun (shared_ptr_base.h:1620)
+==2094==    by 0x5188D09: UnknownInlinedFun (shared_ptr.h:440)
+==2094==    by 0x5188D09: UnknownInlinedFun (QPDFObject.cc:16)
+==2094==    by 0x5188D09: QPDF::~QPDF() (QPDF.cc:237)
+==2094==    by 0x4940CC9: UnknownInlinedFun (pdf.cxx:85)
+==2094==    by 0x4940CC9: cfPDFFree (pdf.cxx:83)
+==2094==    by 0x49190E8: UnknownInlinedFun (bannertopdf.c:866)
+==2094==    by 0x49190E8: cfFilterBannerToPDF (bannertopdf.c:988)
+==2094==    by 0x4914893: cfFilterChain (filter.c:766)
+==2094==    by 0x4A9D30C: _prFilter (print-job.c:1151)
+==2094==    by 0x581A338: _papplJobProcess (job-process.c:542)
+==2094==    by 0x4B401F6: start_thread (pthread_create.c:447)
+==2094==  Address 0xb336aa0 is 0 bytes inside a block of size 56 alloc'd
+==2094==    at 0x4842F95: operator new(unsigned long) (vg_replace_malloc.c:483)
+==2094==    by 0x516C710: Buffer::Buffer(unsigned long) (Buffer.cc:51)
+==2094==    by 0x4946CBF: cfPDFPrependStream (pdf.cxx:172)
+==2094==    by 0x49191EF: UnknownInlinedFun (bannertopdf.c:833)
+==2094==    by 0x49191EF: cfFilterBannerToPDF (bannertopdf.c:988)
+==2094==    by 0x4914893: cfFilterChain (filter.c:766)
+==2094==    by 0x4A9D30C: _prFilter (print-job.c:1151)
+==2094==    by 0x581A338: _papplJobProcess (job-process.c:542)
+==2094==    by 0x4B401F6: start_thread (pthread_create.c:447)
+==2094==    by 0x4BC20E3: clone (clone.S:100)
+==2094== 
+==2094== 
+==2094== HEAP SUMMARY:
+==2094==     in use at exit: 1,327,196 bytes in 43,003 blocks
+==2094==   total heap usage: 171,051 allocs, 128,048 frees, 12,617,474 bytes allocated
+==2094== 
+==2094== Thread 1:
+==2094== 10 bytes in 2 blocks are definitely lost in loss record 78 of 888
+==2094==    at 0x484280F: malloc (vg_replace_malloc.c:442)
+==2094==    by 0x4B570BE: strdup (strdup.c:42)
+==2094==    by 0x4A908C1: _prDriverSetup (pappl-retrofit.c:2073)
+==2094==    by 0x5823313: papplPrinterCreate (printer.c:561)
+==2094==    by 0x583F58D: _papplSystemWebAddPrinter (system-webif.c:475)
+==2094==    by 0x580EE4D: _papplClientProcessHTTP (client.c:443)
+==2094==    by 0x580EF86: _papplClientRun (client.c:668)
+==2094==    by 0x4B401F6: start_thread (pthread_create.c:447)
+==2094==    by 0x4BC20E3: clone (clone.S:100)
+==2094== 
+==2094== 39 bytes in 1 blocks are definitely lost in loss record 335 of 888
+==2094==    at 0x484280F: malloc (vg_replace_malloc.c:442)
+==2094==    by 0x4B570BE: strdup (strdup.c:42)
+==2094==    by 0x5810579: pappl_socket_open (device-network.c:1695)
+==2094==    by 0x580992C: papplDeviceOpen (device.c:810)
+==2094==    by 0x58222AE: UnknownInlinedFun (printer-accessors.c:906)
+==2094==    by 0x58222AE: papplPrinterOpenDevice (printer-accessors.c:891)
+==2094==    by 0x4A9C250: prIdentify (pappl-retrofit.c:598)
+==2094==    by 0x5831DD9: _papplPrinterWebHome (printer-webif.c:759)
+==2094==    by 0x580EE4D: _papplClientProcessHTTP (client.c:443)
+==2094==    by 0x580EF86: _papplClientRun (client.c:668)
+==2094==    by 0x4B401F6: start_thread (pthread_create.c:447)
+==2094==    by 0x4BC20E3: clone (clone.S:100)
+==2094== 
+==2094== 40 bytes in 1 blocks are definitely lost in loss record 350 of 888
+==2094==    at 0x484280F: malloc (vg_replace_malloc.c:442)
+==2094==    by 0x490DC26: human_time (bannertopdf.c:384)
+==2094==    by 0x4918BF9: UnknownInlinedFun (bannertopdf.c:463)
+==2094==    by 0x4918BF9: UnknownInlinedFun (bannertopdf.c:816)
+==2094==    by 0x4918BF9: cfFilterBannerToPDF (bannertopdf.c:988)
+==2094==    by 0x4914893: cfFilterChain (filter.c:766)
+==2094==    by 0x4A9D30C: _prFilter (print-job.c:1151)
+==2094==    by 0x581A338: _papplJobProcess (job-process.c:542)
+==2094==    by 0x4B401F6: start_thread (pthread_create.c:447)
+==2094==    by 0x4BC20E3: clone (clone.S:100)
+==2094== 
+==2094== 40 bytes in 1 blocks are definitely lost in loss record 351 of 888
+==2094==    at 0x484280F: malloc (vg_replace_malloc.c:442)
+==2094==    by 0x490DC26: human_time (bannertopdf.c:384)
+==2094==    by 0x4918C32: UnknownInlinedFun (bannertopdf.c:468)
+==2094==    by 0x4918C32: UnknownInlinedFun (bannertopdf.c:816)
+==2094==    by 0x4918C32: cfFilterBannerToPDF (bannertopdf.c:988)
+==2094==    by 0x4914893: cfFilterChain (filter.c:766)
+==2094==    by 0x4A9D30C: _prFilter (print-job.c:1151)
+==2094==    by 0x581A338: _papplJobProcess (job-process.c:542)
+==2094==    by 0x4B401F6: start_thread (pthread_create.c:447)
+==2094==    by 0x4BC20E3: clone (clone.S:100)
+==2094== 
+==2094== 78 bytes in 2 blocks are definitely lost in loss record 581 of 888
+==2094==    at 0x484280F: malloc (vg_replace_malloc.c:442)
+==2094==    by 0x4B570BE: strdup (strdup.c:42)
+==2094==    by 0x4A9592D: _prSetupDriverList (pappl-retrofit.c:4183)
+==2094==    by 0x4A9964D: _prSetup (pappl-retrofit.c:4359)
+==2094==    by 0x4A99B27: _prSystemCB (pappl-retrofit.c:4779)
+==2094==    by 0x581DF09: _papplMainloopRunServer (mainloop-subcommands.c:652)
+==2094==    by 0x5821475: papplMainloop (mainloop.c:452)
+==2094==    by 0x4A8DBE7: prRetroFitPrinterApp (pappl-retrofit.c:56)
+==2094==    by 0x109377: main (legacy-printer-app.c:188)
+==2094== 
+==2094== 78 bytes in 2 blocks are definitely lost in loss record 582 of 888
+==2094==    at 0x484280F: malloc (vg_replace_malloc.c:442)
+==2094==    by 0x4B570BE: strdup (strdup.c:42)
+==2094==    by 0x4A95C6C: _prSetupDriverList (pappl-retrofit.c:4196)
+==2094==    by 0x4A9964D: _prSetup (pappl-retrofit.c:4359)
+==2094==    by 0x4A99B27: _prSystemCB (pappl-retrofit.c:4779)
+==2094==    by 0x581DF09: _papplMainloopRunServer (mainloop-subcommands.c:652)
+==2094==    by 0x5821475: papplMainloop (mainloop.c:452)
+==2094==    by 0x4A8DBE7: prRetroFitPrinterApp (pappl-retrofit.c:56)
+==2094==    by 0x109377: main (legacy-printer-app.c:188)
+==2094== 
+==2094== 82 bytes in 2 blocks are definitely lost in loss record 600 of 888
+==2094==    at 0x484280F: malloc (vg_replace_malloc.c:442)
+==2094==    by 0x4B570BE: strdup (strdup.c:42)
+==2094==    by 0x4A959B4: _prSetupDriverList (pappl-retrofit.c:4203)
+==2094==    by 0x4A9964D: _prSetup (pappl-retrofit.c:4359)
+==2094==    by 0x4A99B27: _prSystemCB (pappl-retrofit.c:4779)
+==2094==    by 0x581DF09: _papplMainloopRunServer (mainloop-subcommands.c:652)
+==2094==    by 0x5821475: papplMainloop (mainloop.c:452)
+==2094==    by 0x4A8DBE7: prRetroFitPrinterApp (pappl-retrofit.c:56)
+==2094==    by 0x109377: main (legacy-printer-app.c:188)
+==2094== 
+==2094== 98 bytes in 2 blocks are definitely lost in loss record 608 of 888
+==2094==    at 0x484280F: malloc (vg_replace_malloc.c:442)
+==2094==    by 0x4B570BE: strdup (strdup.c:42)
+==2094==    by 0x4A95D64: _prSetupDriverList (pappl-retrofit.c:4136)
+==2094==    by 0x4A9964D: _prSetup (pappl-retrofit.c:4359)
+==2094==    by 0x4A99B27: _prSystemCB (pappl-retrofit.c:4779)
+==2094==    by 0x581DF09: _papplMainloopRunServer (mainloop-subcommands.c:652)
+==2094==    by 0x5821475: papplMainloop (mainloop.c:452)
+==2094==    by 0x4A8DBE7: prRetroFitPrinterApp (pappl-retrofit.c:56)
+==2094==    by 0x109377: main (legacy-printer-app.c:188)
+==2094== 
+==2094== 106 bytes in 1 blocks are definitely lost in loss record 611 of 888
+==2094==    at 0x484280F: malloc (vg_replace_malloc.c:442)
+==2094==    by 0x4B52F8B: __libc_alloc_buffer_allocate (alloc_buffer_allocate.c:26)
+==2094==    by 0x4BE29C5: alloc_buffer_allocate (alloc_buffer.h:149)
+==2094==    by 0x4BE29C5: __resolv_conf_allocate (resolv_conf.c:394)
+==2094==    by 0x4BDDD74: __resolv_conf_load (res_init.c:599)
+==2094==    by 0x4BE263D: __resolv_conf_get_current (resolv_conf.c:143)
+==2094==    by 0x4BDE274: __res_vinit (res_init.c:628)
+==2094==    by 0x4BE3393: maybe_init (resolv_context.c:122)
+==2094==    by 0x4BE3512: context_get (resolv_context.c:184)
+==2094==    by 0x4BE3512: context_get (resolv_context.c:176)
+==2094==    by 0x4BE3512: __resolv_context_get (resolv_context.c:195)
+==2094==    by 0x4BF0730: gethostbyname (getXXbyYY.c:110)
+==2094==    by 0x487FD07: httpGetHostname (http-addr.c:865)
+==2094==    by 0x580C31D: _papplDNSSDCopyHostName (dnssd.c:80)
+==2094==    by 0x5839AD4: _papplSystemSetHostNameNoLock (system-accessors.c:1777)
+==2094== 
+==2094== 2,670 (464 direct, 2,206 indirect) bytes in 1 blocks are definitely lost in loss record 835 of 888
+==2094==    at 0x4849E60: calloc (vg_replace_malloc.c:1595)
+==2094==    by 0x4A0AEB8: ppdCacheCreateWithPPD (ppd-cache.c:1259)
+==2094==    by 0x4A93B0B: _prDriverSetup (pappl-retrofit.c:1333)
+==2094==    by 0x5823313: papplPrinterCreate (printer.c:561)
+==2094==    by 0x583F58D: _papplSystemWebAddPrinter (system-webif.c:475)
+==2094==    by 0x580EE4D: _papplClientProcessHTTP (client.c:443)
+==2094==    by 0x580EF86: _papplClientRun (client.c:668)
+==2094==    by 0x4B401F6: start_thread (pthread_create.c:447)
+==2094==    by 0x4BC20E3: clone (clone.S:100)
+==2094== 
+==2094== LEAK SUMMARY:
+==2094==    definitely lost: 1,035 bytes in 15 blocks
+==2094==    indirectly lost: 2,206 bytes in 57 blocks
+==2094==      possibly lost: 1,402 bytes in 13 blocks
+==2094==    still reachable: 1,322,553 bytes in 42,918 blocks
+==2094==         suppressed: 0 bytes in 0 blocks
+==2094== Reachable blocks (those to which a pointer was found) are not shown.
+==2094== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2094== 
+

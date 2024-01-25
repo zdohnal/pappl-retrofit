@@ -1,0 +1,15 @@
+diff --git a/pappl-retrofit/pappl-retrofit.c b/pappl-retrofit/pappl-retrofit.c
+index b085e66..4c75613 100644
+--- a/pappl-retrofit/pappl-retrofit.c
++++ b/pappl-retrofit/pappl-retrofit.c
+@@ -4238,6 +4238,10 @@ _prSetupDriverList(pr_printer_app_global_data_t *global_data)
+ 	    // Remove the duplicate
+ 	    // We do not count the freeable memory here as in the end
+ 	    // we adjust the allocated memory anyway
++            free(drivers[k].name);
++            free(drivers[k].description);
++            free(drivers[k].extension);
++            free(drivers[k].device_id);
+ 	    memmove(&drivers[k], &drivers[k + 1],
+ 		    (i - k) * sizeof(pappl_pr_driver_t));
+ 	    i --;
