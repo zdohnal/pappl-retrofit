@@ -1,0 +1,18 @@
+diff --git a/pappl-retrofit/pappl-retrofit.c b/pappl-retrofit/pappl-retrofit.c
+index 4d871ea..67eae97 100644
+--- a/pappl-retrofit/pappl-retrofit.c
++++ b/pappl-retrofit/pappl-retrofit.c
+@@ -4793,11 +4793,12 @@ _prSystemCB(int            num_options,	// I - Number of options
+ 
+ 
+ //
+-// '_pr_ppd_paths_free()' - free memory allocated by ppd_paths
++// '_prFreePPDPaths()' - free memory allocated by ppd_paths
+ //
+ 
+ void _prFreePPDPaths(pr_ppd_path_t *path)
+ {
+   free((char*)path->driver_name);
+   free((char*)path->ppd_path);
++  free(path);
+ }

@@ -1,0 +1,14 @@
+diff --git a/pappl-retrofit/pappl-retrofit.c b/pappl-retrofit/pappl-retrofit.c
+index 658bc37..f0fdca4 100644
+--- a/pappl-retrofit/pappl-retrofit.c
++++ b/pappl-retrofit/pappl-retrofit.c
+@@ -73,6 +73,9 @@ prRetroFitPrinterApp(pr_printer_app_config_t *printer_app_config,
+   if (global_data.config->driver_selection_regex_list)
+     cupsArrayDelete(global_data.config->driver_selection_regex_list);
+   
++  if (global_data.ppd_paths)
++    cupsArrayDelete(global_data.ppd_paths);
++
+   return (ret);
+ }
+ 

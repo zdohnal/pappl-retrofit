@@ -33,7 +33,12 @@ Patch003: pappl-retrofit-use-after-free.patch
 Patch004: pr-fd-leak.patch
 Patch005: pr-regexp-leak.patch
 Patch006: pr-define-ppdpathfree.patch
-Patch007: pr-driver-string-leak.patch
+Patch007: pr-ppd-path-leak.patch
+Patch008: pr-close-device.patch
+Patch009: pr-free-dup.patch
+Patch010: pr-driver-string-leak.patch
+Patch011: pr-free-ppd-collect.patch
+Patch012: pr-path-leak.patch
 
 
 # for autogen.sh - generating configure scripts

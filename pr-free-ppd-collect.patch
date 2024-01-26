@@ -1,0 +1,23 @@
+diff --git a/pappl-retrofit/pappl-retrofit.c b/pappl-retrofit/pappl-retrofit.c
+index e2d45bd..37a0678 100644
+--- a/pappl-retrofit/pappl-retrofit.c
++++ b/pappl-retrofit/pappl-retrofit.c
+@@ -89,6 +89,9 @@ prRetroFitPrinterApp(pr_printer_app_config_t *printer_app_config,
+     free(global_data.drivers);
+   }
+ 
++  if (global_data.ppd_collections)
++    cupsArrayDelete(global_data.ppd_collections);
++
+   return (ret);
+ }
+ 
+@@ -4319,7 +4322,7 @@ _prSetup(pr_printer_app_global_data_t *global_data)  // I - Global data
+   global_data->num_drivers = 0;
+   global_data->drivers = NULL;
+   global_data->ppd_paths = cupsArrayNew3(_prComparePPDPaths, NULL, NULL, 0, NULL, (cups_afree_func_t)_prFreePPDPaths);
+-  global_data->ppd_collections = cupsArrayNew(NULL, NULL);
++  global_data->ppd_collections = cupsArrayNew3(NULL, NULL, NULL, 0, NULL, (cups_afree_func_t)free);
+ 
+   //
+   // Build PPD list from all repositories
