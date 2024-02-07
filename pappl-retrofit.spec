@@ -128,7 +128,7 @@ sed -i -e 's! -shared ! -Wl,--as-needed\0!g' libtool
 %make_install
 
 # Remove absolute symlink
-rm -f %{buildroot}/%{_libdir}/legacy-printer-app
+#rm -f %{buildroot}/%{_libdir}/legacy-printer-app
 
 # Remove license files from doc
 rm -f %{buildroot}/%{_docdir}/%{name}/{LICENSE,NOTICE,COPYING}
@@ -166,6 +166,7 @@ make check
 %dir %{_datadir}/legacy-printer-app
 %{_datadir}/legacy-printer-app/testpage.ps
 %{_datadir}/legacy-printer-app/testpage.pdf
+%{_libdir}/legacy-printer-app
 %{_mandir}/man1/legacy-printer-app.1.gz
 
 %changelog

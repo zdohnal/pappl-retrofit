@@ -6,10 +6,10 @@ index b085e66..4c75613 100644
  	    // Remove the duplicate
  	    // We do not count the freeable memory here as in the end
  	    // we adjust the allocated memory anyway
-+            free(drivers[k].name);
-+            free(drivers[k].description);
-+            free(drivers[k].extension);
-+            free(drivers[k].device_id);
++            free((char*)drivers[k].name);
++            free((char*)drivers[k].description);
++            free((char*)drivers[k].extension);
++            free((char*)drivers[k].device_id);
  	    memmove(&drivers[k], &drivers[k + 1],
  		    (i - k) * sizeof(pappl_pr_driver_t));
  	    i --;
