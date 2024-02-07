@@ -1,0 +1,164 @@
+Error: Y2K38_SAFETY (CWE-197):
+libcupsfilters-2.0.0/cupsfilters/fontembed/embed-pdf.c:202: store_truncates_time_t: A "time_t" value is stored in an integer with too few bits to accommodate it.  The expression "time(NULL)" is cast to "unsigned int".
+#  200|     static unsigned int rands = 0;
+#  201|     if (!rands)
+#  202|->     rands = time(NULL);
+#  203|   
+#  204|     char subtag[7];
+
+Error: OVERRUN (CWE-119):
+libcupsfilters-2.0.0/cupsfilters/fontembed/sfnt-subset.c:213: assignment: Assigning: "offset" = "0".
+libcupsfilters-2.0.0/cupsfilters/fontembed/sfnt-subset.c:231: zero_return: Function call "_cfFontEmbedOTFGetGlyph(otf, iA)" returns 0.
+libcupsfilters-2.0.0/cupsfilters/fontembed/sfnt-subset.c:231: assignment: Assigning: "len" = "_cfFontEmbedOTFGetGlyph(otf, iA)". The value of "len" is now 0.
+libcupsfilters-2.0.0/cupsfilters/fontembed/sfnt-subset.c:234: assignment: Assigning: "offset" += "len". The value of "offset" is now 0.
+libcupsfilters-2.0.0/cupsfilters/fontembed/sfnt-subset.c:231: return_constant: Function call "_cfFontEmbedOTFGetGlyph(otf, iA)" may return -1.
+libcupsfilters-2.0.0/cupsfilters/fontembed/sfnt-subset.c:231: assignment: Assigning: "len" = "_cfFontEmbedOTFGetGlyph(otf, iA)". The value of "len" is now -1.
+libcupsfilters-2.0.0/cupsfilters/fontembed/sfnt-subset.c:233: overrun-buffer-arg: Calling "memcpy" with "new_glyf + offset" and "len" is suspicious because of the very large index, 18446744073709551615. The index may be due to a negative parameter being interpreted as unsigned. [Note: The source code implementation of the function has been overridden by a builtin model.]
+#  231|         const int len = _cfFontEmbedOTFGetGlyph(otf, iA);
+#  232|         DEBUG_assert(len >= 0);
+#  233|->       memcpy(new_glyf + offset, otf->gly, len);
+#  234|         offset += len;
+#  235|       }
+
+Error: OVERRUN (CWE-119):
+libcupsfilters-2.0.0/cupsfilters/fontembed/sfnt-subset.c:231: return_constant: Function call "_cfFontEmbedOTFGetGlyph(otf, iA)" may return -1.
+libcupsfilters-2.0.0/cupsfilters/fontembed/sfnt-subset.c:231: assignment: Assigning: "len" = "_cfFontEmbedOTFGetGlyph(otf, iA)". The value of "len" is now -1.
+libcupsfilters-2.0.0/cupsfilters/fontembed/sfnt-subset.c:233: overrun-buffer-arg: Calling "memcpy" with "otf->gly" and "len" is suspicious because of the very large index, 18446744073709551615. The index may be due to a negative parameter being interpreted as unsigned. [Note: The source code implementation of the function has been overridden by a builtin model.]
+#  231|         const int len = _cfFontEmbedOTFGetGlyph(otf, iA);
+#  232|         DEBUG_assert(len >= 0);
+#  233|->       memcpy(new_glyf + offset, otf->gly, len);
+#  234|         offset += len;
+#  235|       }
+
+Error: STRING_NULL (CWE-170):
+libcupsfilters-2.0.0/cupsfilters/ghostscript.c:954: string_null_source: Function "fread" does not terminate string "buf". [Note: The source code implementation of the function has been overridden by a builtin model.]
+libcupsfilters-2.0.0/cupsfilters/ghostscript.c:1422: string_null: Passing unterminated string "buf" to "strcasecmp", which expects a null-terminated string.
+# 1420|         {
+# 1421|           ippAttributeString(ipp_attr, buf, sizeof(buf));
+# 1422|->         if (!strncasecmp(buf, "AdobeRgb", 8)      ||
+# 1423|   	    !strncasecmp(buf, "adobe-rgb", 9)     ||
+# 1424|   	    !strcasecmp(buf, "color")             ||
+
+Error: UNINIT (CWE-457):
+libcupsfilters-2.0.0/cupsfilters/ghostscript.c:780: var_decl: Declaring variable "filename" without initializer.
+libcupsfilters-2.0.0/cupsfilters/ghostscript.c:1683: uninit_use: Using uninitialized value "filename".
+# 1681|     if (fp)
+# 1682|       fclose(fp);
+# 1683|->   if (filename)
+# 1684|       // Remove name of temp file
+# 1685|       unlink(filename);
+
+Error: OVERRUN (CWE-119):
+libcupsfilters-2.0.0/cupsfilters/ieee1284.c:344: alias: Assigning: "mdl" = """". "mdl" now points to byte 0 of """" (which consists of 1 bytes).
+libcupsfilters-2.0.0/cupsfilters/ieee1284.c:348: ptr_incr: Incrementing "mdl" by 2. "mdl" now points to byte 2 of """" (which consists of 1 bytes).
+libcupsfilters-2.0.0/cupsfilters/ieee1284.c:350: overrun-local: Overrunning array of 1 bytes at byte offset 2 by dereferencing pointer "mdl".
+#  348|         mdl += strlen(mfg);
+#  349|   
+#  350|->       while (isspace(*mdl & 255))
+#  351|           mdl ++;
+#  352|       }
+
+Error: NO_EFFECT (CWE-398):
+libcupsfilters-2.0.0/cupsfilters/ieee1284.c:1284: bad_memset: Function "memset" with fill value "'0'" (the zero character) in "memset(bufptr - numdigits, 48, 6 - numdigits)".
+libcupsfilters-2.0.0/cupsfilters/ieee1284.c:1284: remediation: Did you intend to use 0 (the value zero)?
+# 1282|   	    move_right_part(buffer, bufsize,
+# 1283|   			  bufptr - numdigits, 6 - numdigits);
+# 1284|-> 	    memset(bufptr - numdigits, '0', 6 - numdigits);
+# 1285|   	    rightsidemoved += 6 - numdigits;
+# 1286|   	  }
+
+Error: UNINIT (CWE-457):
+libcupsfilters-2.0.0/cupsfilters/image-jpeg.c:179: alloc_fn: Calling "malloc" which returns uninitialized memory.
+libcupsfilters-2.0.0/cupsfilters/image-jpeg.c:179: assign: Assigning: "out" = "malloc(img->xsize * cfImageGetDepth(img))", which points to uninitialized data.
+libcupsfilters-2.0.0/cupsfilters/image-jpeg.c:253: uninit_use_in_call: Using uninitialized value "*out" when calling "cfImageLut".
+#  251|   
+#  252|         if (lut)
+#  253|->         cfImageLut(out, img->xsize * cfImageGetDepth(img), lut);
+#  254|   
+#  255|         _cfImagePutRow(img, 0, cinfo.output_scanline - 1, img->xsize, out);
+
+Error: UNINIT (CWE-457):
+libcupsfilters-2.0.0/cupsfilters/image-jpeg.c:179: alloc_fn: Calling "malloc" which returns uninitialized memory.
+libcupsfilters-2.0.0/cupsfilters/image-jpeg.c:179: assign: Assigning: "out" = "malloc(img->xsize * cfImageGetDepth(img))", which points to uninitialized data.
+libcupsfilters-2.0.0/cupsfilters/image-jpeg.c:310: uninit_use_in_call: Using uninitialized value "*out" when calling "cfImageLut".
+#  308|   
+#  309|         if (lut)
+#  310|->         cfImageLut(out, img->xsize * cfImageGetDepth(img), lut);
+#  311|   
+#  312|         _cfImagePutRow(img, 0, cinfo.output_scanline - 1, img->xsize, out);
+
+Error: UNINIT (CWE-457):
+libcupsfilters-2.0.0/cupsfilters/image-tiff.c:320: alloc_fn: Calling "malloc" which returns uninitialized memory.
+libcupsfilters-2.0.0/cupsfilters/image-tiff.c:320: assign: Assigning: "out" = "malloc(img->xsize * bpp)", which points to uninitialized data.
+libcupsfilters-2.0.0/cupsfilters/image-tiff.c:502: uninit_use_in_call: Using uninitialized value "*out" when calling "cfImageLut".
+#  500|   
+#  501|   	      if (lut)
+#  502|-> 	        cfImageLut(out, img->xsize * bpp, lut);
+#  503|   
+#  504|                 _cfImagePutRow(img, 0, y, img->xsize, out);
+
+Error: UNINIT (CWE-457):
+libcupsfilters-2.0.0/cupsfilters/image-tiff.c:330: alloc_fn: Calling "malloc" which returns uninitialized memory.
+libcupsfilters-2.0.0/cupsfilters/image-tiff.c:330: assign: Assigning: "out" = "malloc(img->ysize * bpp)", which points to uninitialized data.
+libcupsfilters-2.0.0/cupsfilters/image-tiff.c:654: uninit_use_in_call: Using uninitialized value "*out" when calling "cfImageLut".
+#  652|   
+#  653|   	      if (lut)
+#  654|-> 	        cfImageLut(out, img->ysize * bpp, lut);
+#  655|   
+#  656|                 _cfImagePutCol(img, x, 0, img->ysize, out);
+
+Error: UNINIT (CWE-457):
+libcupsfilters-2.0.0/cupsfilters/image-tiff.c:320: alloc_fn: Calling "malloc" which returns uninitialized memory.
+libcupsfilters-2.0.0/cupsfilters/image-tiff.c:320: assign: Assigning: "out" = "malloc(img->xsize * bpp)", which points to uninitialized data.
+libcupsfilters-2.0.0/cupsfilters/image-tiff.c:1470: uninit_use_in_call: Using uninitialized value "*out" when calling "cfImageLut".
+# 1468|   
+# 1469|   	      if (lut)
+# 1470|-> 	        cfImageLut(out, img->xsize * 3, lut);
+# 1471|   
+# 1472|                 _cfImagePutRow(img, 0, y, img->xsize, out);
+
+Error: STRING_NULL (CWE-170):
+libcupsfilters-2.0.0/cupsfilters/imagetoraster.c:376: string_null_source: Function "fread" does not terminate string "buf". [Note: The source code implementation of the function has been overridden by a builtin model.]
+libcupsfilters-2.0.0/cupsfilters/imagetoraster.c:585: var_assign_var: Assigning: "val" = "buf". Both now point to the same unterminated string.
+libcupsfilters-2.0.0/cupsfilters/imagetoraster.c:589: string_null: Passing unterminated string "val" to "strcasecmp", which expects a null-terminated string.
+#  587|     }
+#  588|   
+#  589|->   if (val && (!strcasecmp(val, "true") || !strcasecmp(val, "on") ||
+#  590|                 !strcasecmp(val, "yes")))
+#  591|       doc.Flip = 1;
+
+Error: STRING_OVERFLOW (CWE-120):
+libcupsfilters-2.0.0/cupsfilters/imagetoraster.c:1261: string_overflow: You might overrun the 41-character destination string "defSize" by writing 64 characters from "header.cupsPageSizeName".
+# 1259|     // If size if specified by user, use it, else default size from
+# 1260|     // printer_attrs
+# 1261|->   strcpy(defSize, header.cupsPageSizeName);
+# 1262|   
+# 1263|     if ((strncasecmp(defSize, "Custom", 6)) == 0 ||
+
+Error: RESOURCE_LEAK (CWE-772):
+libcupsfilters-2.0.0/cupsfilters/pdftopdf/pdftopdf.cxx:924: alloc_fn: Storage is returned from allocation function "fdopen".
+libcupsfilters-2.0.0/cupsfilters/pdftopdf/pdftopdf.cxx:924: var_assign: Assigning: "inputfp" = storage returned from "fdopen(inputfd, "rb")".
+libcupsfilters-2.0.0/cupsfilters/pdftopdf/pdftopdf.cxx:980: leaked_storage: Variable "inputfp" going out of scope leaks the storage it points to.
+#  978|       outputfp = fdopen(outputfd, "w");
+#  979|       if (outputfp == NULL)
+#  980|->       return (1);
+#  981|   
+#  982|       if (!streaming)
+
+Error: OVERRUN (CWE-119):
+libcupsfilters-2.0.0/cupsfilters/pwgtopdf.cxx:695: overrun-buffer-val: Overrunning buffer pointed to by "gamma" of 1 8-byte elements by passing it to a function which accesses it at element index 2 (byte offset 23).
+#  693|   		   double bp[3])
+#  694|   {
+#  695|->   QPDFObjectHandle ret = get_calibration_array("/CalGray", wp, gamma, 0, bp);
+#  696|     return (ret);
+#  697|   }
+
+Error: UNINIT (CWE-457):
+libcupsfilters-2.0.0/cupsfilters/raster.c:584: var_decl: Declaring variable "q" without initializer.
+libcupsfilters-2.0.0/cupsfilters/raster.c:719: uninit_use: Using uninitialized value "q".
+#  717|   	  else
+#  718|   	    // Advance to the next color space entry
+#  719|-> 	    if (q && *q != '\0')
+#  720|   	      q ++;
+#  721|   	}
+

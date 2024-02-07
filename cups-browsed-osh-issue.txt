@@ -1,0 +1,45 @@
+Error: UNINIT (CWE-457):
+cups-browsed-2.0.0/daemon/cups-browsed.c:6929: alloc_fn: Calling "malloc" which returns uninitialized memory.
+cups-browsed-2.0.0/daemon/cups-browsed.c:6929: assign: Assigning: "document_format" = "(char *)malloc(32UL)", which points to uninitialized data.
+cups-browsed-2.0.0/daemon/cups-browsed.c:7053: uninit_use_in_call: Using uninitialized value "*document_format" as argument to "%s" when calling "snprintf". [Note: The source code implementation of the function has been overridden by a builtin model.]
+# 7051|         {
+# 7052|   	q->last_printer = dest_index;
+# 7053|-> 	snprintf(buf, sizeof(buf), "\"%d %s %s %s\"", job_id, destination_uri,
+# 7054|   		 document_format, resolution);
+# 7055|   	debug_printf("Destination for job %d to %s: %s\n",
+
+Error: Y2K38_SAFETY (CWE-197):
+cups-browsed-2.0.0/daemon/cups-browsed.c:9694: store_truncates_time_t: A "time_t" value is stored in an integer with too few bits to accommodate it.  The expression "timeout" is cast to "guint".
+# 9692|       debug_printf("checking queues in %ds\n", timeout);
+# 9693|       queues_timer_id =
+# 9694|->       g_timeout_add_seconds (timeout, update_cups_queues, NULL);
+# 9695|     }
+# 9696|     else
+
+Error: REVERSE_NEGATIVE (CWE-191):
+cups-browsed-2.0.0/daemon/cups-browsed.c:10878: negative_sink_in_call: Passing "interface" to a parameter that cannot be negative.
+cups-browsed-2.0.0/daemon/cups-browsed.c:11029: check_after_sink: You might be using variable "interface" before verifying that it is >= 0.
+#11027|         else if (address &&
+#11028|   	       address->proto == AVAHI_PROTO_INET6 &&
+#11029|-> 	       interface != AVAHI_IF_UNSPEC &&
+#11030|   	       IPBasedDeviceURIs != IP_BASED_URIS_IPV4_ONLY)
+#11031|         {
+
+Error: UNINIT (CWE-457):
+cups-browsed-2.0.0/daemon/cups-browsed.c:10931: var_decl: Declaring variable "rp_entry" without initializer.
+cups-browsed-2.0.0/daemon/cups-browsed.c:11124: uninit_use: Using uninitialized value "rp_entry".
+#11122|     // Clean up
+#11123|   
+#11124|->   if (rp_entry)
+#11125|     {
+#11126|       avahi_free(rp_key);
+
+Error: UNINIT (CWE-457):
+cups-browsed-2.0.0/daemon/cups-browsed.c:10931: var_decl: Declaring variable "adminurl_entry" without initializer.
+cups-browsed-2.0.0/daemon/cups-browsed.c:11134: uninit_use: Using uninitialized value "adminurl_entry".
+#11132|       free(rp_value);
+#11133|     }
+#11134|->   if (adminurl_entry)
+#11135|     {
+#11136|       avahi_free(adminurl_key);
+

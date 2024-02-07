@@ -1,0 +1,144 @@
+Error: STRING_NULL (CWE-170):
+pappl-retrofit-1.0b2/pappl-retrofit/cups-backends.c:457: string_null_source: Function "read" does not terminate string "backends[i].buf". [Note: The source code implementation of the function has been overridden by a builtin model.]
+pappl-retrofit-1.0b2/pappl-retrofit/cups-backends.c:471: string_null: Passing unterminated string "backends[i].buf" to "strchr", which expects a null-terminated string.
+#  469|   
+#  470|   	      backends[i].bytes += bytes;
+#  471|-> 	      while ((newline = strchr(backends[i].buf, '\n')) != NULL)
+#  472|   	      {
+#  473|   		// We have read at least one line
+
+Error: RESOURCE_LEAK (CWE-772):
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:174: alloc_fn: Storage is returned from allocation function "calloc".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:174: var_assign: Assigning: "re" = storage returned from "calloc(1UL, 64UL)".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:176: noescape: Resource "re" is not freed or pointed-to in "regcomp".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:178: noescape: Resource "re" is not freed or pointed-to in "regfree".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:174: overwrite_var: Overwriting "re" in "re = (regex_t *)calloc(1UL, 64UL)" leaks the storage that "re" points to.
+#  172|   	     cupsArrayNext(global_data->config->driver_selection_regex_list))
+#  173|         {
+#  174|-> 	if ((re = (regex_t *)calloc(1, sizeof(regex_t))) != NULL)
+#  175|           {
+#  176|   	  if (regcomp(re, regex, REG_ICASE | REG_EXTENDED | REG_NOSUB))
+
+Error: RESOURCE_LEAK (CWE-772):
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:174: alloc_fn: Storage is returned from allocation function "calloc".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:174: var_assign: Assigning: "re" = storage returned from "calloc(1UL, 64UL)".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:176: noescape: Resource "re" is not freed or pointed-to in "regcomp".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:178: noescape: Resource "re" is not freed or pointed-to in "regfree".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:246: overwrite_var: Overwriting "re" in "re = (regex_t *)cupsArrayFirst(compiled_re_list)" leaks the storage that "re" points to.
+#  244|         if (compiled_re_list)
+#  245|         {
+#  246|-> 	for (j = 0, re = (regex_t *)cupsArrayFirst(compiled_re_list);
+#  247|   	     re; j ++, re = (regex_t *)cupsArrayNext(compiled_re_list))
+#  248|   	{
+
+Error: RESOURCE_LEAK (CWE-772):
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:174: alloc_fn: Storage is returned from allocation function "calloc".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:174: var_assign: Assigning: "re" = storage returned from "calloc(1UL, 64UL)".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:176: noescape: Resource "re" is not freed or pointed-to in "regcomp".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:178: noescape: Resource "re" is not freed or pointed-to in "regfree".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:273: overwrite_var: Overwriting "re" in "re = (regex_t *)cupsArrayFirst(compiled_re_list)" leaks the storage that "re" points to.
+#  271|       if (compiled_re_list)
+#  272|       {
+#  273|->       for (re = (regex_t *)cupsArrayFirst(compiled_re_list);
+#  274|   	   re; re = (regex_t *)cupsArrayNext(compiled_re_list))
+#  275|   	regfree(re);
+
+Error: RESOURCE_LEAK (CWE-772):
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:174: alloc_fn: Storage is returned from allocation function "calloc".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:174: var_assign: Assigning: "re" = storage returned from "calloc(1UL, 64UL)".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:176: noescape: Resource "re" is not freed or pointed-to in "regcomp".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:178: noescape: Resource "re" is not freed or pointed-to in "regfree".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:292: leaked_storage: Variable "re" going out of scope leaks the storage it points to.
+#  290|     cupsFreeOptions(num_did, did);
+#  291|   
+#  292|->   return (ret);
+#  293|   }
+#  294|   
+
+Error: RESOURCE_LEAK (CWE-772):
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:350: alloc_fn: Storage is returned from allocation function "calloc".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:350: var_assign: Assigning: "re" = storage returned from "calloc(1UL, 64UL)".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:353: noescape: Resource "re" is not freed or pointed-to in "regcomp".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:355: noescape: Resource "re" is not freed or pointed-to in "regfree".
+pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c:394: leaked_storage: Variable "re" going out of scope leaks the storage it points to.
+#  392|     cupsFreeOptions(num_did, did);
+#  393|   
+#  394|->   return (ret);
+#  395|   }
+#  396|   
+
+Error: OVERRUN (CWE-119):
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:61: cond_at_most: Checking "i < 4U" implies that "i" may be up to 3 on the true branch.
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:65: overrun-local: Overrunning array "remaining" of 3 bytes at byte offset 3 using index "i" (which evaluates to 3).
+#   63|   	b <<= 8;
+#   64|   	if (i < num_remaining)
+#   65|-> 	  b |= remaining[i];
+#   66|   	else if (i - num_remaining < length) 
+#   67|   	  b |= data[i - num_remaining];
+
+Error: OVERRUN (CWE-119):
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:59: cond_at_least: Checking "num_remaining > 0U" implies that "num_remaining" is at least 1 on the true branch.
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:64: cond_between: Checking "i < num_remaining" implies that "num_remaining" is between 1 and 3 (inclusive) on the false branch.
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:64: cond_between: Checking "i < num_remaining" implies that "i" is between 1 and 3 (inclusive) on the false branch.
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:64: cond_between: Checking "i < num_remaining" implies that "num_remaining" is between 1 and 3 (inclusive) on the false branch.
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:64: cond_between: Checking "i < num_remaining" implies that "i" is between 1 and 3 (inclusive) on the false branch.
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:71: overrun-local: Overrunning array of 3 bytes at byte offset 3 by dereferencing pointer "remaining + num_remaining". [Note: The source code implementation of the function has been overridden by a builtin model.]
+#   69|   	{
+#   70|   	  if (length)
+#   71|-> 	    memcpy(remaining + num_remaining, data, length);
+#   72|   	  num_remaining = i;
+#   73|   	  return;
+
+Error: RESOURCE_LEAK (CWE-772):
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:979: alloc_fn: Storage is returned from allocation function "_prCreateJobData".
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:979: var_assign: Assigning: "job_data" = storage returned from "_prCreateJobData(job, job_options)".
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:994: leaked_storage: Variable "job_data" going out of scope leaks the storage it points to.
+#  992|       papplLogJob(job, PAPPL_LOGLEVEL_ERROR, "Unable to open input file '%s' for printing: %s",
+#  993|   		filename, strerror(errno));
+#  994|->     return (false);
+#  995|     }
+#  996|   
+
+Error: RESOURCE_LEAK (CWE-772):
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:990: open_fn: Returning handle opened by "open". [Note: The source code implementation of the function has been overridden by a user model.]
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:990: var_assign: Assigning: "fd" = handle returned from "open(filename, 0)".
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:1031: leaked_handle: Handle variable "fd" going out of scope leaks the handle.
+# 1029|   		"No pre-filter found for input format %s",
+# 1030|   		informat);
+# 1031|->     return (false);
+# 1032|     }
+# 1033|   
+
+Error: RESOURCE_LEAK (CWE-772):
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:979: alloc_fn: Storage is returned from allocation function "_prCreateJobData".
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:979: var_assign: Assigning: "job_data" = storage returned from "_prCreateJobData(job, job_options)".
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:1031: leaked_storage: Variable "job_data" going out of scope leaks the storage it points to.
+# 1029|   		"No pre-filter found for input format %s",
+# 1030|   		informat);
+# 1031|->     return (false);
+# 1032|     }
+# 1033|   
+
+Error: RESOURCE_LEAK (CWE-772):
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:1554: alloc_fn: Storage is returned from allocation function "_prCreateJobData".
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:1554: var_assign: Assigning: "job_data" = storage returned from "_prCreateJobData(job, options)".
+pappl-retrofit-1.0b2/pappl-retrofit/print-job.c:1653: leaked_storage: Variable "job_data" going out of scope leaks the storage it points to.
+# 1651|       if (strlen(job_data->stream_filter) > 1)
+# 1652|         free(ppd_filter_params);
+# 1653|->     return (NULL);
+# 1654|     }
+# 1655|   
+
+Error: RESOURCE_LEAK (CWE-772):
+pappl-retrofit-1.0b2/pappl-retrofit/web-interface.c:971: alloc_fn: Storage is returned from allocation function "fopen".
+pappl-retrofit-1.0b2/pappl-retrofit/web-interface.c:971: var_assign: Assigning: "fp" = storage returned from "fopen(destpath, "w+")".
+pappl-retrofit-1.0b2/pappl-retrofit/web-interface.c:993: noescape: Resource "fp" is not freed or pointed-to in "fwrite".
+pappl-retrofit-1.0b2/pappl-retrofit/web-interface.c:993: noescape: Resource "fp" is not freed or pointed-to in "fwrite".
+pappl-retrofit-1.0b2/pappl-retrofit/web-interface.c:1279: leaked_storage: Variable "fp" going out of scope leaks the storage it points to.
+# 1277|         if (httpGetState(http) == initial_state)
+# 1278|   	httpFlush(http);
+# 1279|->     }
+# 1280|   
+# 1281|       strbuf[0] = '\0';
+
+

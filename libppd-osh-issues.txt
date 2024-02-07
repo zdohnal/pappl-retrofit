@@ -1,0 +1,302 @@
+Error: STRING_NULL (CWE-170):
+libppd-2.0.0/ppd/pdftops.c:385: string_null_source: Function "fread" does not terminate string "buffer". [Note: The source code implementation of the function has been overridden by a builtin model.]
+libppd-2.0.0/ppd/pdftops.c:913: var_assign_var: Assigning: "p" = "buffer". Both now point to the same unterminated string.
+libppd-2.0.0/ppd/pdftops.c:915: string_null: Passing unterminated string "p" to "strchr", which expects a null-terminated string. [Note: The source code implementation of the function has been overridden by a builtin model.]
+#  913|         const char *p = buffer;
+#  914|         xres = atoi(p);
+#  915|->       if ((p = strchr(p, 'x')) != NULL)
+#  916|           yres = atoi(p + 1);
+#  917|         else
+
+Error: STRING_NULL (CWE-170):
+libppd-2.0.0/ppd/pdftops.c:385: string_null_source: Function "fread" does not terminate string "buffer". [Note: The source code implementation of the function has been overridden by a builtin model.]
+libppd-2.0.0/ppd/pdftops.c:933: var_assign_var: Assigning: "p" = "buffer". Both now point to the same unterminated string.
+libppd-2.0.0/ppd/pdftops.c:935: string_null: Passing unterminated string "p" to "strchr", which expects a null-terminated string. [Note: The source code implementation of the function has been overridden by a builtin model.]
+#  933|         const char *p = buffer;
+#  934|         xres = atoi(p);
+#  935|->       if((p = strchr(p, 'x')) != NULL)
+#  936|           yres = atoi(p + 1);
+#  937|         else
+
+Error: STRING_NULL (CWE-170):
+libppd-2.0.0/ppd/pdftops.c:385: string_null_source: Function "fread" does not terminate string "buffer". [Note: The source code implementation of the function has been overridden by a builtin model.]
+libppd-2.0.0/ppd/pdftops.c:1364: string_null: Passing unterminated string "buffer" to "printf", which expects a null-terminated string. [Note: The source code implementation of the function has been overridden by a builtin model.]
+# 1362|               printf("%%%%For: %s\n", data->job_user);
+# 1363|             else
+# 1364|->             printf("%s", buffer);
+# 1365|           }
+# 1366|   
+
+Error: STRING_NULL (CWE-170):
+libppd-2.0.0/ppd/pdftops.c:385: string_null_source: Function "fread" does not terminate string "buffer". [Note: The source code implementation of the function has been overridden by a builtin model.]
+libppd-2.0.0/ppd/pdftops.c:1385: string_null: Passing unterminated string "buffer" to "printf", which expects a null-terminated string. [Note: The source code implementation of the function has been overridden by a builtin model.]
+# 1383|   	       strncmp(buffer, "%%BeginSetup", 12) &&
+# 1384|   	       strncmp(buffer, "%%Page:", 7))
+# 1385|-> 	  printf("%s", buffer);
+# 1386|   
+# 1387|   	if (bytes > 0)
+
+Error: STRING_NULL (CWE-170):
+libppd-2.0.0/ppd/pdftops.c:385: string_null_source: Function "fread" does not terminate string "buffer". [Note: The source code implementation of the function has been overridden by a builtin model.]
+libppd-2.0.0/ppd/pdftops.c:1403: string_null: Passing unterminated string "buffer" to "printf", which expects a null-terminated string. [Note: The source code implementation of the function has been overridden by a builtin model.]
+# 1401|   	  }
+# 1402|   	  else
+# 1403|-> 	    printf("%s", buffer);
+# 1404|   
+# 1405|   	  if (renderer == GS && make_model[0])
+
+Error: STRING_NULL (CWE-170):
+libppd-2.0.0/ppd/pdftops.c:385: string_null_source: Function "fread" does not terminate string "buffer". [Note: The source code implementation of the function has been overridden by a builtin model.]
+libppd-2.0.0/ppd/pdftops.c:1485: string_null: Passing unterminated string "buffer" to "printf", which expects a null-terminated string. [Note: The source code implementation of the function has been overridden by a builtin model.]
+# 1483|   	    if (strncmp(buffer, "%%EndProlog", 11))
+# 1484|   	      puts("%%EndProlog");
+# 1485|-> 	    printf("%s", buffer);
+# 1486|   	  }
+# 1487|   
+
+Error: UNINIT (CWE-457):
+libppd-2.0.0/ppd/ppd-collection.cxx:221: var_decl: Declaring variable "ppdlist" without initializer.
+libppd-2.0.0/ppd/ppd-collection.cxx:244: uninit_use_in_call: Using uninitialized value "ppdlist.Inodes" when calling "free_ppdlist".
+#  242|         load_ppds_dat(cachename, 1, &ppdlist, log, ld))
+#  243|     {
+#  244|->     free_ppdlist(&ppdlist);
+#  245|       return(NULL);
+#  246|     }
+
+Error: Y2K38_SAFETY (CWE-197):
+libppd-2.0.0/ppd/ppd-collection.cxx:851: store_truncates_time_t: A "time_t" value is stored in an integer with too few bits to accommodate it.  The expression "ppd->record.mtime" is cast to "int".
+#  849|       printf("%d,%ld,%d,%d,\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\","
+#  850|              "\"%s\",\"%s\"\n",
+#  851|->            (int)ppd->record.mtime, (long)ppd->record.size,
+#  852|   	   ppd->record.model_number, ppd->record.type, ppd->record.filename,
+#  853|   	   ppd->record.name, ppd->record.languages[0], ppd->record.products[0],
+
+Error: OVERRUN (CWE-119):
+libppd-2.0.0/ppd/ppd-collection.cxx:2413: overrun-buffer-arg: Overrunning array "record.header.magic" of 6 bytes by passing it to a function which accesses it at byte offset 7 using argument "8UL".
+# 2411|       //
+# 2412|   
+# 2413|->     if ((memcmp(record.header.magic, TAR_MAGIC, 6) ||
+# 2414|   	 memcmp(record.header.version, TAR_VERSION, 2)) &&
+# 2415|   	memcmp(record.header.magic, TAR_OLDGNU_MAGIC, 8))
+
+Error: OVERRUN (CWE-119):
+libppd-2.0.0/ppd/ppd-ipp.c:1315: cond_at_most: Checking "i < 160UL" implies that "i" may be up to 159 on the true branch.
+libppd-2.0.0/ppd/ppd-ipp.c:1316: overrun-local: Overrunning array "items" of 20 8-byte elements at element index 159 (byte offset 1279) using index "i" (which evaluates to 159).
+# 1314|     {
+# 1315|       for (i = 0; i < ppd_option->num_choices && i < sizeof(items); i ++)
+# 1316|->       items[i] = ppd_option->choices[i].choice;
+# 1317|       ippAddStrings(attrs, IPP_TAG_PRINTER, IPP_TAG_KEYWORD,
+# 1318|   		  "print-rendering-intent-supported", i, NULL, items);
+
+Error: RESOURCE_LEAK (CWE-772):
+libppd-2.0.0/ppd/ppdc-source.cxx:3217: alloc_fn: Storage is returned from allocation function "get_option".
+libppd-2.0.0/ppd/ppdc-source.cxx:3217: var_assign: Assigning: "tempo" = storage returned from "this->get_option(fp, d, g)".
+libppd-2.0.0/ppd/ppdc-source.cxx:3232: var_assign: Assigning: "o" = "tempo".
+libppd-2.0.0/ppd/ppdc-source.cxx:3234: leaked_storage: Variable "tempo" going out of scope leaks the storage it points to.
+libppd-2.0.0/ppd/ppdc-source.cxx:2719: overwrite_var: Overwriting "o" in "o = d->find_option("ColorModel")" leaks the storage that "o" points to.
+# 2717|   
+# 2718|         // Add the choice to the ColorModel option...
+# 2719|->       if ((o = d->find_option("ColorModel")) == NULL)
+# 2720|         {
+# 2721|   	// Create the ColorModel option...
+
+Error: RESOURCE_LEAK (CWE-772):
+libppd-2.0.0/ppd/ppdc-source.cxx:2976: alloc_fn: Storage is returned from allocation function "get_group".
+libppd-2.0.0/ppd/ppdc-source.cxx:2976: var_assign: Assigning: "tempg" = storage returned from "this->get_group(fp, d)".
+libppd-2.0.0/ppd/ppdc-source.cxx:2991: var_assign: Assigning: "g" = "tempg".
+libppd-2.0.0/ppd/ppdc-source.cxx:2993: leaked_storage: Variable "tempg" going out of scope leaks the storage it points to.
+libppd-2.0.0/ppd/ppdc-source.cxx:2723: overwrite_var: Overwriting "g" in "g = general" leaks the storage that "g" points to.
+# 2721|   	// Create the ColorModel option...
+# 2722|   	o = new ppdcOption(PPDC_PICKONE, "ColorModel", "Color Mode", PPDC_SECTION_ANY, 10.0f);
+# 2723|-> 	g = general;
+# 2724|   	g->add_option(o);
+# 2725|         }
+
+Error: RESOURCE_LEAK (CWE-772):
+libppd-2.0.0/ppd/ppdc-source.cxx:3217: alloc_fn: Storage is returned from allocation function "get_option".
+libppd-2.0.0/ppd/ppdc-source.cxx:3217: var_assign: Assigning: "tempo" = storage returned from "this->get_option(fp, d, g)".
+libppd-2.0.0/ppd/ppdc-source.cxx:3232: var_assign: Assigning: "o" = "tempo".
+libppd-2.0.0/ppd/ppdc-source.cxx:3234: leaked_storage: Variable "tempo" going out of scope leaks the storage it points to.
+libppd-2.0.0/ppd/ppdc-source.cxx:2839: overwrite_var: Overwriting "o" in "o = d->find_option_group("cupsDarkness", &mg)" leaks the storage that "o" points to.
+# 2837|   
+# 2838|         // Add the choice to the cupsDarkness option...
+# 2839|->       if ((o = d->find_option_group("cupsDarkness", &mg)) == NULL)
+# 2840|         {
+# 2841|   	// Create the cupsDarkness option...
+
+Error: RESOURCE_LEAK (CWE-772):
+libppd-2.0.0/ppd/ppdc-source.cxx:2976: alloc_fn: Storage is returned from allocation function "get_group".
+libppd-2.0.0/ppd/ppdc-source.cxx:2976: var_assign: Assigning: "tempg" = storage returned from "this->get_group(fp, d)".
+libppd-2.0.0/ppd/ppdc-source.cxx:2991: var_assign: Assigning: "g" = "tempg".
+libppd-2.0.0/ppd/ppdc-source.cxx:2993: leaked_storage: Variable "tempg" going out of scope leaks the storage it points to.
+libppd-2.0.0/ppd/ppdc-source.cxx:2991: overwrite_var: Overwriting "g" in "g = tempg" leaks the storage that "g" points to.
+# 2989|   	  d->add_group(tempg);
+# 2990|   
+# 2991|->         g = tempg;
+# 2992|         }
+# 2993|       }
+
+Error: RESOURCE_LEAK (CWE-772):
+libppd-2.0.0/ppd/ppdc-source.cxx:2976: alloc_fn: Storage is returned from allocation function "get_group".
+libppd-2.0.0/ppd/ppdc-source.cxx:2976: var_assign: Assigning: "tempg" = storage returned from "this->get_group(fp, d)".
+libppd-2.0.0/ppd/ppdc-source.cxx:2993: leaked_storage: Variable "tempg" going out of scope leaks the storage it points to.
+# 2991|           g = tempg;
+# 2992|         }
+# 2993|->     }
+# 2994|       else if (!strcasecmp(temp, "HWMargins"))
+# 2995|       {
+
+Error: RESOURCE_LEAK (CWE-772):
+libppd-2.0.0/ppd/ppdc-source.cxx:3217: alloc_fn: Storage is returned from allocation function "get_option".
+libppd-2.0.0/ppd/ppdc-source.cxx:3217: var_assign: Assigning: "tempo" = storage returned from "this->get_option(fp, d, g)".
+libppd-2.0.0/ppd/ppdc-source.cxx:3232: var_assign: Assigning: "o" = "tempo".
+libppd-2.0.0/ppd/ppdc-source.cxx:3234: leaked_storage: Variable "tempo" going out of scope leaks the storage it points to.
+libppd-2.0.0/ppd/ppdc-source.cxx:3017: overwrite_var: Overwriting "o" in "o = d->find_option_group("InputSlot", &mg)" leaks the storage that "o" points to.
+# 3015|         // Add the choice to the InputSlot option...
+# 3016|   
+# 3017|->       if ((o = d->find_option_group("InputSlot", &mg)) == NULL)
+# 3018|         {
+# 3019|   	// Create the InputSlot option...
+
+Error: RESOURCE_LEAK (CWE-772):
+libppd-2.0.0/ppd/ppdc-source.cxx:2976: alloc_fn: Storage is returned from allocation function "get_group".
+libppd-2.0.0/ppd/ppdc-source.cxx:2976: var_assign: Assigning: "tempg" = storage returned from "this->get_group(fp, d)".
+libppd-2.0.0/ppd/ppdc-source.cxx:2991: var_assign: Assigning: "g" = "tempg".
+libppd-2.0.0/ppd/ppdc-source.cxx:2993: leaked_storage: Variable "tempg" going out of scope leaks the storage it points to.
+libppd-2.0.0/ppd/ppdc-source.cxx:3022: overwrite_var: Overwriting "g" in "g = general" leaks the storage that "g" points to.
+# 3020|   	o = new ppdcOption(PPDC_PICKONE, "InputSlot", "Media Source",
+# 3021|   	                   PPDC_SECTION_ANY, 10.0f);
+# 3022|-> 	g = general;
+# 3023|   	g->add_option(o);
+# 3024|         }
+
+Error: RESOURCE_LEAK (CWE-772):
+libppd-2.0.0/ppd/ppdc-source.cxx:3217: alloc_fn: Storage is returned from allocation function "get_option".
+libppd-2.0.0/ppd/ppdc-source.cxx:3217: var_assign: Assigning: "tempo" = storage returned from "this->get_option(fp, d, g)".
+libppd-2.0.0/ppd/ppdc-source.cxx:3232: var_assign: Assigning: "o" = "tempo".
+libppd-2.0.0/ppd/ppdc-source.cxx:3234: leaked_storage: Variable "tempo" going out of scope leaks the storage it points to.
+libppd-2.0.0/ppd/ppdc-source.cxx:3045: overwrite_var: Overwriting "o" in "o = this->get_installable(fp)" leaks the storage that "o" points to.
+# 3043|       {
+# 3044|         // Get the installable option...
+# 3045|->       o = get_installable(fp);
+# 3046|   
+# 3047|         // Add it as needed...
+
+Error: RESOURCE_LEAK (CWE-772):
+libppd-2.0.0/ppd/ppdc-source.cxx:3217: alloc_fn: Storage is returned from allocation function "get_option".
+libppd-2.0.0/ppd/ppdc-source.cxx:3217: var_assign: Assigning: "tempo" = storage returned from "this->get_option(fp, d, g)".
+libppd-2.0.0/ppd/ppdc-source.cxx:3232: var_assign: Assigning: "o" = "tempo".
+libppd-2.0.0/ppd/ppdc-source.cxx:3234: leaked_storage: Variable "tempo" going out of scope leaks the storage it points to.
+libppd-2.0.0/ppd/ppdc-source.cxx:3150: overwrite_var: Overwriting "o" in "o = d->find_option_group("MediaType", &mg)" leaks the storage that "o" points to.
+# 3148|   
+# 3149|         // Add the choice to the MediaType option...
+# 3150|->       if ((o = d->find_option_group("MediaType", &mg)) == NULL)
+# 3151|         {
+# 3152|   	// Create the MediaType option...
+
+Error: RESOURCE_LEAK (CWE-772):
+libppd-2.0.0/ppd/ppdc-source.cxx:2976: alloc_fn: Storage is returned from allocation function "get_group".
+libppd-2.0.0/ppd/ppdc-source.cxx:2976: var_assign: Assigning: "tempg" = storage returned from "this->get_group(fp, d)".
+libppd-2.0.0/ppd/ppdc-source.cxx:2991: var_assign: Assigning: "g" = "tempg".
+libppd-2.0.0/ppd/ppdc-source.cxx:2993: leaked_storage: Variable "tempg" going out of scope leaks the storage it points to.
+libppd-2.0.0/ppd/ppdc-source.cxx:3155: overwrite_var: Overwriting "g" in "g = general" leaks the storage that "g" points to.
+# 3153|   	o = new ppdcOption(PPDC_PICKONE, "MediaType", "Media Type",
+# 3154|   	                   PPDC_SECTION_ANY, 10.0f);
+# 3155|-> 	g = general;
+# 3156|   	g->add_option(o);
+# 3157|         }
+
+Error: RESOURCE_LEAK (CWE-772):
+libppd-2.0.0/ppd/ppdc-source.cxx:3217: alloc_fn: Storage is returned from allocation function "get_option".
+libppd-2.0.0/ppd/ppdc-source.cxx:3217: var_assign: Assigning: "tempo" = storage returned from "this->get_option(fp, d, g)".
+libppd-2.0.0/ppd/ppdc-source.cxx:3232: var_assign: Assigning: "o" = "tempo".
+libppd-2.0.0/ppd/ppdc-source.cxx:3234: leaked_storage: Variable "tempo" going out of scope leaks the storage it points to.
+libppd-2.0.0/ppd/ppdc-source.cxx:3232: overwrite_var: Overwriting "o" in "o = tempo" leaks the storage that "o" points to.
+# 3230|   	  g->add_option(tempo);
+# 3231|   
+# 3232|->         o = tempo;
+# 3233|         }
+# 3234|       }
+
+Error: RESOURCE_LEAK (CWE-772):
+libppd-2.0.0/ppd/ppdc-source.cxx:3217: alloc_fn: Storage is returned from allocation function "get_option".
+libppd-2.0.0/ppd/ppdc-source.cxx:3217: var_assign: Assigning: "tempo" = storage returned from "this->get_option(fp, d, g)".
+libppd-2.0.0/ppd/ppdc-source.cxx:3234: leaked_storage: Variable "tempo" going out of scope leaks the storage it points to.
+# 3232|           o = tempo;
+# 3233|         }
+# 3234|->     }
+# 3235|       else if (!strcasecmp(temp, "FileName"))
+# 3236|       {
+
+Error: RESOURCE_LEAK (CWE-772):
+libppd-2.0.0/ppd/ppdc-source.cxx:3217: alloc_fn: Storage is returned from allocation function "get_option".
+libppd-2.0.0/ppd/ppdc-source.cxx:3217: var_assign: Assigning: "tempo" = storage returned from "this->get_option(fp, d, g)".
+libppd-2.0.0/ppd/ppdc-source.cxx:3232: var_assign: Assigning: "o" = "tempo".
+libppd-2.0.0/ppd/ppdc-source.cxx:3234: leaked_storage: Variable "tempo" going out of scope leaks the storage it points to.
+libppd-2.0.0/ppd/ppdc-source.cxx:3283: overwrite_var: Overwriting "o" in "o = d->find_option_group("Resolution", &mg)" leaks the storage that "o" points to.
+# 3281|   
+# 3282|         // Add the choice to the Resolution option...
+# 3283|->       if ((o = d->find_option_group("Resolution", &mg)) == NULL)
+# 3284|         {
+# 3285|   	// Create the Resolution option...
+
+Error: RESOURCE_LEAK (CWE-772):
+libppd-2.0.0/ppd/ppdc-source.cxx:2976: alloc_fn: Storage is returned from allocation function "get_group".
+libppd-2.0.0/ppd/ppdc-source.cxx:2976: var_assign: Assigning: "tempg" = storage returned from "this->get_group(fp, d)".
+libppd-2.0.0/ppd/ppdc-source.cxx:2991: var_assign: Assigning: "g" = "tempg".
+libppd-2.0.0/ppd/ppdc-source.cxx:2993: leaked_storage: Variable "tempg" going out of scope leaks the storage it points to.
+libppd-2.0.0/ppd/ppdc-source.cxx:3217: noescape: Resource "g" is not freed or pointed-to in "get_option".
+libppd-2.0.0/ppd/ppdc-source.cxx:3229: noescape: Resource "g" is not freed or pointed-to in "find_option".
+libppd-2.0.0/ppd/ppdc-source.cxx:3288: overwrite_var: Overwriting "g" in "g = general" leaks the storage that "g" points to.
+# 3286|   	o = new ppdcOption(PPDC_PICKONE, "Resolution", NULL, PPDC_SECTION_ANY,
+# 3287|   	                   10.0f);
+# 3288|-> 	g = general;
+# 3289|   	g->add_option(o);
+# 3290|         }
+
+Error: RESOURCE_LEAK (CWE-772):
+libppd-2.0.0/ppd/ppdc-source.cxx:2411: alloc_fn: Storage is returned from allocation function "operator new".
+libppd-2.0.0/ppd/ppdc-source.cxx:2411: var_assign: Assigning: "d" = storage returned from "new ppdcDriver(td)".
+libppd-2.0.0/ppd/ppdc-source.cxx:2413: noescape: Resource "d" is not freed or pointed-to in "find_group".
+libppd-2.0.0/ppd/ppdc-source.cxx:2416: noescape: Resource "d" is not freed or pointed-to in "add_group".
+libppd-2.0.0/ppd/ppdc-source.cxx:2419: noescape: Resource "d" is not freed or pointed-to in "find_group".
+libppd-2.0.0/ppd/ppdc-source.cxx:2422: noescape: Resource "d" is not freed or pointed-to in "add_group".
+libppd-2.0.0/ppd/ppdc-source.cxx:3398: leaked_storage: Variable "d" going out of scope leaks the storage it points to.
+# 3396|     else if (inc && td)
+# 3397|       td->release();
+# 3398|-> }
+# 3399|   
+# 3400|   
+
+Error: RESOURCE_LEAK (CWE-772):
+libppd-2.0.0/ppd/ppdc-source.cxx:2976: alloc_fn: Storage is returned from allocation function "get_group".
+libppd-2.0.0/ppd/ppdc-source.cxx:2976: var_assign: Assigning: "tempg" = storage returned from "this->get_group(fp, d)".
+libppd-2.0.0/ppd/ppdc-source.cxx:2991: var_assign: Assigning: "g" = "tempg".
+libppd-2.0.0/ppd/ppdc-source.cxx:2993: leaked_storage: Variable "tempg" going out of scope leaks the storage it points to.
+libppd-2.0.0/ppd/ppdc-source.cxx:3398: leaked_storage: Variable "g" going out of scope leaks the storage it points to.
+# 3396|     else if (inc && td)
+# 3397|       td->release();
+# 3398|-> }
+# 3399|   
+# 3400|   
+
+Error: RESOURCE_LEAK (CWE-772):
+libppd-2.0.0/ppd/ppdc-source.cxx:3217: alloc_fn: Storage is returned from allocation function "get_option".
+libppd-2.0.0/ppd/ppdc-source.cxx:3217: var_assign: Assigning: "tempo" = storage returned from "this->get_option(fp, d, g)".
+libppd-2.0.0/ppd/ppdc-source.cxx:3232: var_assign: Assigning: "o" = "tempo".
+libppd-2.0.0/ppd/ppdc-source.cxx:3234: leaked_storage: Variable "tempo" going out of scope leaks the storage it points to.
+libppd-2.0.0/ppd/ppdc-source.cxx:3398: leaked_storage: Variable "o" going out of scope leaks the storage it points to.
+# 3396|     else if (inc && td)
+# 3397|       td->release();
+# 3398|-> }
+# 3399|   
+# 3400|   
+
+Error: SNYK_CODE_WARNING (CWE-134):
+libppd-2.0.0/ppd/debug.c:260:7: error[cpp/FormatString]: Unsanitized input from an environment variable flows into snprintf, where it is used as a format string. This may result in a format string vulnerability.
+#  258|         char	buffer[1024];		// Filename buffer
+#  259|   
+#  260|->       snprintf(buffer, sizeof(buffer), logfile, getpid());
+#  261|   
+#  262|         if (buffer[0] == '+')
+
