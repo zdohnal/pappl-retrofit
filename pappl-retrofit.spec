@@ -30,15 +30,8 @@ Patch002: 0001-Added-man-page-for-the-Legacy-Printer-Application.patch
 # fix use after free
 # part of https://github.com/OpenPrinting/pappl-retrofit/commit/eebb36724a62
 Patch003: pappl-retrofit-use-after-free.patch
-Patch004: pr-fd-leak.patch
-Patch005: pr-regexp-leak.patch
-Patch006: pr-define-ppdpathfree.patch
-Patch007: pr-ppd-path-leak.patch
-Patch008: pr-close-device.patch
-Patch009: pr-free-dup.patch
-Patch010: pr-driver-string-leak.patch
-Patch011: pr-free-ppd-collect.patch
-Patch012: pr-path-leak.patch
+# https://github.com/OpenPrinting/pappl-retrofit/commit/b9597121ea2b
+Patch004: 0001-Add-configure-options-for-several-PAPPL-options-22.patch
 
 
 # for autogen.sh - generating configure scripts
@@ -111,13 +104,16 @@ so such printer will be seen by CUPS.
 
 %prep
 %autosetup -S git
+./autogen.sh
 
 
 %build
 %configure --enable-legacy-printer-app-as-daemon\
   --enable-shared\
   --disable-static\
-  --disable-silent-rules
+  --disable-silent-rules\
+  --with-auth-service=password-auth\
+  --with-server-options=multi-queue,web-interface,raw-socket,web-network,web-remote,web-security,web-tls
 
 sed -i -e 's! -shared ! -Wl,--as-needed\0!g' libtool
 
@@ -126,9 +122,6 @@ sed -i -e 's! -shared ! -Wl,--as-needed\0!g' libtool
 
 %install
 %make_install
-
-# Remove absolute symlink
-#rm -f %{buildroot}/%{_libdir}/legacy-printer-app
 
 # Remove license files from doc
 rm -f %{buildroot}/%{_docdir}/%{name}/{LICENSE,NOTICE,COPYING}
@@ -166,6 +159,8 @@ make check
 %dir %{_datadir}/legacy-printer-app
 %{_datadir}/legacy-printer-app/testpage.ps
 %{_datadir}/legacy-printer-app/testpage.pdf
+# this symlink is required if the app should use CUPS backends/filters
+# in /usr/lib/cups
 %{_libdir}/legacy-printer-app
 %{_mandir}/man1/legacy-printer-app.1.gz
 
