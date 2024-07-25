@@ -1,0 +1,224 @@
+2024-07-25 13:25:25,225 - Mock Version: 5.6
+2024-07-25 13:25:25,237 - Start(bootstrap): chroot init
+2024-07-25 13:25:25,267 - Start(bootstrap): cleaning package manager metadata
+2024-07-25 13:25:25,267 - Finish(bootstrap): cleaning package manager metadata
+2024-07-25 13:25:25,639 - Finish(bootstrap): chroot init
+2024-07-25 13:25:25,645 - Start: chroot init
+2024-07-25 13:25:25,709 - Start: cleaning package manager metadata
+2024-07-25 13:25:25,713 - Finish: cleaning package manager metadata
+2024-07-25 13:25:26,434 - Finish: chroot init
+2024-07-25 13:25:26,473 - Start: chroot ['rpm --eval "%{_libdir}"']
+2024-07-25 13:25:26,557 - Finish: chroot ['rpm --eval "%{_libdir}"']
+2024-07-25 13:25:26,615 - Finish: run
+2024-07-25 13:25:27,455 - Mock Version: 5.6
+2024-07-25 13:25:27,464 - Start(bootstrap): chroot init
+2024-07-25 13:25:27,490 - Start(bootstrap): cleaning package manager metadata
+2024-07-25 13:25:27,490 - Finish(bootstrap): cleaning package manager metadata
+2024-07-25 13:25:27,797 - Finish(bootstrap): chroot init
+2024-07-25 13:25:27,802 - Start: chroot init
+2024-07-25 13:25:27,856 - Start: cleaning package manager metadata
+2024-07-25 13:25:27,859 - Finish: cleaning package manager metadata
+2024-07-25 13:25:28,393 - Finish: chroot init
+2024-07-25 13:25:28,440 - Start: chroot ['rm -rf $(rpm --eval %_builddir)/*']
+2024-07-25 13:25:28,531 - Finish: chroot ['rm -rf $(rpm --eval %_builddir)/*']
+2024-07-25 13:25:28,587 - Finish: run
+2024-07-25 13:25:29,419 - Mock Version: 5.6
+2024-07-25 13:25:29,431 - Start(bootstrap): chroot init
+2024-07-25 13:25:29,463 - Start(bootstrap): cleaning package manager metadata
+2024-07-25 13:25:29,463 - Finish(bootstrap): cleaning package manager metadata
+2024-07-25 13:25:29,887 - Finish(bootstrap): chroot init
+2024-07-25 13:25:29,894 - Start: chroot init
+2024-07-25 13:25:29,969 - Start: cleaning package manager metadata
+2024-07-25 13:25:29,974 - Finish: cleaning package manager metadata
+2024-07-25 13:25:30,892 - Finish: chroot init
+2024-07-25 13:25:30,895 - Start: build phase for pappl-retrofit-1.0b2-2.fc41.src.rpm
+2024-07-25 13:25:30,897 - Start: build setup for pappl-retrofit-1.0b2-2.fc41.src.rpm
+2024-07-25 13:25:47,963 - Finish: build setup for pappl-retrofit-1.0b2-2.fc41.src.rpm
+2024-07-25 13:25:47,964 - Start: Outputting list of installed packages
+2024-07-25 13:25:48,305 - Finish: Outputting list of installed packages
+2024-07-25 13:25:48,305 - Start: rpmbuild pappl-retrofit-1.0b2-2.fc41.src.rpm
+2024-07-25 13:25:59,469 - Finish: rpmbuild pappl-retrofit-1.0b2-2.fc41.src.rpm
+2024-07-25 13:25:59,499 - Finish: build phase for pappl-retrofit-1.0b2-2.fc41.src.rpm
+2024-07-25 13:25:59,518 - Finish: run
+2024-07-25 13:26:00,498 - Mock Version: 5.6
+2024-07-25 13:26:00,520 - Start(bootstrap): chroot init
+2024-07-25 13:26:00,557 - Start(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:00,557 - Finish(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:00,908 - Finish(bootstrap): chroot init
+2024-07-25 13:26:00,913 - Start: chroot init
+2024-07-25 13:26:00,968 - Start: cleaning package manager metadata
+2024-07-25 13:26:00,972 - Finish: cleaning package manager metadata
+2024-07-25 13:26:01,591 - Finish: chroot init
+2024-07-25 13:26:01,631 - Start: chroot ['rpm --eval %_topdir']
+2024-07-25 13:26:01,736 - Finish: chroot ['rpm --eval %_topdir']
+2024-07-25 13:26:01,793 - Finish: run
+2024-07-25 13:26:11,504 - Mock Version: 5.6
+2024-07-25 13:26:11,512 - Start(bootstrap): chroot init
+2024-07-25 13:26:11,538 - Start(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:11,538 - Finish(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:11,840 - Finish(bootstrap): chroot init
+2024-07-25 13:26:11,845 - Start: chroot init
+2024-07-25 13:26:11,896 - Start: cleaning package manager metadata
+2024-07-25 13:26:11,900 - Finish: cleaning package manager metadata
+2024-07-25 13:26:12,472 - Finish: chroot init
+2024-07-25 13:26:12,475 - Finish: run
+2024-07-25 13:26:13,380 - Mock Version: 5.6
+2024-07-25 13:26:13,391 - Start(bootstrap): chroot init
+2024-07-25 13:26:13,419 - Start(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:13,419 - Finish(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:13,749 - Finish(bootstrap): chroot init
+2024-07-25 13:26:13,756 - Start: chroot init
+2024-07-25 13:26:13,820 - Start: cleaning package manager metadata
+2024-07-25 13:26:13,824 - Finish: cleaning package manager metadata
+2024-07-25 13:26:14,421 - Finish: chroot init
+2024-07-25 13:26:14,462 - Start: chroot ['rpm -q pappl-retrofit']
+2024-07-25 13:26:14,580 - Finish: chroot ['rpm -q pappl-retrofit']
+2024-07-25 13:26:14,641 - Finish: run
+2024-07-25 13:26:15,483 - Mock Version: 5.6
+2024-07-25 13:26:15,492 - Start(bootstrap): chroot init
+2024-07-25 13:26:15,518 - Start(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:15,518 - Finish(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:15,834 - Finish(bootstrap): chroot init
+2024-07-25 13:26:15,839 - Start: chroot init
+2024-07-25 13:26:15,893 - Start: cleaning package manager metadata
+2024-07-25 13:26:15,897 - Finish: cleaning package manager metadata
+2024-07-25 13:26:16,472 - Finish: chroot init
+2024-07-25 13:26:16,513 - Start: chroot ['rpm -q pappl-retrofit-debuginfo']
+2024-07-25 13:26:16,649 - Finish: chroot ['rpm -q pappl-retrofit-debuginfo']
+2024-07-25 13:26:16,707 - Finish: run
+2024-07-25 13:26:17,573 - Mock Version: 5.6
+2024-07-25 13:26:17,584 - Start(bootstrap): chroot init
+2024-07-25 13:26:17,614 - Start(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:17,614 - Finish(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:17,994 - Finish(bootstrap): chroot init
+2024-07-25 13:26:18,000 - Start: chroot init
+2024-07-25 13:26:18,066 - Start: cleaning package manager metadata
+2024-07-25 13:26:18,070 - Finish: cleaning package manager metadata
+2024-07-25 13:26:18,680 - Finish: chroot init
+2024-07-25 13:26:18,720 - Start: chroot ['rpm -q legacy-printer-app']
+2024-07-25 13:26:18,817 - Finish: chroot ['rpm -q legacy-printer-app']
+2024-07-25 13:26:18,884 - Finish: run
+2024-07-25 13:26:19,737 - Mock Version: 5.6
+2024-07-25 13:26:19,747 - Start(bootstrap): chroot init
+2024-07-25 13:26:19,773 - Start(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:19,774 - Finish(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:20,095 - Finish(bootstrap): chroot init
+2024-07-25 13:26:20,100 - Start: chroot init
+2024-07-25 13:26:20,154 - Start: cleaning package manager metadata
+2024-07-25 13:26:20,158 - Finish: cleaning package manager metadata
+2024-07-25 13:26:20,740 - Finish: chroot init
+2024-07-25 13:26:20,780 - Start: chroot ['rpm -q legacy-printer-app-debuginfo']
+2024-07-25 13:26:20,865 - Finish: chroot ['rpm -q legacy-printer-app-debuginfo']
+2024-07-25 13:26:20,921 - Finish: run
+2024-07-25 13:26:21,764 - Mock Version: 5.6
+2024-07-25 13:26:21,773 - Start(bootstrap): chroot init
+2024-07-25 13:26:21,798 - Start(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:21,798 - Finish(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:22,108 - Finish(bootstrap): chroot init
+2024-07-25 13:26:22,114 - Start: chroot init
+2024-07-25 13:26:22,169 - Start: cleaning package manager metadata
+2024-07-25 13:26:22,173 - Finish: cleaning package manager metadata
+2024-07-25 13:26:22,736 - Finish: chroot init
+2024-07-25 13:26:22,776 - Start: chroot ['rpm -q pappl-retrofit-devel']
+2024-07-25 13:26:22,865 - Finish: chroot ['rpm -q pappl-retrofit-devel']
+2024-07-25 13:26:22,923 - Finish: run
+2024-07-25 13:26:23,817 - Mock Version: 5.6
+2024-07-25 13:26:23,827 - Start(bootstrap): chroot init
+2024-07-25 13:26:23,854 - Start(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:23,854 - Finish(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:24,170 - Finish(bootstrap): chroot init
+2024-07-25 13:26:24,175 - Start: chroot init
+2024-07-25 13:26:24,227 - Start: cleaning package manager metadata
+2024-07-25 13:26:24,231 - Finish: cleaning package manager metadata
+2024-07-25 13:26:24,874 - Finish: chroot init
+2024-07-25 13:26:24,914 - Start: chroot ['rpm -q pappl-retrofit-debugsource']
+2024-07-25 13:26:25,011 - Finish: chroot ['rpm -q pappl-retrofit-debugsource']
+2024-07-25 13:26:25,072 - Finish: run
+2024-07-25 13:26:27,893 - Mock Version: 5.6
+2024-07-25 13:26:27,903 - Start(bootstrap): chroot init
+2024-07-25 13:26:27,931 - Start(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:27,932 - Finish(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:28,352 - Finish(bootstrap): chroot init
+2024-07-25 13:26:28,359 - Start: chroot init
+2024-07-25 13:26:28,426 - Start: cleaning package manager metadata
+2024-07-25 13:26:28,431 - Finish: cleaning package manager metadata
+2024-07-25 13:26:29,044 - Finish: chroot init
+2024-07-25 13:26:53,355 - Finish: run
+2024-07-25 13:26:54,667 - Mock Version: 5.6
+2024-07-25 13:26:54,676 - Start(bootstrap): chroot init
+2024-07-25 13:26:54,701 - Start(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:54,701 - Finish(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:55,018 - Finish(bootstrap): chroot init
+2024-07-25 13:26:55,025 - Start: chroot init
+2024-07-25 13:26:55,092 - Start: cleaning package manager metadata
+2024-07-25 13:26:55,097 - Finish: cleaning package manager metadata
+2024-07-25 13:26:55,704 - Finish: chroot init
+2024-07-25 13:26:55,707 - Finish: run
+2024-07-25 13:26:56,598 - Mock Version: 5.6
+2024-07-25 13:26:56,609 - Start(bootstrap): chroot init
+2024-07-25 13:26:56,641 - Start(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:56,642 - Finish(bootstrap): cleaning package manager metadata
+2024-07-25 13:26:57,014 - Finish(bootstrap): chroot init
+2024-07-25 13:26:57,020 - Start: chroot init
+2024-07-25 13:26:57,087 - Start: cleaning package manager metadata
+2024-07-25 13:26:57,092 - Finish: cleaning package manager metadata
+2024-07-25 13:26:57,744 - Finish: chroot init
+2024-07-25 13:26:57,784 - Start: chroot ['rpm -q rpmlint']
+2024-07-25 13:26:57,874 - Finish: chroot ['rpm -q rpmlint']
+2024-07-25 13:26:57,933 - Finish: run
+2024-07-25 13:27:00,928 - Mock Version: 5.6
+2024-07-25 13:27:00,939 - Start(bootstrap): chroot init
+2024-07-25 13:27:00,968 - Start(bootstrap): cleaning package manager metadata
+2024-07-25 13:27:00,968 - Finish(bootstrap): cleaning package manager metadata
+2024-07-25 13:27:01,290 - Finish(bootstrap): chroot init
+2024-07-25 13:27:01,295 - Start: chroot init
+2024-07-25 13:27:01,351 - Start: cleaning package manager metadata
+2024-07-25 13:27:01,355 - Finish: cleaning package manager metadata
+2024-07-25 13:27:01,943 - Finish: chroot init
+2024-07-25 13:27:06,446 - Finish: run
+2024-07-25 13:27:07,324 - Mock Version: 5.6
+2024-07-25 13:27:07,336 - Start(bootstrap): chroot init
+2024-07-25 13:27:07,368 - Start(bootstrap): cleaning package manager metadata
+2024-07-25 13:27:07,368 - Finish(bootstrap): cleaning package manager metadata
+2024-07-25 13:27:07,755 - Finish(bootstrap): chroot init
+2024-07-25 13:27:07,761 - Start: chroot init
+2024-07-25 13:27:07,825 - Start: cleaning package manager metadata
+2024-07-25 13:27:07,830 - Finish: cleaning package manager metadata
+2024-07-25 13:27:08,422 - Finish: chroot init
+2024-07-25 13:27:08,461 - Start: chroot ["echo 'rpmlint:'; rpmlint --installed pappl-retrofit-debuginfo pappl-retrofit pappl-retrofit-devel pappl-retrofit-debugsource legacy-printer-app; echo 'rpmlint-done:'"]
+2024-07-25 13:27:09,388 - Finish: chroot ["echo 'rpmlint:'; rpmlint --installed pappl-retrofit-debuginfo pappl-retrofit pappl-retrofit-devel pappl-retrofit-debugsource legacy-printer-app; echo 'rpmlint-done:'"]
+2024-07-25 13:27:09,447 - Finish: run
+2024-07-25 13:27:18,040 - Mock Version: 5.6
+2024-07-25 13:27:18,051 - Start(bootstrap): chroot init
+2024-07-25 13:27:18,079 - Start(bootstrap): cleaning package manager metadata
+2024-07-25 13:27:18,079 - Finish(bootstrap): cleaning package manager metadata
+2024-07-25 13:27:18,402 - Finish(bootstrap): chroot init
+2024-07-25 13:27:18,407 - Start: chroot init
+2024-07-25 13:27:18,460 - Start: cleaning package manager metadata
+2024-07-25 13:27:18,464 - Finish: cleaning package manager metadata
+2024-07-25 13:27:19,036 - Finish: chroot init
+2024-07-25 13:27:19,077 - Start: chroot ['rm -rf $(rpm --eval %_builddir)/*']
+2024-07-25 13:27:19,168 - Finish: chroot ['rm -rf $(rpm --eval %_builddir)/*']
+2024-07-25 13:27:19,233 - Finish: run
+2024-07-25 13:27:20,126 - Mock Version: 5.6
+2024-07-25 13:27:20,137 - Start(bootstrap): chroot init
+2024-07-25 13:27:20,167 - Start(bootstrap): cleaning package manager metadata
+2024-07-25 13:27:20,167 - Finish(bootstrap): cleaning package manager metadata
+2024-07-25 13:27:20,521 - Finish(bootstrap): chroot init
+2024-07-25 13:27:20,528 - Start: chroot init
+2024-07-25 13:27:20,595 - Start: cleaning package manager metadata
+2024-07-25 13:27:20,599 - Finish: cleaning package manager metadata
+2024-07-25 13:27:21,208 - Finish: chroot init
+2024-07-25 13:27:21,216 - Finish: run
+2024-07-25 13:27:22,045 - Mock Version: 5.6
+2024-07-25 13:27:22,054 - Start(bootstrap): chroot init
+2024-07-25 13:27:22,081 - Start(bootstrap): cleaning package manager metadata
+2024-07-25 13:27:22,081 - Finish(bootstrap): cleaning package manager metadata
+2024-07-25 13:27:22,401 - Finish(bootstrap): chroot init
+2024-07-25 13:27:22,406 - Start: chroot init
+2024-07-25 13:27:22,460 - Start: cleaning package manager metadata
+2024-07-25 13:27:22,464 - Finish: cleaning package manager metadata
+2024-07-25 13:27:23,039 - Finish: chroot init
+2024-07-25 13:27:23,080 - Start: chroot ['rpm -i pappl-retrofit-1.0b2-2.fc41.src.rpm; rpmbuild --nodeps -bp $(rpm --eval %_specdir)/pappl-retrofit.spec;chmod -R  go+r  $(rpm --eval %_builddir)/* || :']
+2024-07-25 13:27:23,235 - Finish: chroot ['rpm -i pappl-retrofit-1.0b2-2.fc41.src.rpm; rpmbuild --nodeps -bp $(rpm --eval %_specdir)/pappl-retrofit.spec;chmod -R  go+r  $(rpm --eval %_builddir)/* || :']
+2024-07-25 13:27:23,297 - Finish: run

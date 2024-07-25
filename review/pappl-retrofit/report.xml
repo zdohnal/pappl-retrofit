@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<analysis>
+    <metadata>
+        <generator name="fedora-review" version="0.10.0" build="e79b66b 2023-07-24 17:28:48 -0500"/>
+        <file given-path="pappl-retrofit.spec">
+            <hash alg="sha224" hexdigest="f1368e73d202975d884daa92d2ff0683108e3f3950ce1d0c2d1ea6b0"/>
+        </file>
+        <sut>
+            <source-rpm name="pappl-retrofit" version="1.0b2" release="2.fc41"/>
+        </sut>
+    </metadata>
+    <results>
+        <issue test-id="CheckAutotoolsObsoletedMacros" severity="EXTRA">
+            <message>Package should not use obsolete m4 macros</message>
+            <location>
+                <file given-path="pappl-retrofit.spec"/>
+            </location>
+            <notes>Some obsoleted macros found, see the attachment.</notes>
+        </issue>
+    </results>
+</analysis>

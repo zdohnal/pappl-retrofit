@@ -1,0 +1,1723 @@
+$i$i$i$i$i$i$idiagnostics:
+------------
+1) Version information for libraries and programs used by rpminspect as well as
+storage requirements.  This result is for informational and diagnostic purposes
+only. 
+
+Result: DIAGNOSTICS
+Details:
+rpminspect version 1.12.1
+zlib version 1.3.1.zlib-ng
+libmagic version 545
+libclamav version 1.0.6
+librpm version 4.19.1.1
+libxml version 21208
+json-c version 0.17
+libcurl version 8.6.0 (OpenSSL/3.2.1 zlib/1.3.1.zlib-ng libidn2/2.3.7 nghttp2/1.59.0)
+libarchive version 3.7.2 (zlib/1.3.0.zlib-ng liblzma/5.4.6 bz2lib/1.0.8 liblz4/1.9.4 libzstd/1.5.6)
+libyaml version 0.2.5
+OpenSSL version 3.2.1 30 Jan 2024
+xmlrpc-c version 1.59.2
+msgunfmt (GNU gettext-tools) 0.22.5
+annocheck version 12.60.
+abidiff version 2.5.0
+kmidiff version 2.5.0
+udevadm version 255
+
+Space required to download artifacts: 0 bytes (0 B)
+Space required to unpack artifacts: 79616 bytes (78 KiB)
+
+
+
+2) Command line arguments used to invoke rpminspect. 
+
+Result: DIAGNOSTICS
+Details:
+/usr/bin/rpminspect -c /usr/share/rpminspect/fedora.yaml -r fedora-41 ./legacy-printer-app-1.0b2-2.fc41.x86_64.rpm
+
+
+3) Build 
+
+Result: DIAGNOSTICS
+Details:
+./legacy-printer-app-1.0b2-2.fc41.x86_64.rpm
+
+
+
+addedfiles:
+-----------
+Result: OK
+
+
+annocheck:
+----------
+1) annocheck 'hardened' test passes for /usr/sbin/legacy-printer-app on x86_64 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+Details:
+Command: annocheck --ignore-unknown --verbose /usr/sbin/legacy-printer-app
+Exit Code: 0
+
+annocheck: Version 12.60.
+Hardened: /usr/sbin/legacy-printer-app: info: No matching profile found.
+Hardened: /usr/sbin/legacy-printer-app: PASS: pie test because the ELF file header has the correct type 
+Hardened: /usr/sbin/legacy-printer-app: WARN: Could not find separate debug file: legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: /usr/sbin/legacy-printer-app: PASS: cf-protection test because correct flags found in .note.gnu.property note 
+Hardened: /usr/sbin/legacy-printer-app: PASS: writable-got test 
+Hardened: /usr/sbin/legacy-printer-app: PASS: dynamic-segment test 
+Hardened: /usr/sbin/legacy-printer-app: PASS: bind-now test 
+Hardened: legacy-printer-app:  try: /usr/lib/debug/.build-id/19/ee28c3452295bfc25e7daf5a6f63bbd48672b2.debug.
+Hardened: legacy-printer-app:  try: usr/lib/debug/.build-id/19/ee28c3452295bfc25e7daf5a6f63bbd48672b2.debug.
+Hardened: legacy-printer-app:  try: ./legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: ./.debug/legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: /legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: /.debug/legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: /usr/lib/debug/legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: /usr/lib/debug/legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: /usr/lib/debug/usr/legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: /usr/lib/debug/usr/bin/legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: /lib/debug/legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: usr/lib/debug/legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: usr/lib/debug/legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: usr/lib/debug/usr/legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: usr/lib/debug/usr/bin/legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: lib/debug/legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: /usr/lib/debug/legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: /usr/lib/debug/usr/legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: /usr/lib/debug/usr/bin/legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: /lib/debug/legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: /lib/debug/legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: /usr/lib/debug/legacy-printer-app-1.0b2-2.fc41.x86_64.debug.
+Hardened: legacy-printer-app:  try: /usr/lib/debug/legacy-printer-app-1.0b2-1.fc41.x86_64.debug.
+Hardened: /usr/sbin/legacy-printer-app: PASS: entry test 
+Hardened: /usr/sbin/legacy-printer-app: PASS: gnu-stack test because stack segment exists with the correct permissions 
+Hardened: /usr/sbin/legacy-printer-app: PASS: gnu-relro test 
+Hardened: /usr/sbin/legacy-printer-app: PASS: gaps test because no gaps found in .text section coverage 
+Hardened: /usr/sbin/legacy-printer-app: PASS: notes test 
+Hardened: /usr/sbin/legacy-printer-app: skip: branch-protection test because not an AArch64 binary 
+Hardened: /usr/sbin/legacy-printer-app: skip: dynamic-tags test because AArch64 specific 
+Hardened: /usr/sbin/legacy-printer-app: PASS: fast test 
+Hardened: /usr/sbin/legacy-printer-app: skip: fips test because not a GO binary 
+Hardened: /usr/sbin/legacy-printer-app: skip: fortify test because sources compiled as if they were assembler are not checked by this test 
+Hardened: /usr/sbin/legacy-printer-app: WARN: If real assembler source code is used it may need updating to support the tested feature
+Hardened: /usr/sbin/legacy-printer-app: WARN:  and it definitely needs updating to add notes about its security protections.
+Hardened: /usr/sbin/legacy-printer-app: WARN: For more details see https://sourceware.org/annobin/annobin.html/Absence-of-compiled-code.html
+Hardened: /usr/sbin/legacy-printer-app: skip: glibcxx-assertions test because sources compiled as if they were assembler are not checked by this test 
+Hardened: /usr/sbin/legacy-printer-app: skip: go-revision test because no GO compiled code found 
+Hardened: /usr/sbin/legacy-printer-app: skip: implicit-values test because  These tests are only relevent to C source code 
+Hardened: /usr/sbin/legacy-printer-app: PASS: instrumentation test 
+Hardened: /usr/sbin/legacy-printer-app: skip: lto test because sources compiled as if they were assembler are not checked by this test 
+Hardened: /usr/sbin/legacy-printer-app: PASS: openssl-engine test 
+Hardened: /usr/sbin/legacy-printer-app: skip: optimization test because sources compiled as if they were assembler are not checked by this test 
+Hardened: /usr/sbin/legacy-printer-app: skip: pic test because sources compiled as if they were assembler are not checked by this test 
+Hardened: /usr/sbin/legacy-printer-app: PASS: production test 
+Hardened: /usr/sbin/legacy-printer-app: PASS: property-note test because CET enabled property note found 
+Hardened: /usr/sbin/legacy-printer-app: PASS: run-path test 
+Hardened: /usr/sbin/legacy-printer-app: PASS: rwx-seg test 
+Hardened: /usr/sbin/legacy-printer-app: PASS: short-enums test 
+Hardened: /usr/sbin/legacy-printer-app: skip: stack-clash test because sources compiled as if they were assembler are not checked by this test 
+Hardened: /usr/sbin/legacy-printer-app: skip: stack-prot test because sources compiled as if they were assembler are not checked by this test 
+Hardened: /usr/sbin/legacy-printer-app: skip: stack-realign test because not an i686 executable 
+Hardened: /usr/sbin/legacy-printer-app: PASS: textrel test 
+Hardened: /usr/sbin/legacy-printer-app: PASS: threads test 
+Hardened: /usr/sbin/legacy-printer-app: PASS: unicode test 
+Hardened: /usr/sbin/legacy-printer-app: skip: warnings test because sources compiled as if they were assembler are not checked by this test 
+Hardened: /usr/sbin/legacy-printer-app: Overall: PASS.
+
+Suggested Remedy: See annocheck(1) for more information.
+
+
+badfuncs:
+---------
+Result: OK
+
+
+capabilities:
+-------------
+Result: OK
+
+
+debuginfo:
+----------
+Result: OK
+
+
+desktop:
+--------
+Result: OK
+
+
+disttag:
+--------
+1) Specified package is not a source RPM, skipping. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+elf:
+----
+Result: OK
+
+
+emptyrpm:
+---------
+Result: OK
+
+
+files:
+------
+1) The files inspection is only for source packages, skipping. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+javabytecode:
+-------------
+Result: OK
+
+
+kmidiff:
+--------
+Result: SKIP
+
+
+license:
+--------
+1) Valid License Tag in legacy-printer-app-1.0b2-2.fc41.x86_64: Apache-2.0 WITH
+LLVM-exception 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+Result: OK
+
+
+lto:
+----
+Result: OK
+
+
+manpage:
+--------
+Result: OK
+
+
+metadata:
+---------
+1) Package Build Host "fedora" is not within an expected build host subdomain in
+legacy-printer-app-1.0b2-2.fc41.x86_64 
+
+Result: BAD
+Waiver Authorization: Not Waivable
+
+Suggested Remedy: Make sure the SRPM is built on a host within the expected
+subdomain.
+
+
+modularity:
+-----------
+1) Inspection skipped because this build's type is not `module'. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+ownership:
+----------
+Result: OK
+
+
+patches:
+--------
+1) No source packages available, skipping inspection. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+pathmigration:
+--------------
+Result: OK
+
+
+permissions:
+------------
+Result: OK
+
+
+politics:
+---------
+Result: OK
+
+
+rpmdeps:
+--------
+Result: OK
+
+
+runpath:
+--------
+Result: OK
+
+
+shellsyntax:
+------------
+Result: OK
+
+
+specname:
+---------
+1) The specname inspection is only for source packages, skipping. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+symlinks:
+---------
+1) symbolic link /usr/lib64/legacy-printer-app is a dangling symbolic link in
+legacy-printer-app on x86_64 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+Suggested Remedy: Make sure symlinks point to a valid destination in one of the
+subpackages of the build; dangling symlinks are not allowed.  If you are
+comparing builds and have a non-symlink turn in to a symlink, ensure this is
+deliberate.  NOTE:  You cannot turn a directory in to a symlink due to RPM
+limitations.
+
+Result: OK
+
+
+udevrules:
+----------
+Result: SKIP
+Details:
+/usr/lib/udev/rules.d/40-usb_modeswitch.rules:12 style: more than one comma between tokens.
+/usr/lib/udev/rules.d/40-usb_modeswitch.rules: udev rules have style issues.
+Failed to parse rules file /usr/lib/udev/rules.d/60-nfs.rules: Permission denied
+/usr/lib/udev/rules.d/61-gdm.rules:90 style: LABEL="gdm_virt_passthrough_check" is unused.
+/usr/lib/udev/rules.d/61-gdm.rules:98 style: LABEL="gdm_virt_multi_gpu_check" is unused.
+/usr/lib/udev/rules.d/61-gdm.rules:114 style: LABEL="gdm_prefer_xorg" is unused.
+/usr/lib/udev/rules.d/61-gdm.rules: udev rules have style issues.
+/usr/lib/udev/rules.d/77-mm-huawei-net-port-types.rules:25 style: whitespace after comma is expected.
+/usr/lib/udev/rules.d/77-mm-huawei-net-port-types.rules:26 style: whitespace after comma is expected.
+/usr/lib/udev/rules.d/77-mm-huawei-net-port-types.rules: udev rules have style issues.
+
+
+
+unicode:
+--------
+Result: OK
+
+
+virus:
+------
+1) clamav version information 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+Details:
+clamav version 1.0.6
+/var/lib/clamav/main.cvd version 62 (16 Sep 2021 08-32 -0400)
+/var/lib/clamav/daily.cvd version 27256 (25 Apr 2024 04-27 -0400)
+/var/lib/clamav/bytecode.cvd version 335 (27 Feb 2024 10-37 -0500)
+
+
+Result: OK
+
+
+xml:
+----
+Result: OK
+
+$idiagnostics:
+------------
+1) Version information for libraries and programs used by rpminspect as well as
+storage requirements.  This result is for informational and diagnostic purposes
+only. 
+
+Result: DIAGNOSTICS
+Details:
+rpminspect version 1.12.1
+zlib version 1.3.1.zlib-ng
+libmagic version 545
+libclamav version 1.0.6
+librpm version 4.19.1.1
+libxml version 21208
+json-c version 0.17
+libcurl version 8.6.0 (OpenSSL/3.2.1 zlib/1.3.1.zlib-ng libidn2/2.3.7 nghttp2/1.59.0)
+libarchive version 3.7.2 (zlib/1.3.0.zlib-ng liblzma/5.4.6 bz2lib/1.0.8 liblz4/1.9.4 libzstd/1.5.6)
+libyaml version 0.2.5
+OpenSSL version 3.2.1 30 Jan 2024
+xmlrpc-c version 1.59.2
+msgunfmt (GNU gettext-tools) 0.22.5
+annocheck version 12.60.
+abidiff version 2.5.0
+kmidiff version 2.5.0
+udevadm version 255
+
+Space required to download artifacts: 0 bytes (0 B)
+Space required to unpack artifacts: 28494 bytes (28 KiB)
+
+
+
+2) Command line arguments used to invoke rpminspect. 
+
+Result: DIAGNOSTICS
+Details:
+/usr/bin/rpminspect -c /usr/share/rpminspect/fedora.yaml -r fedora-41 ./legacy-printer-app-debuginfo-1.0b2-2.fc41.x86_64.rpm
+
+
+3) Build 
+
+Result: DIAGNOSTICS
+Details:
+./legacy-printer-app-debuginfo-1.0b2-2.fc41.x86_64.rpm
+
+
+
+addedfiles:
+-----------
+Result: OK
+
+
+annocheck:
+----------
+Result: OK
+
+
+badfuncs:
+---------
+Result: OK
+
+
+capabilities:
+-------------
+Result: OK
+
+
+debuginfo:
+----------
+Result: OK
+
+
+desktop:
+--------
+Result: OK
+
+
+disttag:
+--------
+1) Specified package is not a source RPM, skipping. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+elf:
+----
+Result: OK
+
+
+emptyrpm:
+---------
+Result: OK
+
+
+files:
+------
+1) The files inspection is only for source packages, skipping. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+javabytecode:
+-------------
+Result: OK
+
+
+kmidiff:
+--------
+Result: SKIP
+
+
+license:
+--------
+1) Valid License Tag in legacy-printer-app-debuginfo-1.0b2-2.fc41.x86_64:
+Apache-2.0 WITH LLVM-exception 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+Result: OK
+
+
+lto:
+----
+Result: OK
+
+
+manpage:
+--------
+Result: OK
+
+
+metadata:
+---------
+1) Package Build Host "fedora" is not within an expected build host subdomain in
+legacy-printer-app-debuginfo-1.0b2-2.fc41.x86_64 
+
+Result: BAD
+Waiver Authorization: Not Waivable
+
+Suggested Remedy: Make sure the SRPM is built on a host within the expected
+subdomain.
+
+
+modularity:
+-----------
+1) Inspection skipped because this build's type is not `module'. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+ownership:
+----------
+Result: OK
+
+
+patches:
+--------
+1) No source packages available, skipping inspection. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+pathmigration:
+--------------
+Result: OK
+
+
+permissions:
+------------
+Result: OK
+
+
+politics:
+---------
+Result: OK
+
+
+rpmdeps:
+--------
+Result: OK
+
+
+runpath:
+--------
+Result: OK
+
+
+shellsyntax:
+------------
+Result: OK
+
+
+specname:
+---------
+1) The specname inspection is only for source packages, skipping. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+symlinks:
+---------
+Result: OK
+
+
+udevrules:
+----------
+Result: SKIP
+Details:
+/usr/lib/udev/rules.d/40-usb_modeswitch.rules:12 style: more than one comma between tokens.
+/usr/lib/udev/rules.d/40-usb_modeswitch.rules: udev rules have style issues.
+Failed to parse rules file /usr/lib/udev/rules.d/60-nfs.rules: Permission denied
+/usr/lib/udev/rules.d/61-gdm.rules:90 style: LABEL="gdm_virt_passthrough_check" is unused.
+/usr/lib/udev/rules.d/61-gdm.rules:98 style: LABEL="gdm_virt_multi_gpu_check" is unused.
+/usr/lib/udev/rules.d/61-gdm.rules:114 style: LABEL="gdm_prefer_xorg" is unused.
+/usr/lib/udev/rules.d/61-gdm.rules: udev rules have style issues.
+/usr/lib/udev/rules.d/77-mm-huawei-net-port-types.rules:25 style: whitespace after comma is expected.
+/usr/lib/udev/rules.d/77-mm-huawei-net-port-types.rules:26 style: whitespace after comma is expected.
+/usr/lib/udev/rules.d/77-mm-huawei-net-port-types.rules: udev rules have style issues.
+
+
+
+unicode:
+--------
+Result: OK
+
+
+virus:
+------
+1) clamav version information 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+Details:
+clamav version 1.0.6
+/var/lib/clamav/main.cvd version 62 (16 Sep 2021 08-32 -0400)
+/var/lib/clamav/daily.cvd version 27256 (25 Apr 2024 04-27 -0400)
+/var/lib/clamav/bytecode.cvd version 335 (27 Feb 2024 10-37 -0500)
+
+
+Result: OK
+
+
+xml:
+----
+Result: OK
+
+$idiagnostics:
+------------
+1) Version information for libraries and programs used by rpminspect as well as
+storage requirements.  This result is for informational and diagnostic purposes
+only. 
+
+Result: DIAGNOSTICS
+Details:
+rpminspect version 1.12.1
+zlib version 1.3.1.zlib-ng
+libmagic version 545
+libclamav version 1.0.6
+librpm version 4.19.1.1
+libxml version 21208
+json-c version 0.17
+libcurl version 8.6.0 (OpenSSL/3.2.1 zlib/1.3.1.zlib-ng libidn2/2.3.7 nghttp2/1.59.0)
+libarchive version 3.7.2 (zlib/1.3.0.zlib-ng liblzma/5.4.6 bz2lib/1.0.8 liblz4/1.9.4 libzstd/1.5.6)
+libyaml version 0.2.5
+OpenSSL version 3.2.1 30 Jan 2024
+xmlrpc-c version 1.59.2
+msgunfmt (GNU gettext-tools) 0.22.5
+annocheck version 12.60.
+abidiff version 2.5.0
+kmidiff version 2.5.0
+udevadm version 255
+
+Space required to download artifacts: 0 bytes (0 B)
+Space required to unpack artifacts: 192641 bytes (188 KiB)
+
+
+
+2) Command line arguments used to invoke rpminspect. 
+
+Result: DIAGNOSTICS
+Details:
+/usr/bin/rpminspect -c /usr/share/rpminspect/fedora.yaml -r fedora-41 ./pappl-retrofit-1.0b2-2.fc41.x86_64.rpm
+
+
+3) Build 
+
+Result: DIAGNOSTICS
+Details:
+./pappl-retrofit-1.0b2-2.fc41.x86_64.rpm
+
+
+
+addedfiles:
+-----------
+Result: OK
+
+
+annocheck:
+----------
+1) annocheck 'hardened' test passes for /usr/lib64/libpappl-retrofit.so.1.0.0 on
+x86_64 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+Details:
+Command: annocheck --ignore-unknown --verbose /usr/lib64/libpappl-retrofit.so.1.0.0
+Exit Code: 0
+
+annocheck: Version 12.60.
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: info: No matching profile found.
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: pie test because the ELF file header has the correct type 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: WARN: Could not find separate debug file: libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: cf-protection test because correct flags found in .note.gnu.property note 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: writable-got test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: dynamic-segment test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: bind-now test 
+Hardened: libpappl-retrofit.so.1.0.0:  try: /usr/lib/debug/.build-id/91/78225cdfaf2c880abee556cc35106581133764.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: usr/lib/debug/.build-id/91/78225cdfaf2c880abee556cc35106581133764.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: ./libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: ./.debug/libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: /libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: /.debug/libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: /usr/lib/debug/libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: /usr/lib/debug/libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: /usr/lib/debug/usr/libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: /usr/lib/debug/usr/bin/libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: /lib/debug/libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: usr/lib/debug/libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: usr/lib/debug/libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: usr/lib/debug/usr/libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: usr/lib/debug/usr/bin/libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: lib/debug/libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: /usr/lib/debug/libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: /usr/lib/debug/usr/libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: /usr/lib/debug/usr/bin/libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: /lib/debug/libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: /lib/debug/libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: /usr/lib/debug/libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug.
+Hardened: libpappl-retrofit.so.1.0.0:  try: /usr/lib/debug/libpappl-retrofit.so.1.0.0-1.0b2-1.fc41.x86_64.debug.
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: skip: entry test because shared libraries do not use entry points 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: gnu-stack test because stack segment exists with the correct permissions 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: gnu-relro test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: gaps test because no gaps found in .text section coverage 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: notes test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: skip: branch-protection test because not an AArch64 binary 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: skip: dynamic-tags test because AArch64 specific 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: fast test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: skip: fips test because not a GO binary 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: skip: fortify test because sources compiled as if they were assembler are not checked by this test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: WARN: If real assembler source code is used it may need updating to support the tested feature
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: WARN:  and it definitely needs updating to add notes about its security protections.
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: WARN: For more details see https://sourceware.org/annobin/annobin.html/Absence-of-compiled-code.html
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: skip: glibcxx-assertions test because sources compiled as if they were assembler are not checked by this test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: skip: go-revision test because no GO compiled code found 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: skip: implicit-values test because  These tests are only relevent to C source code 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: instrumentation test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: skip: lto test because sources compiled as if they were assembler are not checked by this test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: openssl-engine test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: skip: optimization test because sources compiled as if they were assembler are not checked by this test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: skip: pic test because sources compiled as if they were assembler are not checked by this test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: production test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: property-note test because CET enabled property note found 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: run-path test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: rwx-seg test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: short-enums test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: skip: stack-clash test because sources compiled as if they were assembler are not checked by this test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: skip: stack-prot test because sources compiled as if they were assembler are not checked by this test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: skip: stack-realign test because not an i686 executable 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: textrel test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: threads test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: PASS: unicode test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: skip: warnings test because sources compiled as if they were assembler are not checked by this test 
+Hardened: /usr/lib64/libpappl-retrofit.so.1.0.0: Overall: PASS.
+
+Suggested Remedy: See annocheck(1) for more information.
+
+
+badfuncs:
+---------
+Result: OK
+
+
+capabilities:
+-------------
+Result: OK
+
+
+debuginfo:
+----------
+Result: OK
+
+
+desktop:
+--------
+Result: OK
+
+
+disttag:
+--------
+1) Specified package is not a source RPM, skipping. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+elf:
+----
+Result: OK
+
+
+emptyrpm:
+---------
+Result: OK
+
+
+files:
+------
+1) The files inspection is only for source packages, skipping. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+javabytecode:
+-------------
+Result: OK
+
+
+kmidiff:
+--------
+Result: SKIP
+
+
+license:
+--------
+1) Valid License Tag in pappl-retrofit-1.0b2-2.fc41.x86_64: Apache-2.0 WITH
+LLVM-exception 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+Result: OK
+
+
+lto:
+----
+Result: OK
+
+
+manpage:
+--------
+Result: OK
+
+
+metadata:
+---------
+1) Package Build Host "fedora" is not within an expected build host subdomain in
+pappl-retrofit-1.0b2-2.fc41.x86_64 
+
+Result: BAD
+Waiver Authorization: Not Waivable
+
+Suggested Remedy: Make sure the SRPM is built on a host within the expected
+subdomain.
+
+
+modularity:
+-----------
+1) Inspection skipped because this build's type is not `module'. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+ownership:
+----------
+Result: OK
+
+
+patches:
+--------
+1) No source packages available, skipping inspection. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+pathmigration:
+--------------
+Result: OK
+
+
+permissions:
+------------
+Result: OK
+
+
+politics:
+---------
+Result: OK
+
+
+rpmdeps:
+--------
+Result: OK
+
+
+runpath:
+--------
+Result: OK
+
+
+shellsyntax:
+------------
+Result: OK
+
+
+specname:
+---------
+1) The specname inspection is only for source packages, skipping. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+symlinks:
+---------
+Result: OK
+
+
+udevrules:
+----------
+Result: SKIP
+Details:
+/usr/lib/udev/rules.d/40-usb_modeswitch.rules:12 style: more than one comma between tokens.
+/usr/lib/udev/rules.d/40-usb_modeswitch.rules: udev rules have style issues.
+Failed to parse rules file /usr/lib/udev/rules.d/60-nfs.rules: Permission denied
+/usr/lib/udev/rules.d/61-gdm.rules:90 style: LABEL="gdm_virt_passthrough_check" is unused.
+/usr/lib/udev/rules.d/61-gdm.rules:98 style: LABEL="gdm_virt_multi_gpu_check" is unused.
+/usr/lib/udev/rules.d/61-gdm.rules:114 style: LABEL="gdm_prefer_xorg" is unused.
+/usr/lib/udev/rules.d/61-gdm.rules: udev rules have style issues.
+/usr/lib/udev/rules.d/77-mm-huawei-net-port-types.rules:25 style: whitespace after comma is expected.
+/usr/lib/udev/rules.d/77-mm-huawei-net-port-types.rules:26 style: whitespace after comma is expected.
+/usr/lib/udev/rules.d/77-mm-huawei-net-port-types.rules: udev rules have style issues.
+
+
+
+unicode:
+--------
+Result: OK
+
+
+virus:
+------
+1) clamav version information 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+Details:
+clamav version 1.0.6
+/var/lib/clamav/main.cvd version 62 (16 Sep 2021 08-32 -0400)
+/var/lib/clamav/daily.cvd version 27256 (25 Apr 2024 04-27 -0400)
+/var/lib/clamav/bytecode.cvd version 335 (27 Feb 2024 10-37 -0500)
+
+
+Result: OK
+
+
+xml:
+----
+Result: OK
+
+$idiagnostics:
+------------
+1) Version information for libraries and programs used by rpminspect as well as
+storage requirements.  This result is for informational and diagnostic purposes
+only. 
+
+Result: DIAGNOSTICS
+Details:
+rpminspect version 1.12.1
+zlib version 1.3.1.zlib-ng
+libmagic version 545
+libclamav version 1.0.6
+librpm version 4.19.1.1
+libxml version 21208
+json-c version 0.17
+libcurl version 8.6.0 (OpenSSL/3.2.1 zlib/1.3.1.zlib-ng libidn2/2.3.7 nghttp2/1.59.0)
+libarchive version 3.7.2 (zlib/1.3.0.zlib-ng liblzma/5.4.6 bz2lib/1.0.8 liblz4/1.9.4 libzstd/1.5.6)
+libyaml version 0.2.5
+OpenSSL version 3.2.1 30 Jan 2024
+xmlrpc-c version 1.59.2
+msgunfmt (GNU gettext-tools) 0.22.5
+annocheck version 12.60.
+abidiff version 2.5.0
+kmidiff version 2.5.0
+udevadm version 255
+
+Space required to download artifacts: 0 bytes (0 B)
+Space required to unpack artifacts: 357806 bytes (349 KiB)
+
+
+
+2) Command line arguments used to invoke rpminspect. 
+
+Result: DIAGNOSTICS
+Details:
+/usr/bin/rpminspect -c /usr/share/rpminspect/fedora.yaml -r fedora-41 ./pappl-retrofit-debuginfo-1.0b2-2.fc41.x86_64.rpm
+
+
+3) Build 
+
+Result: DIAGNOSTICS
+Details:
+./pappl-retrofit-debuginfo-1.0b2-2.fc41.x86_64.rpm
+
+
+
+addedfiles:
+-----------
+Result: OK
+
+
+annocheck:
+----------
+Result: OK
+
+
+badfuncs:
+---------
+Result: OK
+
+
+capabilities:
+-------------
+Result: OK
+
+
+debuginfo:
+----------
+Result: OK
+
+
+desktop:
+--------
+Result: OK
+
+
+disttag:
+--------
+1) Specified package is not a source RPM, skipping. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+elf:
+----
+Result: OK
+
+
+emptyrpm:
+---------
+Result: OK
+
+
+files:
+------
+1) The files inspection is only for source packages, skipping. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+javabytecode:
+-------------
+Result: OK
+
+
+kmidiff:
+--------
+Result: SKIP
+
+
+license:
+--------
+1) Valid License Tag in pappl-retrofit-debuginfo-1.0b2-2.fc41.x86_64: Apache-2.0
+WITH LLVM-exception 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+Result: OK
+
+
+lto:
+----
+Result: OK
+
+
+manpage:
+--------
+Result: OK
+
+
+metadata:
+---------
+1) Package Build Host "fedora" is not within an expected build host subdomain in
+pappl-retrofit-debuginfo-1.0b2-2.fc41.x86_64 
+
+Result: BAD
+Waiver Authorization: Not Waivable
+
+Suggested Remedy: Make sure the SRPM is built on a host within the expected
+subdomain.
+
+
+modularity:
+-----------
+1) Inspection skipped because this build's type is not `module'. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+ownership:
+----------
+Result: OK
+
+
+patches:
+--------
+1) No source packages available, skipping inspection. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+pathmigration:
+--------------
+Result: OK
+
+
+permissions:
+------------
+Result: OK
+
+
+politics:
+---------
+Result: OK
+
+
+rpmdeps:
+--------
+Result: OK
+
+
+runpath:
+--------
+Result: OK
+
+
+shellsyntax:
+------------
+Result: OK
+
+
+specname:
+---------
+1) The specname inspection is only for source packages, skipping. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+symlinks:
+---------
+Result: OK
+
+
+udevrules:
+----------
+Result: SKIP
+Details:
+/usr/lib/udev/rules.d/40-usb_modeswitch.rules:12 style: more than one comma between tokens.
+/usr/lib/udev/rules.d/40-usb_modeswitch.rules: udev rules have style issues.
+Failed to parse rules file /usr/lib/udev/rules.d/60-nfs.rules: Permission denied
+/usr/lib/udev/rules.d/61-gdm.rules:90 style: LABEL="gdm_virt_passthrough_check" is unused.
+/usr/lib/udev/rules.d/61-gdm.rules:98 style: LABEL="gdm_virt_multi_gpu_check" is unused.
+/usr/lib/udev/rules.d/61-gdm.rules:114 style: LABEL="gdm_prefer_xorg" is unused.
+/usr/lib/udev/rules.d/61-gdm.rules: udev rules have style issues.
+/usr/lib/udev/rules.d/77-mm-huawei-net-port-types.rules:25 style: whitespace after comma is expected.
+/usr/lib/udev/rules.d/77-mm-huawei-net-port-types.rules:26 style: whitespace after comma is expected.
+/usr/lib/udev/rules.d/77-mm-huawei-net-port-types.rules: udev rules have style issues.
+
+
+
+unicode:
+--------
+Result: OK
+
+
+virus:
+------
+1) clamav version information 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+Details:
+clamav version 1.0.6
+/var/lib/clamav/main.cvd version 62 (16 Sep 2021 08-32 -0400)
+/var/lib/clamav/daily.cvd version 27256 (25 Apr 2024 04-27 -0400)
+/var/lib/clamav/bytecode.cvd version 335 (27 Feb 2024 10-37 -0500)
+
+
+Result: OK
+
+
+xml:
+----
+Result: OK
+
+$idiagnostics:
+------------
+1) Version information for libraries and programs used by rpminspect as well as
+storage requirements.  This result is for informational and diagnostic purposes
+only. 
+
+Result: DIAGNOSTICS
+Details:
+rpminspect version 1.12.1
+zlib version 1.3.1.zlib-ng
+libmagic version 545
+libclamav version 1.0.6
+librpm version 4.19.1.1
+libxml version 21208
+json-c version 0.17
+libcurl version 8.6.0 (OpenSSL/3.2.1 zlib/1.3.1.zlib-ng libidn2/2.3.7 nghttp2/1.59.0)
+libarchive version 3.7.2 (zlib/1.3.0.zlib-ng liblzma/5.4.6 bz2lib/1.0.8 liblz4/1.9.4 libzstd/1.5.6)
+libyaml version 0.2.5
+OpenSSL version 3.2.1 30 Jan 2024
+xmlrpc-c version 1.59.2
+msgunfmt (GNU gettext-tools) 0.22.5
+annocheck version 12.60.
+abidiff version 2.5.0
+kmidiff version 2.5.0
+udevadm version 255
+
+Space required to download artifacts: 0 bytes (0 B)
+Space required to unpack artifacts: 352549 bytes (344 KiB)
+
+
+
+2) Command line arguments used to invoke rpminspect. 
+
+Result: DIAGNOSTICS
+Details:
+/usr/bin/rpminspect -c /usr/share/rpminspect/fedora.yaml -r fedora-41 ./pappl-retrofit-debugsource-1.0b2-2.fc41.x86_64.rpm
+
+
+3) Build 
+
+Result: DIAGNOSTICS
+Details:
+./pappl-retrofit-debugsource-1.0b2-2.fc41.x86_64.rpm
+
+
+
+addedfiles:
+-----------
+Result: OK
+
+
+annocheck:
+----------
+Result: OK
+
+
+badfuncs:
+---------
+Result: OK
+
+
+capabilities:
+-------------
+Result: OK
+
+
+debuginfo:
+----------
+Result: OK
+
+
+desktop:
+--------
+Result: OK
+
+
+disttag:
+--------
+1) Specified package is not a source RPM, skipping. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+elf:
+----
+Result: OK
+
+
+emptyrpm:
+---------
+Result: OK
+
+
+files:
+------
+1) The files inspection is only for source packages, skipping. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+javabytecode:
+-------------
+Result: OK
+
+
+kmidiff:
+--------
+Result: SKIP
+
+
+license:
+--------
+1) Valid License Tag in pappl-retrofit-debugsource-1.0b2-2.fc41.x86_64:
+Apache-2.0 WITH LLVM-exception 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+Result: OK
+
+
+lto:
+----
+Result: OK
+
+
+manpage:
+--------
+Result: OK
+
+
+metadata:
+---------
+1) Package Build Host "fedora" is not within an expected build host subdomain in
+pappl-retrofit-debugsource-1.0b2-2.fc41.x86_64 
+
+Result: BAD
+Waiver Authorization: Not Waivable
+
+Suggested Remedy: Make sure the SRPM is built on a host within the expected
+subdomain.
+
+
+modularity:
+-----------
+1) Inspection skipped because this build's type is not `module'. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+ownership:
+----------
+Result: OK
+
+
+patches:
+--------
+1) No source packages available, skipping inspection. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+pathmigration:
+--------------
+Result: OK
+
+
+permissions:
+------------
+Result: OK
+
+
+politics:
+---------
+Result: OK
+
+
+rpmdeps:
+--------
+Result: OK
+
+
+runpath:
+--------
+Result: OK
+
+
+shellsyntax:
+------------
+Result: OK
+
+
+specname:
+---------
+1) The specname inspection is only for source packages, skipping. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+symlinks:
+---------
+Result: OK
+
+
+udevrules:
+----------
+Result: SKIP
+Details:
+/usr/lib/udev/rules.d/40-usb_modeswitch.rules:12 style: more than one comma between tokens.
+/usr/lib/udev/rules.d/40-usb_modeswitch.rules: udev rules have style issues.
+Failed to parse rules file /usr/lib/udev/rules.d/60-nfs.rules: Permission denied
+/usr/lib/udev/rules.d/61-gdm.rules:90 style: LABEL="gdm_virt_passthrough_check" is unused.
+/usr/lib/udev/rules.d/61-gdm.rules:98 style: LABEL="gdm_virt_multi_gpu_check" is unused.
+/usr/lib/udev/rules.d/61-gdm.rules:114 style: LABEL="gdm_prefer_xorg" is unused.
+/usr/lib/udev/rules.d/61-gdm.rules: udev rules have style issues.
+/usr/lib/udev/rules.d/77-mm-huawei-net-port-types.rules:25 style: whitespace after comma is expected.
+/usr/lib/udev/rules.d/77-mm-huawei-net-port-types.rules:26 style: whitespace after comma is expected.
+/usr/lib/udev/rules.d/77-mm-huawei-net-port-types.rules: udev rules have style issues.
+
+
+
+unicode:
+--------
+Result: OK
+
+
+virus:
+------
+1) clamav version information 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+Details:
+clamav version 1.0.6
+/var/lib/clamav/main.cvd version 62 (16 Sep 2021 08-32 -0400)
+/var/lib/clamav/daily.cvd version 27256 (25 Apr 2024 04-27 -0400)
+/var/lib/clamav/bytecode.cvd version 335 (27 Feb 2024 10-37 -0500)
+
+
+Result: OK
+
+
+xml:
+----
+Result: OK
+
+$idiagnostics:
+------------
+1) Version information for libraries and programs used by rpminspect as well as
+storage requirements.  This result is for informational and diagnostic purposes
+only. 
+
+Result: DIAGNOSTICS
+Details:
+rpminspect version 1.12.1
+zlib version 1.3.1.zlib-ng
+libmagic version 545
+libclamav version 1.0.6
+librpm version 4.19.1.1
+libxml version 21208
+json-c version 0.17
+libcurl version 8.6.0 (OpenSSL/3.2.1 zlib/1.3.1.zlib-ng libidn2/2.3.7 nghttp2/1.59.0)
+libarchive version 3.7.2 (zlib/1.3.0.zlib-ng liblzma/5.4.6 bz2lib/1.0.8 liblz4/1.9.4 libzstd/1.5.6)
+libyaml version 0.2.5
+OpenSSL version 3.2.1 30 Jan 2024
+xmlrpc-c version 1.59.2
+msgunfmt (GNU gettext-tools) 0.22.5
+annocheck version 12.60.
+abidiff version 2.5.0
+kmidiff version 2.5.0
+udevadm version 255
+
+Space required to download artifacts: 0 bytes (0 B)
+Space required to unpack artifacts: 27183 bytes (27 KiB)
+
+
+
+2) Command line arguments used to invoke rpminspect. 
+
+Result: DIAGNOSTICS
+Details:
+/usr/bin/rpminspect -c /usr/share/rpminspect/fedora.yaml -r fedora-41 ./pappl-retrofit-devel-1.0b2-2.fc41.x86_64.rpm
+
+
+3) Build 
+
+Result: DIAGNOSTICS
+Details:
+./pappl-retrofit-devel-1.0b2-2.fc41.x86_64.rpm
+
+
+
+addedfiles:
+-----------
+Result: OK
+
+
+annocheck:
+----------
+Result: OK
+
+
+badfuncs:
+---------
+Result: OK
+
+
+capabilities:
+-------------
+Result: OK
+
+
+debuginfo:
+----------
+Result: OK
+
+
+desktop:
+--------
+Result: OK
+
+
+disttag:
+--------
+1) Specified package is not a source RPM, skipping. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+elf:
+----
+Result: OK
+
+
+emptyrpm:
+---------
+Result: OK
+
+
+files:
+------
+1) The files inspection is only for source packages, skipping. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+javabytecode:
+-------------
+Result: OK
+
+
+kmidiff:
+--------
+Result: SKIP
+
+
+license:
+--------
+1) Valid License Tag in pappl-retrofit-devel-1.0b2-2.fc41.x86_64: Apache-2.0
+WITH LLVM-exception 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+Result: OK
+
+
+lto:
+----
+Result: OK
+
+
+manpage:
+--------
+Result: OK
+
+
+metadata:
+---------
+1) Package Build Host "fedora" is not within an expected build host subdomain in
+pappl-retrofit-devel-1.0b2-2.fc41.x86_64 
+
+Result: BAD
+Waiver Authorization: Not Waivable
+
+Suggested Remedy: Make sure the SRPM is built on a host within the expected
+subdomain.
+
+
+modularity:
+-----------
+1) Inspection skipped because this build's type is not `module'. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+ownership:
+----------
+Result: OK
+
+
+patches:
+--------
+1) No source packages available, skipping inspection. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+pathmigration:
+--------------
+Result: OK
+
+
+permissions:
+------------
+Result: OK
+
+
+politics:
+---------
+Result: OK
+
+
+rpmdeps:
+--------
+Result: OK
+
+
+runpath:
+--------
+Result: OK
+
+
+shellsyntax:
+------------
+Result: OK
+
+
+specname:
+---------
+1) The specname inspection is only for source packages, skipping. 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+
+
+symlinks:
+---------
+1) symbolic link /usr/lib64/libpappl-retrofit.so is a dangling symbolic link in
+pappl-retrofit-devel on x86_64 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+Suggested Remedy: Make sure symlinks point to a valid destination in one of the
+subpackages of the build; dangling symlinks are not allowed.  If you are
+comparing builds and have a non-symlink turn in to a symlink, ensure this is
+deliberate.  NOTE:  You cannot turn a directory in to a symlink due to RPM
+limitations.
+
+Result: OK
+
+
+udevrules:
+----------
+Result: SKIP
+Details:
+/usr/lib/udev/rules.d/40-usb_modeswitch.rules:12 style: more than one comma between tokens.
+/usr/lib/udev/rules.d/40-usb_modeswitch.rules: udev rules have style issues.
+Failed to parse rules file /usr/lib/udev/rules.d/60-nfs.rules: Permission denied
+/usr/lib/udev/rules.d/61-gdm.rules:90 style: LABEL="gdm_virt_passthrough_check" is unused.
+/usr/lib/udev/rules.d/61-gdm.rules:98 style: LABEL="gdm_virt_multi_gpu_check" is unused.
+/usr/lib/udev/rules.d/61-gdm.rules:114 style: LABEL="gdm_prefer_xorg" is unused.
+/usr/lib/udev/rules.d/61-gdm.rules: udev rules have style issues.
+/usr/lib/udev/rules.d/77-mm-huawei-net-port-types.rules:25 style: whitespace after comma is expected.
+/usr/lib/udev/rules.d/77-mm-huawei-net-port-types.rules:26 style: whitespace after comma is expected.
+/usr/lib/udev/rules.d/77-mm-huawei-net-port-types.rules: udev rules have style issues.
+
+
+
+unicode:
+--------
+Result: OK
+
+
+virus:
+------
+1) clamav version information 
+
+Result: INFO
+Waiver Authorization: Not Waivable
+
+Details:
+clamav version 1.0.6
+/var/lib/clamav/main.cvd version 62 (16 Sep 2021 08-32 -0400)
+/var/lib/clamav/daily.cvd version 27256 (25 Apr 2024 04-27 -0400)
+/var/lib/clamav/bytecode.cvd version 335 (27 Feb 2024 10-37 -0500)
+
+
+Result: OK
+
+
+xml:
+----
+Result: OK
+

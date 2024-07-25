@@ -62,8 +62,6 @@ BuildRequires: pkgconfig(libppd) >= 2.0b2
 BuildRequires: pkgconfig(pappl) >= 1.1b2
 # used to fix unused shlib dependency error from rpmlint
 BuildRequires: sed
-# uses systemd macros in %%files
-BuildRequires: systemd-rpm-macros
 
 
 %description
@@ -82,11 +80,6 @@ This package provides the pappl-retrofit headers and development environment.
 
 %package -n legacy-printer-app
 Summary: Legacy printer application
-
-# virtual provide for /usr/sbin -> /usr/bin link
-# the original daemon is installed in /usr/sbin
-Provides: /usr/bin/legacy-printer-app
-
 %if %{with mdns}
 # Avahi has to run for mDNS support
 Recommends: avahi

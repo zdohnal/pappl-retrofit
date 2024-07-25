@@ -1,0 +1,645 @@
+Mock Version: 5.6
+Mock Version: 5.6
+Mock Version: 5.6
+ENTER ['do_with_status'](['bash', '--login', '-c', '/usr/bin/rpmbuild -bs --noclean --target x86_64 --nodeps /builddir/build/SPECS/pappl-retrofit.spec'], chrootPath='/var/lib/mock/fedora-rawhide-x86_64/root'env={'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOME': '/builddir', 'HOSTNAME': 'mock', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'PS1': '<mock-chroot> \\s-\\v\\$ ', 'LANG': 'C.UTF-8'}shell=Falselogger=<mockbuild.trace_decorator.getLog object at 0x7f7aed41d370>timeout=0uid=1000gid=135user='mockbuild'nspawn_args=['--capability=cap_ipc_lock', '--bind=/tmp/mock-resolv.jxlxiz1k:/etc/resolv.conf', '--bind=/dev/btrfs-control', '--bind=/dev/mapper/control', '--bind=/dev/fuse', '--bind=/dev/loop-control', '--bind=/dev/loop0', '--bind=/dev/loop1', '--bind=/dev/loop2', '--bind=/dev/loop3', '--bind=/dev/loop4', '--bind=/dev/loop5', '--bind=/dev/loop6', '--bind=/dev/loop7', '--bind=/dev/loop8', '--bind=/dev/loop9', '--bind=/dev/loop10', '--bind=/dev/loop11']unshare_net=TrueprintOutput=False)
+Using nspawn with args ['--capability=cap_ipc_lock', '--bind=/tmp/mock-resolv.jxlxiz1k:/etc/resolv.conf', '--bind=/dev/btrfs-control', '--bind=/dev/mapper/control', '--bind=/dev/fuse', '--bind=/dev/loop-control', '--bind=/dev/loop0', '--bind=/dev/loop1', '--bind=/dev/loop2', '--bind=/dev/loop3', '--bind=/dev/loop4', '--bind=/dev/loop5', '--bind=/dev/loop6', '--bind=/dev/loop7', '--bind=/dev/loop8', '--bind=/dev/loop9', '--bind=/dev/loop10', '--bind=/dev/loop11']
+Executing command: ['/usr/bin/systemd-nspawn', '-q', '-M', '3abac0a06c7c443e97026906bb3537c6', '-D', '/var/lib/mock/fedora-rawhide-x86_64/root', '-a', '-u', 'mockbuild', '--capability=cap_ipc_lock', '--bind=/tmp/mock-resolv.jxlxiz1k:/etc/resolv.conf', '--bind=/dev/btrfs-control', '--bind=/dev/mapper/control', '--bind=/dev/fuse', '--bind=/dev/loop-control', '--bind=/dev/loop0', '--bind=/dev/loop1', '--bind=/dev/loop2', '--bind=/dev/loop3', '--bind=/dev/loop4', '--bind=/dev/loop5', '--bind=/dev/loop6', '--bind=/dev/loop7', '--bind=/dev/loop8', '--bind=/dev/loop9', '--bind=/dev/loop10', '--bind=/dev/loop11', '--console=pipe', '--setenv=TERM=vt100', '--setenv=SHELL=/bin/bash', '--setenv=HOME=/builddir', '--setenv=HOSTNAME=mock', '--setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin', '--setenv=PROMPT_COMMAND=printf "\\033]0;<mock-chroot>\\007"', '--setenv=PS1=<mock-chroot> \\s-\\v\\$ ', '--setenv=LANG=C.UTF-8', '--resolv-conf=off', 'bash', '--login', '-c', '/usr/bin/rpmbuild -bs --noclean --target x86_64 --nodeps /builddir/build/SPECS/pappl-retrofit.spec'] with env {'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOME': '/builddir', 'HOSTNAME': 'mock', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'PS1': '<mock-chroot> \\s-\\v\\$ ', 'LANG': 'C.UTF-8', 'SYSTEMD_NSPAWN_TMPFS_TMP': '0', 'SYSTEMD_SECCOMP': '0'} and shell False
+Building target platforms: x86_64
+Building for target x86_64
+setting SOURCE_DATE_EPOCH=1705536000
+Wrote: /builddir/build/SRPMS/pappl-retrofit-1.0b2-2.fc41.src.rpm
+Child return code was: 0
+ENTER ['do_with_status'](['bash', '--login', '-c', '/usr/bin/rpmbuild -bb --noclean --target x86_64 --nodeps /builddir/build/SPECS/pappl-retrofit.spec'], chrootPath='/var/lib/mock/fedora-rawhide-x86_64/root'env={'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOME': '/builddir', 'HOSTNAME': 'mock', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'PS1': '<mock-chroot> \\s-\\v\\$ ', 'LANG': 'C.UTF-8'}shell=Falselogger=<mockbuild.trace_decorator.getLog object at 0x7f7aed41d370>timeout=0uid=1000gid=135user='mockbuild'nspawn_args=['--capability=cap_ipc_lock', '--bind=/tmp/mock-resolv.jxlxiz1k:/etc/resolv.conf', '--bind=/dev/btrfs-control', '--bind=/dev/mapper/control', '--bind=/dev/fuse', '--bind=/dev/loop-control', '--bind=/dev/loop0', '--bind=/dev/loop1', '--bind=/dev/loop2', '--bind=/dev/loop3', '--bind=/dev/loop4', '--bind=/dev/loop5', '--bind=/dev/loop6', '--bind=/dev/loop7', '--bind=/dev/loop8', '--bind=/dev/loop9', '--bind=/dev/loop10', '--bind=/dev/loop11']unshare_net=TrueprintOutput=False)
+Using nspawn with args ['--capability=cap_ipc_lock', '--bind=/tmp/mock-resolv.jxlxiz1k:/etc/resolv.conf', '--bind=/dev/btrfs-control', '--bind=/dev/mapper/control', '--bind=/dev/fuse', '--bind=/dev/loop-control', '--bind=/dev/loop0', '--bind=/dev/loop1', '--bind=/dev/loop2', '--bind=/dev/loop3', '--bind=/dev/loop4', '--bind=/dev/loop5', '--bind=/dev/loop6', '--bind=/dev/loop7', '--bind=/dev/loop8', '--bind=/dev/loop9', '--bind=/dev/loop10', '--bind=/dev/loop11']
+Executing command: ['/usr/bin/systemd-nspawn', '-q', '-M', '7418fdbeeb204a8eb9df3ff962a15efd', '-D', '/var/lib/mock/fedora-rawhide-x86_64/root', '-a', '-u', 'mockbuild', '--capability=cap_ipc_lock', '--bind=/tmp/mock-resolv.jxlxiz1k:/etc/resolv.conf', '--bind=/dev/btrfs-control', '--bind=/dev/mapper/control', '--bind=/dev/fuse', '--bind=/dev/loop-control', '--bind=/dev/loop0', '--bind=/dev/loop1', '--bind=/dev/loop2', '--bind=/dev/loop3', '--bind=/dev/loop4', '--bind=/dev/loop5', '--bind=/dev/loop6', '--bind=/dev/loop7', '--bind=/dev/loop8', '--bind=/dev/loop9', '--bind=/dev/loop10', '--bind=/dev/loop11', '--console=pipe', '--setenv=TERM=vt100', '--setenv=SHELL=/bin/bash', '--setenv=HOME=/builddir', '--setenv=HOSTNAME=mock', '--setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin', '--setenv=PROMPT_COMMAND=printf "\\033]0;<mock-chroot>\\007"', '--setenv=PS1=<mock-chroot> \\s-\\v\\$ ', '--setenv=LANG=C.UTF-8', '--resolv-conf=off', 'bash', '--login', '-c', '/usr/bin/rpmbuild -bb --noclean --target x86_64 --nodeps /builddir/build/SPECS/pappl-retrofit.spec'] with env {'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOME': '/builddir', 'HOSTNAME': 'mock', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'PS1': '<mock-chroot> \\s-\\v\\$ ', 'LANG': 'C.UTF-8', 'SYSTEMD_NSPAWN_TMPFS_TMP': '0', 'SYSTEMD_SECCOMP': '0'} and shell False
+Building target platforms: x86_64
+Building for target x86_64
+setting SOURCE_DATE_EPOCH=1705536000
+Executing(%mkbuilddir): /bin/sh -e /var/tmp/rpm-tmp.u3s73d
++ umask 022
++ cd /builddir/build/BUILD/pappl-retrofit-1.0b2-build
++ test -d /builddir/build/BUILD/pappl-retrofit-1.0b2-build
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w /builddir/build/BUILD/pappl-retrofit-1.0b2-build
++ /usr/bin/rm -rf /builddir/build/BUILD/pappl-retrofit-1.0b2-build
++ /usr/bin/mkdir -p /builddir/build/BUILD/pappl-retrofit-1.0b2-build
++ /usr/bin/mkdir -p /builddir/build/BUILD/pappl-retrofit-1.0b2-build/SPECPARTS
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.HJBksN
++ umask 022
++ cd /builddir/build/BUILD/pappl-retrofit-1.0b2-build
++ cd /builddir/build/BUILD/pappl-retrofit-1.0b2-build
++ rm -rf pappl-retrofit-1.0b2
++ /usr/lib/rpm/rpmuncompress -x /builddir/build/SOURCES/pappl-retrofit-1.0b2.tar.gz
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd pappl-retrofit-1.0b2
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ /usr/bin/git init -q
++ /usr/bin/git config user.name rpm-build
++ /usr/bin/git config user.email '<rpm-build>'
++ /usr/bin/git config gc.auto 0
++ /usr/bin/git add --force .
++ GIT_COMMITTER_DATE=@1705536000
++ GIT_AUTHOR_DATE=@1705536000
++ /usr/bin/git commit -q --allow-empty -a --author 'rpm-build <rpm-build>' -m 'pappl-retrofit-1.0b2 base'
++ /usr/bin/git checkout --track -b rpm-build
+Switched to a new branch 'rpm-build'
+branch 'rpm-build' set up to track 'master'.
++ /usr/lib/rpm/rpmuncompress /builddir/build/SOURCES/0001-pappl-retrofit-private.h-Add-include-cups-sidechanne.patch
++ /usr/bin/git apply --index --reject -
+Checking patch pappl-retrofit/pappl-retrofit-private.h...
+Applied patch pappl-retrofit/pappl-retrofit-private.h cleanly.
++ GIT_COMMITTER_DATE=@1705536000
++ GIT_AUTHOR_DATE=@1705536000
++ /usr/bin/git commit -q -m 0001-pappl-retrofit-private.h-Add-include-cups-sidechanne.patch --author 'rpm-build <rpm-build>'
++ /usr/lib/rpm/rpmuncompress /builddir/build/SOURCES/0001-Added-man-page-for-the-Legacy-Printer-Application.patch
++ /usr/bin/git apply --index --reject -
+Checking patch Makefile.am...
+Checking patch legacy/legacy-printer-app.1...
+Applied patch Makefile.am cleanly.
+Applied patch legacy/legacy-printer-app.1 cleanly.
++ GIT_COMMITTER_DATE=@1705536000
++ GIT_AUTHOR_DATE=@1705536000
++ /usr/bin/git commit -q -m 0001-Added-man-page-for-the-Legacy-Printer-Application.patch --author 'rpm-build <rpm-build>'
++ /usr/lib/rpm/rpmuncompress /builddir/build/SOURCES/pappl-retrofit-use-after-free.patch
++ /usr/bin/git apply --index --reject -
+Checking patch pappl-retrofit/cups-backends.c...
+Applied patch pappl-retrofit/cups-backends.c cleanly.
++ GIT_COMMITTER_DATE=@1705536000
++ GIT_AUTHOR_DATE=@1705536000
++ /usr/bin/git commit -q -m pappl-retrofit-use-after-free.patch --author 'rpm-build <rpm-build>'
++ /usr/lib/rpm/rpmuncompress /builddir/build/SOURCES/0001-Add-configure-options-for-several-PAPPL-options-22.patch
++ /usr/bin/git apply --index --reject -
+Checking patch configure.ac...
+Checking patch legacy/legacy-printer-app.service...
+Checking patch legacy/legacy-printer-app.service.in...
+Applied patch configure.ac cleanly.
+Applied patch legacy/legacy-printer-app.service cleanly.
+Applied patch legacy/legacy-printer-app.service.in cleanly.
++ GIT_COMMITTER_DATE=@1705536000
++ GIT_AUTHOR_DATE=@1705536000
++ /usr/bin/git commit -q -m 0001-Add-configure-options-for-several-PAPPL-options-22.patch --author 'rpm-build <rpm-build>'
++ ./autogen.sh
+Copying file m4/codeset.m4
+Copying file m4/extern-inline.m4
+Copying file m4/fcntl-o.m4
+Copying file m4/glibc2.m4
+Copying file m4/glibc21.m4
+Copying file m4/intdiv0.m4
+Copying file m4/intl.m4
+Copying file m4/intldir.m4
+Copying file m4/intmax.m4
+Copying file m4/inttypes-pri.m4
+Copying file m4/inttypes_h.m4
+Copying file m4/lcmessage.m4
+Copying file m4/lock.m4
+Copying file m4/longlong.m4
+Copying file m4/printf-posix.m4
+Copying file m4/size_max.m4
+Copying file m4/stdint_h.m4
+Copying file m4/threadlib.m4
+Copying file m4/uintmax_t.m4
+Copying file m4/visibility.m4
+Copying file m4/wchar_t.m4
+Copying file m4/wint_t.m4
+Copying file m4/xsize.m4
+Creating directory po
+Copying file po/Makefile.in.in
+Copying file po/Makevars.template
+Copying file po/Rules-quot
+Copying file po/boldquot.sed
+Copying file po/en@boldquot.header
+Copying file po/en@quot.header
+Copying file po/insert-header.sin
+Copying file po/quot.sed
+Copying file po/remove-potcdate.sin
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+configure.ac:51: installing './compile'
+configure.ac:17: installing './missing'
+Makefile.am: installing './depcomp'
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.WxSJMN
++ umask 022
++ cd /builddir/build/BUILD/pappl-retrofit-1.0b2-build
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
++ export CFLAGS
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
++ export CXXFLAGS
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules '
++ export FFLAGS
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules '
++ export FCFLAGS
++ VALAFLAGS=-g
++ export VALAFLAGS
++ RUSTFLAGS='-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Cforce-frame-pointers=yes -Clink-arg=-specs=/usr/lib/rpm/redhat/redhat-package-notes --cap-lints=warn'
++ export RUSTFLAGS
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes '
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=gcc
++ export CC
++ CXX=g++
++ export CXX
++ cd pappl-retrofit-1.0b2
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
++ export CFLAGS
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
++ export CXXFLAGS
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules '
++ export FFLAGS
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules '
++ export FCFLAGS
++ VALAFLAGS=-g
++ export VALAFLAGS
++ RUSTFLAGS='-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Cforce-frame-pointers=yes -Clink-arg=-specs=/usr/lib/rpm/redhat/redhat-package-notes --cap-lints=warn'
++ export RUSTFLAGS
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes '
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=gcc
++ export CC
++ CXX=g++
++ export CXX
++ '[' '-flto=auto -ffat-lto-objectsx' '!=' x ']'
+++ find . -type f -name configure -print
++ for file in $(find . -type f -name configure -print)
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\) = /__attribute__ ((used)) char (*f) () = /g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \(\*f\) \(\);/__attribute__ ((used)) char (*f) ();/g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed -r --in-place=.backup 's/^char \$2 \(\);/__attribute__ ((used)) char \$2 ();/g' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed --in-place=.backup '1{$!N;$!N};$!N;s/int x = 1;\nint y = 0;\nint z;\nint nan;/volatile int x = 1; volatile int y = 0; volatile int z, nan;/;P;D' ./configure
++ diff -u ./configure.backup ./configure
++ mv ./configure.backup ./configure
++ /usr/bin/sed --in-place=.backup 's#^lt_cv_sys_global_symbol_to_cdecl=.*#lt_cv_sys_global_symbol_to_cdecl="sed -n -e '\''s/^T .* \\(.*\\)$/extern int \\1();/p'\'' -e '\''s/^$symcode* .* \\(.*\\)$/extern char \\1;/p'\''"#' ./configure
++ diff -u ./configure.backup ./configure
+--- ./configure.backup	2024-07-25 13:25:51.746742823 +0200
++++ ./configure	2024-07-25 13:25:51.781743093 +0200
+@@ -8452,7 +8452,7 @@
+ # Transform an extracted symbol line into a proper C declaration.
+ # Some systems (esp. on ia64) link data and code symbols differently,
+ # so use this general approach.
+-lt_cv_sys_global_symbol_to_cdecl="$SED -n"\
++lt_cv_sys_global_symbol_to_cdecl="sed -n -e 's/^T .* \(.*\)$/extern int \1();/p' -e 's/^$symcode* .* \(.*\)$/extern char \1;/p'"
+ $lt_cdecl_hook\
+ " -e 's/^T .* \(.*\)$/extern int \1();/p'"\
+ " -e 's/^$symcode$symcode* .* \(.*\)$/extern char \1;/p'"
+@@ -17931,7 +17931,7 @@
+ compiler='`$ECHO "$compiler" | $SED "$delay_single_quote_subst"`'
+ GCC='`$ECHO "$GCC" | $SED "$delay_single_quote_subst"`'
+ lt_cv_sys_global_symbol_pipe='`$ECHO "$lt_cv_sys_global_symbol_pipe" | $SED "$delay_single_quote_subst"`'
+-lt_cv_sys_global_symbol_to_cdecl='`$ECHO "$lt_cv_sys_global_symbol_to_cdecl" | $SED "$delay_single_quote_subst"`'
++lt_cv_sys_global_symbol_to_cdecl="sed -n -e 's/^T .* \(.*\)$/extern int \1();/p' -e 's/^$symcode* .* \(.*\)$/extern char \1;/p'"
+ lt_cv_sys_global_symbol_to_import='`$ECHO "$lt_cv_sys_global_symbol_to_import" | $SED "$delay_single_quote_subst"`'
+ lt_cv_sys_global_symbol_to_c_name_address='`$ECHO "$lt_cv_sys_global_symbol_to_c_name_address" | $SED "$delay_single_quote_subst"`'
+ lt_cv_sys_global_symbol_to_c_name_address_lib_prefix='`$ECHO "$lt_cv_sys_global_symbol_to_c_name_address_lib_prefix" | $SED "$delay_single_quote_subst"`'
++ '[' 1 = 1 ']'
++++ dirname ./configure
+++ find . -name config.guess -o -name config.sub
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./config.sub
++ '[' -f /usr/lib/rpm/redhat/config.sub ']'
++ /usr/bin/rm -f ./config.sub
+++ basename ./config.sub
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.sub ./config.sub
+'/usr/lib/rpm/redhat/config.sub' -> './config.sub'
++ for i in $(find $(dirname ./configure) -name config.guess -o -name config.sub)
+++ basename ./config.guess
++ '[' -f /usr/lib/rpm/redhat/config.guess ']'
++ /usr/bin/rm -f ./config.guess
+++ basename ./config.guess
++ /usr/bin/cp -fv /usr/lib/rpm/redhat/config.guess ./config.guess
+'/usr/lib/rpm/redhat/config.guess' -> './config.guess'
++ '[' 1 = 1 ']'
++ '[' x '!=' 'x-Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld' ']'
+++ find . -name ltmain.sh
++ for i in $(find . -name ltmain.sh)
++ /usr/bin/sed -i.backup -e 's~compiler_flags=$~compiler_flags="-Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld"~' ./ltmain.sh
+++ grep -q runstatedir=DIR ./configure
+++ echo --runstatedir=/run
++ ./configure --build=x86_64-redhat-linux --host=x86_64-redhat-linux --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --runstatedir=/run --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --enable-legacy-printer-app-as-daemon --enable-shared --disable-static --disable-silent-rules --with-auth-service=password-auth --with-server-options=multi-queue,web-interface,raw-socket,web-network,web-remote,web-security,web-tls
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking for x86_64-redhat-linux-gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of gcc... none
+checking build system type... x86_64-redhat-linux-gnu
+checking host system type... x86_64-redhat-linux-gnu
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking how to run the C preprocessor... gcc -E
+checking for egrep -e... /usr/bin/grep -E
+checking for iconv... yes
+checking for working iconv... yes
+checking for iconv declaration... 
+         extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+checking whether ln -s works... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-redhat-linux-gnu file names to x86_64-redhat-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-redhat-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for x86_64-redhat-linux-file... no
+checking for file... file
+checking for x86_64-redhat-linux-objdump... no
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for x86_64-redhat-linux-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for x86_64-redhat-linux-ar... no
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for x86_64-redhat-linux-strip... no
+checking for strip... strip
+checking for x86_64-redhat-linux-ranlib... no
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ./configure: line 8458:  -e 's/^T .* \(.*\)$/extern int \1();/p' -e 's/^[ABCDGIRSTW][ABCDGIRSTW]* .* \(.*\)$/extern char \1;/p': No such file or directory
+ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for x86_64-redhat-linux-mt... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... no
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking for x86_64-redhat-linux-pkg-config... no
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.20... yes
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking for x86_64-redhat-linux-cups-config... no
+checking for cups-config... /usr/bin/cups-config
+checking for sigaction... yes
+checking for waitpid... yes
+checking for wait3... yes
+checking for strtoll... yes
+checking for open_memstream... yes
+checking for getline... yes
+checking for strcasestr... yes
+checking for library containing pow... -lm
+checking for strdup... yes
+checking for strlcat... yes
+checking for strlcpy... yes
+checking for snprintf... yes
+checking for vsnprintf... yes
+checking for stdlib.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for zlib.h... yes
+checking for endian.h... yes
+checking for dirent.h... yes
+checking for sys/ioctl.h... yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for pappl... yes
+checking for libcupsfilters... yes
+checking for libppd... yes
+checking for gcc option to enable large file support... none needed
+checking for long long... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating legacy/legacy-printer-app.service
+config.status: creating libpappl-retrofit.pc
+config.status: creating Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing po-directories commands
+configure:
+==============================================================================
+Environment settings:
+	CFLAGS:          -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -Wall -std=gnu11 -D_GNU_SOURCE
+	LDFLAGS:         -Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes 
+Build configuration:
+	cups-config:     system
+	legacy-printer-app as daemon: yes
+	legacy-printer-app w/ PAPPL backends: no
+	systemd unitdir: /usr/lib/systemd/system
+	log file: -
+	server options: multi-queue,web-interface,raw-socket,web-network,web-remote,web-security,web-tls
+	auth service: password-auth
+	admin group: none
+==============================================================================
++ sed -i -e 's! -shared ! -Wl,--as-needed\0!g' libtool
++ /usr/bin/make -O -j12 V=1 VERBOSE=1
+/usr/bin/make  all-recursive
+make[2]: Entering directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
+gcc -DHAVE_CONFIG_H -I.     -I/usr/include/cupsfilters -I/usr/include/ppd -I./pappl-retrofit/ -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -Wall -std=gnu11 -D_GNU_SOURCE -c -o legacy/printer_app-legacy-printer-app.o `test -f 'legacy/legacy-printer-app.c' || echo './'`legacy/legacy-printer-app.c
+make[2]: Leaving directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
+make[2]: Entering directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.     -I/usr/include/cupsfilters -I/usr/include/ppd -I/usr/include/p11-kit-1 -D_REENTRANT -I/usr/include/libpng16 -I/usr/include/libusb-1.0 -DWITH_GZFILEOP -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -Wall -std=gnu11 -D_GNU_SOURCE -c -o pappl-retrofit/libpappl_retrofit_la-cups-backends.lo `test -f 'pappl-retrofit/cups-backends.c' || echo './'`pappl-retrofit/cups-backends.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/cupsfilters -I/usr/include/ppd -I/usr/include/p11-kit-1 -D_REENTRANT -I/usr/include/libpng16 -I/usr/include/libusb-1.0 -DWITH_GZFILEOP -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wall -std=gnu11 -D_GNU_SOURCE -c pappl-retrofit/cups-backends.c  -fPIC -DPIC -o pappl-retrofit/.libs/libpappl_retrofit_la-cups-backends.o
+make[2]: Leaving directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
+make[2]: Entering directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.     -I/usr/include/cupsfilters -I/usr/include/ppd -I/usr/include/p11-kit-1 -D_REENTRANT -I/usr/include/libpng16 -I/usr/include/libusb-1.0 -DWITH_GZFILEOP -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -Wall -std=gnu11 -D_GNU_SOURCE -c -o pappl-retrofit/libpappl_retrofit_la-web-interface.lo `test -f 'pappl-retrofit/web-interface.c' || echo './'`pappl-retrofit/web-interface.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/cupsfilters -I/usr/include/ppd -I/usr/include/p11-kit-1 -D_REENTRANT -I/usr/include/libpng16 -I/usr/include/libusb-1.0 -DWITH_GZFILEOP -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wall -std=gnu11 -D_GNU_SOURCE -c pappl-retrofit/web-interface.c  -fPIC -DPIC -o pappl-retrofit/.libs/libpappl_retrofit_la-web-interface.o
+make[2]: Leaving directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
+make[2]: Entering directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.     -I/usr/include/cupsfilters -I/usr/include/ppd -I/usr/include/p11-kit-1 -D_REENTRANT -I/usr/include/libpng16 -I/usr/include/libusb-1.0 -DWITH_GZFILEOP -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -Wall -std=gnu11 -D_GNU_SOURCE -c -o pappl-retrofit/libpappl_retrofit_la-print-job.lo `test -f 'pappl-retrofit/print-job.c' || echo './'`pappl-retrofit/print-job.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/cupsfilters -I/usr/include/ppd -I/usr/include/p11-kit-1 -D_REENTRANT -I/usr/include/libpng16 -I/usr/include/libusb-1.0 -DWITH_GZFILEOP -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wall -std=gnu11 -D_GNU_SOURCE -c pappl-retrofit/print-job.c  -fPIC -DPIC -o pappl-retrofit/.libs/libpappl_retrofit_la-print-job.o
+make[2]: Leaving directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
+make[2]: Entering directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.     -I/usr/include/cupsfilters -I/usr/include/ppd -I/usr/include/p11-kit-1 -D_REENTRANT -I/usr/include/libpng16 -I/usr/include/libusb-1.0 -DWITH_GZFILEOP -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -Wall -std=gnu11 -D_GNU_SOURCE -c -o pappl-retrofit/libpappl_retrofit_la-pappl-retrofit.lo `test -f 'pappl-retrofit/pappl-retrofit.c' || echo './'`pappl-retrofit/pappl-retrofit.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/usr/include/cupsfilters -I/usr/include/ppd -I/usr/include/p11-kit-1 -D_REENTRANT -I/usr/include/libpng16 -I/usr/include/libusb-1.0 -DWITH_GZFILEOP -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wall -std=gnu11 -D_GNU_SOURCE -c pappl-retrofit/pappl-retrofit.c  -fPIC -DPIC -o pappl-retrofit/.libs/libpappl_retrofit_la-pappl-retrofit.o
+make[2]: Leaving directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
+make[2]: Entering directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
+/bin/sh ./libtool  --tag=CC   --mode=link gcc  -I/usr/include/cupsfilters -I/usr/include/ppd -I/usr/include/p11-kit-1 -D_REENTRANT -I/usr/include/libpng16 -I/usr/include/libusb-1.0 -DWITH_GZFILEOP -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -Wall -std=gnu11 -D_GNU_SOURCE -no-undefined -version-info 1 -Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes  -o libpappl-retrofit.la -rpath /usr/lib64 pappl-retrofit/libpappl_retrofit_la-pappl-retrofit.lo pappl-retrofit/libpappl_retrofit_la-print-job.lo pappl-retrofit/libpappl_retrofit_la-cups-backends.lo pappl-retrofit/libpappl_retrofit_la-web-interface.lo -lcups -lcupsfilters -lppd -lpappl -lcups -lm 
+libtool: link: gcc -Wl,--as-needed -shared  -fPIC -DPIC  pappl-retrofit/.libs/libpappl_retrofit_la-pappl-retrofit.o pappl-retrofit/.libs/libpappl_retrofit_la-print-job.o pappl-retrofit/.libs/libpappl_retrofit_la-cups-backends.o pappl-retrofit/.libs/libpappl_retrofit_la-web-interface.o   -lcupsfilters -lppd -lpappl -lcups -lm -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -O2 -flto=auto -g -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -mtls-dialect=gnu2 -mno-omit-leaf-frame-pointer -Wl,-z -Wl,relro -Wl,--as-needed -Wl,-z -Wl,pack-relative-relocs -Wl,-z -Wl,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes   -Wl,-soname -Wl,libpappl-retrofit.so.1 -o .libs/libpappl-retrofit.so.1.0.0
+libtool: link: (cd ".libs" && rm -f "libpappl-retrofit.so.1" && ln -s "libpappl-retrofit.so.1.0.0" "libpappl-retrofit.so.1")
+libtool: link: (cd ".libs" && rm -f "libpappl-retrofit.so" && ln -s "libpappl-retrofit.so.1.0.0" "libpappl-retrofit.so")
+libtool: link: ( cd ".libs" && rm -f "libpappl-retrofit.la" && ln -s "../libpappl-retrofit.la" "libpappl-retrofit.la" )
+make[2]: Leaving directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
+make[2]: Entering directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
+/bin/sh ./libtool  --tag=CC   --mode=link gcc  -I/usr/include/cupsfilters -I/usr/include/ppd -I./pappl-retrofit/ -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -Wall -std=gnu11 -D_GNU_SOURCE  -Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes  -o legacy-printer-app legacy/printer_app-legacy-printer-app.o -lcups -lcupsfilters -lppd libpappl-retrofit.la -lm 
+libtool: link: gcc -I/usr/include/cupsfilters -I/usr/include/ppd -I./pappl-retrofit/ -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wall -std=gnu11 -D_GNU_SOURCE -Wl,-z -Wl,relro -Wl,--as-needed -Wl,-z -Wl,pack-relative-relocs -Wl,-z -Wl,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes -o .libs/legacy-printer-app legacy/printer_app-legacy-printer-app.o  ./.libs/libpappl-retrofit.so -lcupsfilters -lppd -lpappl -lcups -lm
+make[2]: Leaving directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.pbO7AB
++ umask 022
++ cd /builddir/build/BUILD/pappl-retrofit-1.0b2-build
++ '[' /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT '!=' / ']'
++ rm -rf /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT
+++ dirname /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT
++ mkdir -p /builddir/build/BUILD/pappl-retrofit-1.0b2-build
++ mkdir /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
++ export CFLAGS
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
++ export CXXFLAGS
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules '
++ export FFLAGS
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules '
++ export FCFLAGS
++ VALAFLAGS=-g
++ export VALAFLAGS
++ RUSTFLAGS='-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Cforce-frame-pointers=yes -Clink-arg=-specs=/usr/lib/rpm/redhat/redhat-package-notes --cap-lints=warn'
++ export RUSTFLAGS
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes '
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=gcc
++ export CC
++ CXX=g++
++ export CXX
++ cd pappl-retrofit-1.0b2
++ /usr/bin/make install DESTDIR=/builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT 'INSTALL=/usr/bin/install -p'
+make[1]: Entering directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
+make[2]: Entering directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
+ /usr/bin/mkdir -p '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/lib64'
+ /bin/sh ./libtool   --mode=install /usr/bin/install -p   libpappl-retrofit.la '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/lib64'
+libtool: install: /usr/bin/install -p .libs/libpappl-retrofit.so.1.0.0 /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/lib64/libpappl-retrofit.so.1.0.0
+libtool: install: (cd /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/lib64 && { ln -s -f libpappl-retrofit.so.1.0.0 libpappl-retrofit.so.1 || { rm -f libpappl-retrofit.so.1 && ln -s libpappl-retrofit.so.1.0.0 libpappl-retrofit.so.1; }; })
+libtool: install: (cd /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/lib64 && { ln -s -f libpappl-retrofit.so.1.0.0 libpappl-retrofit.so || { rm -f libpappl-retrofit.so && ln -s libpappl-retrofit.so.1.0.0 libpappl-retrofit.so; }; })
+libtool: install: /usr/bin/install -p .libs/libpappl-retrofit.lai /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/lib64/libpappl-retrofit.la
+libtool: warning: remember to run 'libtool --finish /usr/lib64'
+ /usr/bin/mkdir -p '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/sbin'
+  /bin/sh ./libtool   --mode=install /usr/bin/install -p legacy-printer-app '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/sbin'
+libtool: warning: 'libpappl-retrofit.la' has not been installed in '/usr/lib64'
+libtool: install: /usr/bin/install -p .libs/legacy-printer-app /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/sbin/legacy-printer-app
+ /usr/bin/mkdir -p '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/share/doc/pappl-retrofit'
+ /usr/bin/install -p -m 644 README.md AUTHORS COPYING NOTICE LICENSE DEVELOPING.md CONTRIBUTING.md '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/share/doc/pappl-retrofit'
+ /usr/bin/mkdir -p '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/share/man/man1'
+ /usr/bin/install -p -m 644 legacy/legacy-printer-app.1 '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/share/man/man1'
+ /usr/bin/mkdir -p '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/lib64/pkgconfig'
+ /usr/bin/install -p -m 644 libpappl-retrofit.pc '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/lib64/pkgconfig'
+ /usr/bin/mkdir -p '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/include'
+ /usr/bin/install -p -m 644 pappl-retrofit/pappl-retrofit.h '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/include'
+ /usr/bin/mkdir -p '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/share/legacy-printer-app'
+ /usr/bin/install -p -m 644 data/testpage.pdf data/testpage.ps '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/share/legacy-printer-app'
+/usr/bin/make  install-data-hook
+make[3]: Entering directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
+/usr/bin/install -p -d -m 755 /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/var/lib/legacy-printer-app
+/usr/bin/install -p -d -m 755 /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/var/lib/legacy-printer-app/ppd
+/usr/bin/install -p -d -m 755 /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/var/spool/legacy-printer-app
+/usr/bin/install -p -d -m 755 /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/share/legacy-printer-app
+if [ -d /usr/lib/cups ]; then \
+  ln -s -f /usr/lib/cups /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/lib64/legacy-printer-app;\
+else \
+  /usr/bin/install -p -d -m 755 /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/lib64/legacy-printer-app; \
+  /usr/bin/install -p -d -m 755 /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/lib64/legacy-printer-app/filter; \
+  /usr/bin/install -p -d -m 755 /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/lib64/legacy-printer-app/backend; \
+fi
+/usr/bin/install -p -d -m 755 /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/lib/systemd/system
+/usr/bin/install -p -m 644 legacy/legacy-printer-app.service /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/lib/systemd/system
+make[3]: Leaving directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
+make[2]: Leaving directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
+make[1]: Leaving directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
++ rm -f /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT//usr/share/doc/pappl-retrofit/LICENSE /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT//usr/share/doc/pappl-retrofit/NOTICE /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT//usr/share/doc/pappl-retrofit/COPYING
++ /usr/bin/find-debuginfo -j12 --strict-build-id -m -i --build-id-seed 1.0b2-2.fc41 --unique-debug-suffix -1.0b2-2.fc41.x86_64 --unique-debug-src-base pappl-retrofit-1.0b2-2.fc41.x86_64 --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 110000000 -S debugsourcefiles.list /builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2
+find-debuginfo: starting
+Extracting debug info from 2 files
+DWARF-compressing 2 files
+sepdebugcrcfix: Updated 2 CRC32s, 0 CRC32s did match.
+Creating .debug symlinks for symlinks to ELF files
+Copying sources found by 'debugedit -l' to /usr/src/debug/pappl-retrofit-1.0b2-2.fc41.x86_64
+689 blocks
+find-debuginfo: done
++ /usr/lib/rpm/check-buildroot
++ /usr/lib/rpm/redhat/brp-ldconfig
++ /usr/lib/rpm/brp-compress
++ /usr/lib/rpm/redhat/brp-strip-lto /usr/bin/strip
++ /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
++ /usr/lib/rpm/check-rpaths
++ /usr/lib/rpm/redhat/brp-mangle-shebangs
+*** WARNING: ./usr/lib64/libpappl-retrofit.la is executable but has no shebang, removing executable bit
++ /usr/lib/rpm/brp-remove-la-files
++ env /usr/lib/rpm/redhat/brp-python-bytecompile '' 1 0 -j12
++ /usr/lib/rpm/redhat/brp-python-hardlink
++ /usr/bin/add-determinism --brp -j12 /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT
+Scanned 31 directories and 28 files,
+               processed 0 inodes,
+               0 modified (0 replaced + 0 rewritten),
+               0 unsupported format, 0 errors
+Reading /builddir/build/BUILD/pappl-retrofit-1.0b2-build/SPECPARTS/rpm-debuginfo.specpart
+Executing(%check): /bin/sh -e /var/tmp/rpm-tmp.SyWRDA
++ umask 022
++ cd /builddir/build/BUILD/pappl-retrofit-1.0b2-build
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
++ export CFLAGS
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer '
++ export CXXFLAGS
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules '
++ export FFLAGS
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules '
++ export FCFLAGS
++ VALAFLAGS=-g
++ export VALAFLAGS
++ RUSTFLAGS='-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Cforce-frame-pointers=yes -Clink-arg=-specs=/usr/lib/rpm/redhat/redhat-package-notes --cap-lints=warn'
++ export RUSTFLAGS
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes '
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=gcc
++ export CC
++ CXX=g++
++ export CXX
++ cd pappl-retrofit-1.0b2
++ make check
+make[1]: Entering directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
+make[1]: Leaving directory '/builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2'
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Processing files: pappl-retrofit-1.0b2-2.fc41.x86_64
+Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.xun9gc
++ umask 022
++ cd /builddir/build/BUILD/pappl-retrofit-1.0b2-build
++ cd pappl-retrofit-1.0b2
++ DOCDIR=/builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/share/doc/pappl-retrofit
++ export LC_ALL=C.UTF-8
++ LC_ALL=C.UTF-8
++ export DOCDIR
++ /usr/bin/mkdir -p /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/share/doc/pappl-retrofit
++ cp -pr /builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/AUTHORS /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/share/doc/pappl-retrofit
++ cp -pr /builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/README.md /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/share/doc/pappl-retrofit
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%license): /bin/sh -e /var/tmp/rpm-tmp.UiuVk4
++ umask 022
++ cd /builddir/build/BUILD/pappl-retrofit-1.0b2-build
++ cd pappl-retrofit-1.0b2
++ LICENSEDIR=/builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/share/licenses/pappl-retrofit
++ export LC_ALL=C.UTF-8
++ LC_ALL=C.UTF-8
++ export LICENSEDIR
++ /usr/bin/mkdir -p /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/share/licenses/pappl-retrofit
++ cp -pr /builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/LICENSE /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/share/licenses/pappl-retrofit
++ cp -pr /builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/NOTICE /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/share/licenses/pappl-retrofit
++ cp -pr /builddir/build/BUILD/pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/COPYING /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT/usr/share/licenses/pappl-retrofit
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Provides: libpappl-retrofit.so.1()(64bit) pappl-retrofit = 1.0b2-2.fc41 pappl-retrofit(x86-64) = 1.0b2-2.fc41
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires: libc.so.6()(64bit) libc.so.6(GLIBC_2.14)(64bit) libc.so.6(GLIBC_2.16)(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.26)(64bit) libc.so.6(GLIBC_2.3)(64bit) libc.so.6(GLIBC_2.3.4)(64bit) libc.so.6(GLIBC_2.38)(64bit) libc.so.6(GLIBC_2.4)(64bit) libc.so.6(GLIBC_ABI_DT_RELR)(64bit) libcups.so.2()(64bit) libcupsfilters.so.2()(64bit) libpappl.so.1()(64bit) libppd.so.2()(64bit) rtld(GNU_HASH)
+Processing files: pappl-retrofit-devel-1.0b2-2.fc41.x86_64
+Provides: pappl-retrofit-devel = 1.0b2-2.fc41 pappl-retrofit-devel(x86-64) = 1.0b2-2.fc41 pkgconfig(libpappl-retrofit) = 1.0b2
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires: /usr/bin/pkg-config libpappl-retrofit.so.1()(64bit)
+Processing files: legacy-printer-app-1.0b2-2.fc41.x86_64
+warning: absolute symlink: /usr/lib64/legacy-printer-app -> /usr/lib/cups
+Provides: legacy-printer-app = 1.0b2-2.fc41 legacy-printer-app(x86-64) = 1.0b2-2.fc41
+Requires(interp): /bin/sh /bin/sh /bin/sh
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires(post): /bin/sh systemd
+Requires(preun): /bin/sh systemd
+Requires(postun): /bin/sh systemd
+Requires: libc.so.6()(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.34)(64bit) libc.so.6(GLIBC_2.4)(64bit) libc.so.6(GLIBC_ABI_DT_RELR)(64bit) libcups.so.2()(64bit) libcupsfilters.so.2()(64bit) libpappl-retrofit.so.1()(64bit) libppd.so.2()(64bit) rtld(GNU_HASH)
+Recommends: avahi cups nss-mdns
+Processing files: pappl-retrofit-debugsource-1.0b2-2.fc41.x86_64
+Provides: pappl-retrofit-debugsource = 1.0b2-2.fc41 pappl-retrofit-debugsource(x86-64) = 1.0b2-2.fc41
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Processing files: pappl-retrofit-debuginfo-1.0b2-2.fc41.x86_64
+Provides: debuginfo(build-id) = 9178225cdfaf2c880abee556cc35106581133764 libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug()(64bit) pappl-retrofit-debuginfo = 1.0b2-2.fc41 pappl-retrofit-debuginfo(x86-64) = 1.0b2-2.fc41
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Recommends: pappl-retrofit-debugsource(x86-64) = 1.0b2-2.fc41
+Processing files: legacy-printer-app-debuginfo-1.0b2-2.fc41.x86_64
+Provides: debuginfo(build-id) = 19ee28c3452295bfc25e7daf5a6f63bbd48672b2 legacy-printer-app-debuginfo = 1.0b2-2.fc41 legacy-printer-app-debuginfo(x86-64) = 1.0b2-2.fc41
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Recommends: pappl-retrofit-debugsource(x86-64) = 1.0b2-2.fc41
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /builddir/build/BUILD/pappl-retrofit-1.0b2-build/BUILDROOT
+Wrote: /builddir/build/RPMS/legacy-printer-app-debuginfo-1.0b2-2.fc41.x86_64.rpm
+Wrote: /builddir/build/RPMS/pappl-retrofit-devel-1.0b2-2.fc41.x86_64.rpm
+Wrote: /builddir/build/RPMS/legacy-printer-app-1.0b2-2.fc41.x86_64.rpm
+Wrote: /builddir/build/RPMS/pappl-retrofit-1.0b2-2.fc41.x86_64.rpm
+Wrote: /builddir/build/RPMS/pappl-retrofit-debuginfo-1.0b2-2.fc41.x86_64.rpm
+Wrote: /builddir/build/RPMS/pappl-retrofit-debugsource-1.0b2-2.fc41.x86_64.rpm
+RPM build warnings:
+    absolute symlink: /usr/lib64/legacy-printer-app -> /usr/lib/cups
+Child return code was: 0
+Mock Version: 5.6
+Mock Version: 5.6
+Mock Version: 5.6
+Mock Version: 5.6
+Mock Version: 5.6
+Mock Version: 5.6
+Mock Version: 5.6
+Mock Version: 5.6
+Mock Version: 5.6
+Mock Version: 5.6
+Mock Version: 5.6
+Mock Version: 5.6
+Mock Version: 5.6
+Mock Version: 5.6
+Mock Version: 5.6
+Mock Version: 5.6

@@ -1,0 +1,95 @@
+
+*No copyright* Apache License 2.0
+---------------------------------
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/LICENSE
+
+Apache License 2.0
+------------------
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/README.md
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/data/testpage.ps
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/legacy/legacy-printer-app.c
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/pappl-retrofit/cups-backends-private.h
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/pappl-retrofit/cups-backends.c
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit-private.h
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.c
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/pappl-retrofit/pappl-retrofit.h
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/pappl-retrofit/print-job-private.h
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/pappl-retrofit/print-job.c
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/pappl-retrofit/web-interface-private.h
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/pappl-retrofit/web-interface.c
+
+Apache License 2.0 and/or GNU General Public License, Version 2
+---------------------------------------------------------------
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/COPYING
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/NOTICE
+
+FSF All Permissive License
+--------------------------
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/INSTALL
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/m4/ax_compare_version.m4
+
+FSF Unlimited License (with License Retention)
+----------------------------------------------
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/config.rpath
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/m4/iconv.m4
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/m4/lib-ld.m4
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/m4/lib-link.m4
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/m4/lib-prefix.m4
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/m4/ltoptions.m4
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/m4/ltsugar.m4
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/m4/ltversion.m4
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/m4/lt~obsolete.m4
+
+FSF Unlimited License (with License Retention) and/or GNU General Public License and/or GNU Lesser General Public License
+-------------------------------------------------------------------------------------------------------------------------
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/m4/gettext.m4
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/m4/intlmacosx.m4
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/m4/nls.m4
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/m4/po.m4
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/m4/progtest.m4
+
+FSF Unlimited License (with License Retention) and/or GNU General Public License v2.0 or later [generated file]
+---------------------------------------------------------------------------------------------------------------
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/aclocal.m4
+
+FSF Unlimited License (with License Retention) and/or GNU General Public License, Version 2
+-------------------------------------------------------------------------------------------
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/m4/libtool.m4
+
+FSF Unlimited License [generated file]
+--------------------------------------
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/configure
+
+GNU General Public License v2.0 or later
+----------------------------------------
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/ltmain.sh
+
+GNU General Public License v2.0 or later [generated file]
+---------------------------------------------------------
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/compile
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/depcomp
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/missing
+
+GNU General Public License v3.0 or later
+----------------------------------------
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/config.guess
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/config.sub
+
+Unknown or generated
+--------------------
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/ABOUT-NLS
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/AUTHORS
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/CONTRIBUTING.md
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/DEVELOPING.md
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/Makefile.am
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/Makefile.in
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/autogen.sh
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/config.h.in
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/configure.ac
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/data/testpage.pdf
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/legacy/legacy-printer-app.service
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/libpappl-retrofit.pc.in
+
+X11 License [generated file]
+----------------------------
+pappl-retrofit-1.0b2-build/pappl-retrofit-1.0b2/install-sh

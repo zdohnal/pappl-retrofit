@@ -1,0 +1,316 @@
+
+This is a review *template*. Besides handling the [ ]-marked tests you are
+also supposed to fix the template before pasting into bugzilla:
+- Add issues you find to the list of issues on top. If there isn't such
+  a list, create one.
+- Add your own remarks to the template checks.
+- Add new lines marked [!] or [?] when you discover new things not
+  listed by fedora-review.
+- Change or remove any text in the template which is plain wrong. In this
+  case you could also file a bug against fedora-review
+- Remove the "[ ] Manual check required", you will not have any such lines
+  in what you paste.
+- Remove attachments which you deem not really useful (the rpmlint
+  ones are mandatory, though)
+- Remove this text
+
+
+
+Package Review
+==============
+
+Legend:
+[x] = Pass, [!] = Fail, [-] = Not applicable, [?] = Not evaluated
+[ ] = Manual review needed
+
+
+
+===== MUST items =====
+
+C/C++:
+[x]: Package does not contain kernel modules.
+[x]: If your application is a C or C++ application you must list a
+     BuildRequires against gcc, gcc-c++ or clang.
+[x]: Header files in -devel subpackage, if present.
+[x]: ldconfig not called in %post and %postun for Fedora 28 and later.
+[x]: Package does not contain any libtool archives (.la)
+[x]: Package contains no static executables.
+[x]: Rpath absent or only used for internal libs.
+[x]: Development (unversioned) .so files in -devel subpackage, if present.
+
+Generic:
+[x]: Package is licensed with an open-source compatible license and meets
+     other legal requirements as defined in the legal section of Packaging
+     Guidelines.
+[x]: License field in the package spec file matches the actual license.
+     Note: Checking patched sources after %prep for licenses. Licenses
+     found: "Unknown or generated", "Apache License 2.0 and/or GNU General
+     Public License, Version 2", "FSF All Permissive License", "*No
+     copyright* Apache License 2.0", "Apache License 2.0", "FSF Unlimited
+     License (with License Retention) and/or GNU General Public License
+     v2.0 or later [generated file]", "GNU General Public License v2.0 or
+     later [generated file]", "GNU General Public License v3.0 or later",
+     "FSF Unlimited License (with License Retention)", "FSF Unlimited
+     License [generated file]", "X11 License [generated file]", "GNU
+     General Public License v2.0 or later", "FSF Unlimited License (with
+     License Retention) and/or GNU General Public License and/or GNU Lesser
+     General Public License", "FSF Unlimited License (with License
+     Retention) and/or GNU General Public License, Version 2". 12 files
+     have unknown license. Detailed output of licensecheck in
+     /home/zdohnal/repo_upstream/pappl-retrofit/review/pappl-
+     retrofit/licensecheck.txt
+[x]: License file installed when any subpackage combination is installed.
+[x]: %build honors applicable compiler flags or justifies otherwise.
+[x]: Package contains no bundled libraries without FPC exception.
+[x]: Changelog in prescribed format.
+[x]: Sources contain only permissible code or content.
+[-]: Package contains desktop file if it is a GUI application.
+[x]: Development files must be in a -devel package
+[x]: Package uses nothing in %doc for runtime.
+[x]: Package consistently uses macros (instead of hard-coded directory
+     names).
+[x]: Package is named according to the Package Naming Guidelines.
+[x]: Package does not generate any conflict.
+[x]: Package obeys FHS, except libexecdir and /usr/target.
+[-]: If the package is a rename of another package, proper Obsoletes and
+     Provides are present.
+[x]: Requires correct, justified where necessary.
+[x]: Spec file is legible and written in American English.
+[x]: Package contains systemd file(s) if in need.
+[x]: Useful -debuginfo package or justification otherwise.
+[x]: Package is not known to require an ExcludeArch tag.
+[x]: Large documentation must go in a -doc subpackage. Large could be size
+     (~1MB) or number of files.
+     Note: Documentation size is 34313 bytes in 4 files.
+[x]: Package complies to the Packaging Guidelines
+[x]: Package successfully compiles and builds into binary rpms on at least
+     one supported primary architecture.
+[x]: Package installs properly.
+[x]: Rpmlint is run on all rpms the build produces.
+     Note: There are rpmlint messages (see attachment).
+[x]: If (and only if) the source package includes the text of the
+     license(s) in its own file, then that file, containing the text of the
+     license(s) for the package is included in %license.
+[x]: The License field must be a valid SPDX expression.
+[x]: Package requires other packages for directories it uses.
+[x]: Package must own all directories that it creates.
+[x]: Package does not own files or directories owned by other packages.
+[x]: Package uses either %{buildroot} or $RPM_BUILD_ROOT
+[x]: Package does not run rm -rf %{buildroot} (or $RPM_BUILD_ROOT) at the
+     beginning of %install.
+[x]: Macros in Summary, %description expandable at SRPM build time.
+[x]: Dist tag is present.
+[x]: Package does not contain duplicates in %files.
+[x]: Permissions on files are set properly.
+[x]: Package must not depend on deprecated() packages.
+[x]: Package use %makeinstall only when make install DESTDIR=... doesn't
+     work.
+[x]: Package is named using only allowed ASCII characters.
+[x]: Package does not use a name that already exists.
+[x]: Package is not relocatable.
+[x]: Sources used to build the package match the upstream source, as
+     provided in the spec URL.
+[x]: Spec file name must match the spec package %{name}, in the format
+     %{name}.spec.
+[x]: systemd_post is invoked in %post, systemd_preun in %preun, and
+     systemd_postun in %postun for Systemd service files.
+     Note: Systemd service file(s) in legacy-printer-app
+[x]: File names are valid UTF-8.
+[x]: Packages must not store files under /srv, /opt or /usr/local
+
+===== SHOULD items =====
+
+Generic:
+[-]: If the source package does not include license text(s) as a separate
+     file from upstream, the packager SHOULD query upstream to include it.
+[x]: Final provides and requires are sane (see attachments).
+[x]: Package functions as described.
+[x]: Latest version is packaged.
+[x]: Package does not include license text files separate from upstream.
+[x]: Patches link to upstream bugs/comments/lists or are otherwise
+     justified.
+[x]: Scriptlets must be sane, if used.
+[-]: Sources are verified with gpgverify first in %prep if upstream
+     publishes signatures.
+     Note: gpgverify is not used.
+[x]: Package should compile and build into binary rpms on all supported
+     architectures.
+[x]: %check is present and all tests pass.
+[x]: Packages should try to preserve timestamps of original installed
+     files.
+[x]: Reviewer should test that the package builds in mock.
+[x]: Buildroot is not present
+[x]: Package has no %clean section with rm -rf %{buildroot} (or
+     $RPM_BUILD_ROOT)
+[x]: No file requires outside of /etc, /bin, /sbin, /usr/bin, /usr/sbin.
+[x]: Fully versioned dependency in subpackages if applicable.
+[x]: Packager, Vendor, PreReq, Copyright tags should not be in spec file
+[x]: The placement of pkgconfig(.pc) files are correct.
+[x]: Sources can be downloaded from URI in Source: tag
+[x]: SourceX is a working URL.
+[x]: Spec use %global instead of %define unless justified.
+
+===== EXTRA items =====
+
+Generic:
+[!]: Package should not use obsolete m4 macros
+     Note: Some obsoleted macros found, see the attachment.
+     See: https://fedorahosted.org/FedoraReview/wiki/AutoTools
+[x]: Rpmlint is run on debuginfo package(s).
+     Note: No rpmlint messages.
+[x]: Rpmlint is run on all installed packages.
+     Note: There are rpmlint messages (see attachment).
+[x]: Large data in /usr/share should live in a noarch subpackage if package
+     is arched.
+
+
+Rpmlint
+-------
+Checking: pappl-retrofit-1.0b2-2.fc41.x86_64.rpm
+          pappl-retrofit-devel-1.0b2-2.fc41.x86_64.rpm
+          legacy-printer-app-1.0b2-2.fc41.x86_64.rpm
+          pappl-retrofit-debuginfo-1.0b2-2.fc41.x86_64.rpm
+          pappl-retrofit-debugsource-1.0b2-2.fc41.x86_64.rpm
+          pappl-retrofit-1.0b2-2.fc41.src.rpm
+=========================================================================================================== rpmlint session starts ===========================================================================================================
+rpmlint: 2.5.0
+configuration:
+    /usr/lib/python3.12/site-packages/rpmlint/configdefaults.toml
+    /etc/xdg/rpmlint/fedora-legacy-licenses.toml
+    /etc/xdg/rpmlint/fedora-spdx-licenses.toml
+    /etc/xdg/rpmlint/fedora.toml
+    /etc/xdg/rpmlint/scoring.toml
+    /etc/xdg/rpmlint/users-groups.toml
+    /etc/xdg/rpmlint/warn-on-functions.toml
+rpmlintrc: [PosixPath('/tmp/tmpnunl07jw')]
+checks: 32, packages: 6
+
+legacy-printer-app.x86_64: W: dangling-symlink /usr/lib64/legacy-printer-app /usr/lib/cups
+===================================================================== 6 packages and 0 specfiles checked; 0 errors, 1 warnings, 44 filtered, 0 badness; has taken 0.6 s ======================================================================
+
+
+
+
+Rpmlint (debuginfo)
+-------------------
+Checking: pappl-retrofit-debuginfo-1.0b2-2.fc41.x86_64.rpm
+=========================================================================================================== rpmlint session starts ===========================================================================================================
+rpmlint: 2.5.0
+configuration:
+    /usr/lib/python3.12/site-packages/rpmlint/configdefaults.toml
+    /etc/xdg/rpmlint/fedora-legacy-licenses.toml
+    /etc/xdg/rpmlint/fedora-spdx-licenses.toml
+    /etc/xdg/rpmlint/fedora.toml
+    /etc/xdg/rpmlint/scoring.toml
+    /etc/xdg/rpmlint/users-groups.toml
+    /etc/xdg/rpmlint/warn-on-functions.toml
+rpmlintrc: [PosixPath('/tmp/tmpa8bz6x0f')]
+checks: 32, packages: 1
+
+===================================================================== 1 packages and 0 specfiles checked; 0 errors, 0 warnings, 10 filtered, 0 badness; has taken 0.1 s ======================================================================
+
+
+
+
+
+Rpmlint (installed packages)
+----------------------------
+/bin/sh: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
+/bin/sh: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
+/bin/sh: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
+============================ rpmlint session starts ============================
+rpmlint: 2.5.0
+configuration:
+    /usr/lib/python3.13/site-packages/rpmlint/configdefaults.toml
+    /etc/xdg/rpmlint/fedora-legacy-licenses.toml
+    /etc/xdg/rpmlint/fedora-spdx-licenses.toml
+    /etc/xdg/rpmlint/fedora.toml
+    /etc/xdg/rpmlint/scoring.toml
+    /etc/xdg/rpmlint/users-groups.toml
+    /etc/xdg/rpmlint/warn-on-functions.toml
+checks: 32, packages: 5
+
+legacy-printer-app.x86_64: W: dangling-symlink /usr/lib64/legacy-printer-app /usr/lib/cups
+ 5 packages and 0 specfiles checked; 0 errors, 1 warnings, 40 filtered, 0 badness; has taken 0.6 s 
+
+
+
+Source checksums
+----------------
+https://github.com/OpenPrinting/pappl-retrofit//releases/download/1.0b2/pappl-retrofit-1.0b2.tar.gz :
+  CHECKSUM(SHA256) this package     : 752e2c54c730d33e1fe10069bb20cb11c324594c051a2beeb2822b63534a588c
+  CHECKSUM(SHA256) upstream package : 752e2c54c730d33e1fe10069bb20cb11c324594c051a2beeb2822b63534a588c
+
+
+Requires
+--------
+pappl-retrofit (rpmlib, GLIBC filtered):
+    libc.so.6()(64bit)
+    libcups.so.2()(64bit)
+    libcupsfilters.so.2()(64bit)
+    libpappl.so.1()(64bit)
+    libppd.so.2()(64bit)
+    rtld(GNU_HASH)
+
+pappl-retrofit-devel (rpmlib, GLIBC filtered):
+    /usr/bin/pkg-config
+    libpappl-retrofit.so.1()(64bit)
+    pappl-retrofit(x86-64)
+
+legacy-printer-app (rpmlib, GLIBC filtered):
+    /bin/sh
+    libc.so.6()(64bit)
+    libcups.so.2()(64bit)
+    libcupsfilters.so.2()(64bit)
+    libpappl-retrofit.so.1()(64bit)
+    libppd.so.2()(64bit)
+    pappl-retrofit(x86-64)
+    rtld(GNU_HASH)
+    systemd
+
+pappl-retrofit-debuginfo (rpmlib, GLIBC filtered):
+
+pappl-retrofit-debugsource (rpmlib, GLIBC filtered):
+
+
+
+Provides
+--------
+pappl-retrofit:
+    libpappl-retrofit.so.1()(64bit)
+    pappl-retrofit
+    pappl-retrofit(x86-64)
+
+pappl-retrofit-devel:
+    pappl-retrofit-devel
+    pappl-retrofit-devel(x86-64)
+    pkgconfig(libpappl-retrofit)
+
+legacy-printer-app:
+    legacy-printer-app
+    legacy-printer-app(x86-64)
+
+pappl-retrofit-debuginfo:
+    debuginfo(build-id)
+    libpappl-retrofit.so.1.0.0-1.0b2-2.fc41.x86_64.debug()(64bit)
+    pappl-retrofit-debuginfo
+    pappl-retrofit-debuginfo(x86-64)
+
+pappl-retrofit-debugsource:
+    pappl-retrofit-debugsource
+    pappl-retrofit-debugsource(x86-64)
+
+
+
+AutoTools: Obsoleted m4s found
+------------------------------
+  AC_PROG_LIBTOOL found in: pappl-retrofit-1.0b2-build/pappl-
+  retrofit-1.0b2/configure.ac:60
+
+
+Generated by fedora-review 0.10.0 (e79b66b) last change: 2023-07-24
+Command line :/usr/bin/fedora-review -rn ../pappl-retrofit-1.0b2-2.fc41.src.rpm
+Buildroot used: fedora-rawhide-x86_64
+Active plugins: Shell-api, C/C++, Generic
+Disabled plugins: Ocaml, Java, R, Haskell, SugarActivity, Perl, Python, fonts, PHP
+Disabled flags: EXARCH, EPEL6, EPEL7, DISTTAG, BATCH

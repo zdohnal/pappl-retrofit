@@ -1,0 +1,16 @@
+Checking: pappl-retrofit-debuginfo-1.0b2-2.fc41.x86_64.rpm
+=========================================================================================================== rpmlint session starts ===========================================================================================================
+rpmlint: 2.5.0
+configuration:
+    /usr/lib/python3.12/site-packages/rpmlint/configdefaults.toml
+    /etc/xdg/rpmlint/fedora-legacy-licenses.toml
+    /etc/xdg/rpmlint/fedora-spdx-licenses.toml
+    /etc/xdg/rpmlint/fedora.toml
+    /etc/xdg/rpmlint/scoring.toml
+    /etc/xdg/rpmlint/users-groups.toml
+    /etc/xdg/rpmlint/warn-on-functions.toml
+rpmlintrc: [PosixPath('/tmp/tmpa8bz6x0f')]
+checks: 32, packages: 1
+
+===================================================================== 1 packages and 0 specfiles checked; 0 errors, 0 warnings, 10 filtered, 0 badness; has taken 0.1 s ======================================================================
+
