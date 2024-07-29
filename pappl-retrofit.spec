@@ -97,6 +97,8 @@ Recommends: nss-mdns
 Recommends: cups
 
 Requires: %{name}%{?_isa} = %{version}-%{release}
+# it is needed for providing /usr/lib/cups as well
+Requires: cups-filesystem
 
 Requires(post): systemd
 Requires(preun): systemd
