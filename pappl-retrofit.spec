@@ -175,7 +175,7 @@ make check
 
 %changelog
 * Thu Jan 18 2024 Zdenek Dohnal <zdohnal@redhat.com> 1.0b2-2
-- initial import
+- 2300030 - review request: pappl-retrofit
 
 * Mon Sep 18 2023 Brandon Nielsen <nielsenb@jetfuse.net> 1.0b2-1
 - Update to 1.0b2
